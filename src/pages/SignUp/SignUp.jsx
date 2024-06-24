@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import {Link} from "react-router-dom";
-import axios from "axios";
+import React, {useEffect, useState} from 'react';
+import {signUp} from "./api";
+import Input from "./components/Input";
+
+
 
 const SignUp = () => {
     const [username, setUsername] = useState('');
@@ -9,13 +11,38 @@ const SignUp = () => {
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const [apiProgress, setApiProgress] = useState(false)
     const [successMessage, setSuccessMessage] = useState('');
+    const [errors, setErrors] = useState({})
+    const [generalError, setGeneralError] = useState('');
 
-    const onSubmit = (event) => {
+    useEffect(() => {
+        setErrors(function(lastErrors){
+            return {...lastErrors,
+            username: undefined
+            }
+        })
+    }, [username]);
+
+    useEffect(() => {
+        setErrors(function(lastErrors){
+            return {...lastErrors,
+            email: undefined
+            }
+        })
+    }, [email]);
+
+    const onSubmit =  (event) => {
         event.preventDefault();
         setSuccessMessage('');
-
-        axios.post('/api/v1/users', {event: {username, email, password}  })
+        setGeneralError('');
+        signUp({username, email, password})
             .then((response) => {setSuccessMessage(response.data.message) })
+            .catch((axiosError) => {
+                if(axiosError.response?.data && axiosError.response.status === 400) {
+                    setErrors(axiosError.response.data.validationErrors);
+                }else{
+                   setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
+                }
+            })
             .finally(() => setApiProgress(false));
         setApiProgress(true)
 
@@ -25,24 +52,17 @@ const SignUp = () => {
         <div className="login-container">
                     <h2  className="login-title">Registrieren</h2>
                     <form onSubmit={onSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">Vollständiger Name</label>
-                            <input onChange={(event) => setUsername(event.target.value)} type="text" className="form-control" id="name" placeholder="Name eingeben"/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email Adresse</label>
-                            <input  onChange={(event) => setEmail(event.target.value)} type="email" className="form-control" id="email" placeholder="Email eingeben"/>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Passwort</label>
-                            <input  onChange={(event) => setPassword(event.target.value)} type="password" className="form-control" id="password" placeholder="Passwort"/>
-                        </div>
+                        <Input id="username" label="Vollständiger Name" error={errors.username}  onChange={(event) => setUsername(event.target.value)}/>
+                        <Input id="email" label="Email Adresse" error={errors.email}  onChange={(event) => setEmail(event.target.value)}/>
+                        <Input id="password" label="Passwort" error={errors.password}  onChange={(event) => setPassword(event.target.value)}/>
+
                         <div className="form-group">
                             <label htmlFor="passwordRepeat">Passwort wiederholen</label>
                             <input  onChange={(event) => setPasswordRepeat(event.target.value)} type="password" className="form-control" id="passwordRepeat"
                                    placeholder="Passwort wiederholen"/>
                         </div>
                         {successMessage && <div className="alert alert-success">{successMessage}</div>}
+                        {generalError && <div className="alert alert-danger">{generalError}</div>}
                         <button disabled={apiProgress || (!password || password !== passwordRepeat)} type="submit" className="btn btn-success">
                             {apiProgress && <span className="spinner-border spinner-border-sm" role="status" aria-hidden=""></span>}
                             Registrieren</button>
