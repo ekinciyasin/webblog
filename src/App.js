@@ -5,12 +5,14 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp/SignUp";
+import './App.css';
+
 
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <HomePage />,
+        element: <HomePage  />,
     },
     {
         path: "/login",
@@ -23,9 +25,19 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+    function createTitle()  {
+         if(true){
+             return "Homepage"
+         }
+        if(false){
+             return "Block"
+         }
+     }
+
+
   return (
       <div>
-          <NavBar/>
+          <NavBar title={createTitle()}/>
           <RouterProvider router={router} />
       </div>
   );
