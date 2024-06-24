@@ -1,17 +1,58 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import './Login.css';
 import {Link} from "react-router-dom";
+import {signUp} from "./SignUp/api";
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [apiProgress, setApiProgress] = useState(false)
+    const [successMessage, setSuccessMessage] = useState('');
+    const [errors, setErrors] = useState({})
+    const [generalError, setGeneralError] = useState('');
+
 
     const handleLogin = (event) => {
         event.preventDefault();
 
-        console.log('Giriş yapılıyor:', { username, email, password });
     };
+
+
+    useEffect(() => {
+        setErrors(function(lastErrors){
+            return {...lastErrors,
+                email: undefined
+            }
+        })
+    }, [email]);
+
+    useEffect(() => {
+        setErrors(function(lastErrors){
+            return {...lastErrors,
+                password: undefined
+            }
+        })
+    }, [password]);
+
+    const onSubmit =  (event) => {
+        event.preventDefault();
+        setSuccessMessage('');
+        setGeneralError('');
+        signUp({username, email, password})
+            .then((response) => {setSuccessMessage(response.data.message) })
+            .catch((axiosError) => {
+                if(axiosError.response?.data && axiosError.response.status === 400) {
+                    setErrors(axiosError.response.data.validationErrors);
+                }else{
+                    setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
+                }
+            })
+            .finally(() => setApiProgress(false));
+        setApiProgress(true)
+
+    };
+
 
     return (
         <div className="login-container">
