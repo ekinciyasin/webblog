@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoriesPage from "./CategoriesPage";
+import BlockItem from "../components/BlockItem";
 const HomePage = () => {
     return (
         <>
@@ -9,13 +10,7 @@ const HomePage = () => {
             <div className="row">
                 <div className="col-lg-8">
                     <div className="card">
-                        <img src="https://via.placeholder.com/800x400" className="card-img-top" alt="Hauptbild" />
-                        <div className="card-body">
-                            <span className="badge bg-danger">Biologie</span>
-                            <h5 className="card-title">Ein Tier, das ohne Sauerstoff leben kann, wurde entdeckt</h5>
-                            <p className="card-text">Fizikist</p>
-                            <p className="card-text"><small className="text-muted">21.06.2024 • 133 Ansichten</small></p>
-                        </div>
+                        <BlockItem></BlockItem>
                     </div>
                 </div>
                 <div className="col-lg-4">
