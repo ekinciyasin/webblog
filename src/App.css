@@ -1,4 +1,79 @@
 
-.homePageMainContainer{
-background-color: #354147;
+
+.homePageMainContainer {
+    background-color: #0a1c25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#customCard {
+    background-color: #0a1c25;
+    margin-bottom: 60px;
+    flex-direction: row;
+    color: white;
+}
+
+#customArticleContainer,
+.reactApp{
+    color: white;
+    background-color: #0a1c25;
+    border: none;
+}
+
+.articleTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 30px 25px 30px 0;
+}
+
+#customBtnBlockItem {
+    background-color: #0a1c25;
+    color: #FBD784;
+    border: none;
+    margin-top: 15px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#comment{
+    background-color: #0a1c25;
+    border: 1px solid white;
+    color: white;
+}
+
+.card-img-top{
+    width: 100%;
+    max-width: 285px;
+    max-height: 190px;
+}
+
+.card-text{
+    margin-top: 10px;
+    font-size: 10px !important;
+}
+
+#card-title{
+    margin-bottom: 20px;
+}
+
+#swap{
+    margin-left: -50px;
+}
+
+#noswap{
+    margin-left: 50px;
+    text-align: right;
+}
+
+.card-body{
+    max-width: 260px;
+    margin-left: 10px;
+}
+
+#noswap-pic{
+    margin-left: 10px;
 }

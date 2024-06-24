@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CategoriesPage from "./pages/CategoriesPage";
 import * as PropTypes from "prop-types";
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
 import NavBar from "./components/NavBar";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp/SignUp";
@@ -26,6 +26,10 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp />,
     },
+    {
+        path: "/:blockId",
+        element: <ArticlePage />,
+    },
 ]);
 
 function App() {
@@ -40,7 +44,7 @@ function App() {
 
 
   return (
-      <div>
+      <div className="reactApp">
           <NavBar title={createTitle()}/>
           <RouterProvider router={router} />
       </div>
