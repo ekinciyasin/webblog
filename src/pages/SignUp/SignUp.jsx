@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {signUp, signUpUser} from "./api";
-import Input from "./components/Input";
-import {loginUser} from "../Login/api";
+import Input from "../../components/Input";
+import {login, loginUser} from "../Login/api";
 import {useNavigate} from "react-router-dom";
 import {getUser} from "../../api/ApiCalls";
 
@@ -33,6 +33,7 @@ const SignUp = ({onLogin}) => {
             email: undefined
             }
         })
+        setGeneralError('')
     }, [email]);
 
     useEffect(() => {
@@ -93,22 +94,18 @@ const SignUp = ({onLogin}) => {
             return;
 
         }
+        let newUser;
         try {
-            // Kullanıcıyı kaydet
-            const role ="USER"
-            const id = Date.now();
-            const newUser = await signUp({id, username, email, role, password});
-            const user = await getUser(id)
-
-            onLogin(user);
-            navigate('/');
+            newUser = await signUp({ username, email, password });
+            await login(email, password);
+            onLogin(newUser);
+            navigate("/");
         } catch (error) {
-            if (error.message === 'Email already exists') {
-                setErrors({ email: 'Diese E-Mail-Adresse ist bereits registriert.' });
-            } else {
-                setGeneralError('Ein unbekannter Fehler ist aufgetreten.');
-            }
+            setGeneralError(error.message || 'Registrierung fehlgeschlagen.');
+        } finally {
+            setApiProgress(false);
         }
+
 
     };
 
