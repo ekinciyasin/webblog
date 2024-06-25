@@ -30,13 +30,13 @@ const ArticlePage = (props) => {
                     alt="Card image cap"
                     style={{ width: '40rem', margin: '0 auto' }}
                 />
-                <div className="card-body">
+                <div className="">
                     <div className="articleTitle">
                         <h2 className="card-title">{block.blockTitle}</h2>
                         <div>{block.blockDatum}</div>
                     </div>
-                    <div className="card-text">{block.blockText}</div>
-                    <div className="card-text">{block.blockDatum}</div>
+                    <div className="">{block.blockText}</div>
+                    <div className="">{block.blockText}</div>
                 </div>
             </div>
 

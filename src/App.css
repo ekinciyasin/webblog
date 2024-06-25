@@ -1,7 +1,10 @@
-
+:root {
+    --background: #0B1D26;
+    --gold: #FBD784;
+}
 
 .homePageMainContainer {
-    background-color: #0a1c25;
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +12,7 @@
 }
 
 #customCard {
-    background-color: #0a1c25;
+    background-color: var(--background);
     margin-bottom: 60px;
     flex-direction: row;
     color: white;
@@ -18,7 +21,7 @@
 #customArticleContainer,
 .reactApp{
     color: white;
-    background-color: #0a1c25;
+    background-color: var(--background);
     border: none;
 }
 
@@ -31,8 +34,8 @@
 }
 
 #customBtnBlockItem {
-    background-color: #0a1c25;
-    color: #FBD784;
+    background-color: var(--background);
+    color: var(--gold);
     border: none;
     margin-top: 15px;
     margin-left: 0;
@@ -40,12 +43,13 @@
 }
 
 #comment{
-    background-color: #0a1c25;
+    background-color: var(--background);
     border: 1px solid white;
     color: white;
 }
 
-.card-img-top{
+#noswap-pic,
+#swap{
     width: 100%;
     max-width: 285px;
     max-height: 190px;

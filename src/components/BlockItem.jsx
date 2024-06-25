@@ -17,7 +17,7 @@ const BlockItem = ({ blockId, title, url, blockland, blockDate, blockText, swap,
             ) : (
                 <>
                     <img className="card-img-top" src={url} alt="Card image cap"  id="swap"/>
-                    <div className="card-body">
+                    <div className="card-body" id="card-body">
                         <h5 className="card-title" id="card-title">{title}</h5>
                         <div className="card-text">{blockbeschreibung}</div>
                         <div className="card-text">{blockDate}</div>
