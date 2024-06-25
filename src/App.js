@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import HomePage from "./pages/HomePage";
 import CategoriesPage from "./pages/CategoriesPage";
 import * as PropTypes from "prop-types";
@@ -14,6 +14,7 @@ import Loading from "./components/Loading";
 import BlockItem from "./components/BlockItem";
 import ArticlePage from './components/Articlepage';
 import './App.css';
+import AdminPage from "./pages/AdminPage/AdminPage";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,7 +73,7 @@ function App() {
             path: "/new-article",
             element: (
                 <ProtectedRoute isLoggedIn={isLoggedIn} userRole={userRole}>
-                    <NewArticle />
+                   <AdminPage/>
                 </ProtectedRoute>
             ),
         },
