@@ -1,3 +1,86 @@
+:root {
+    --background: #0B1D26;
+    --gold: #FBD784;
+}
+
+.homePageMainContainer {
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#customCard {
+    background-color: var(--background);
+    margin-bottom: 60px;
+    flex-direction: row;
+    color: white;
+}
+
+#customArticleContainer,
+.reactApp{
+    color: white;
+    background-color: var(--background);
+    border: none;
+}
+
+.articleTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 30px 25px 30px 0;
+}
+
+#customBtnBlockItem {
+    background-color: var(--background);
+    color: var(--gold);
+    border: none;
+    margin-top: 15px;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#comment{
+    background-color: var(--background);
+    border: 1px solid white;
+    color: white;
+}
+
+#noswap-pic,
+#swap{
+    width: 100%;
+    max-width: 285px;
+    max-height: 190px;
+}
+
+.card-text{
+    margin-top: 10px;
+    font-size: 10px !important;
+}
+
+#card-title{
+    margin-bottom: 20px;
+}
+
+#swap{
+    margin-left: -50px;
+}
+
+#noswap{
+    margin-left: 50px;
+    text-align: right;
+}
+
+.card-body{
+    max-width: 260px;
+    margin-left: 10px;
+}
+
+#noswap-pic{
+    margin-left: 10px;
+    }
 .bold-italic {
     font-weight: bold;
     font-style: italic;

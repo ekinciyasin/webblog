@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CategoriesPage from "./pages/CategoriesPage";
+import * as PropTypes from "prop-types";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login.jsx";
-import HomePage from "./pages/HomePage";
 import NewArticle from "./pages/NewArticle";
 import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
+import BlockItem from "./components/BlockItem";
+import ArticlePage from './components/Articlepage';
+import './App.css';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,6 +31,7 @@ function App() {
         setUsername(storedUsername);
         setLoading(false);
     }, []);
+
 
     const handleLogin = (user) => {
         setIsLoggedIn(true);
@@ -56,6 +63,10 @@ function App() {
         {
             path: "/signup",
             element: <SignUp onLogin={handleLogin} />,
+        },
+        {
+            path: "/:blockId",
+            element: <ArticlePage />,
         },
         {
             path: "/new-article",
