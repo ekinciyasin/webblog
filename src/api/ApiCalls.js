@@ -11,3 +11,10 @@
 // export const changeLanguage = (language) => {
 //     axios.defaults.headers["accept-language"] = language;
 // };
+
+import axios from "axios";
+
+
+export const getUser = (id) => {
+ return  axios.get("http://localhost:3005/users/1")
+};

@@ -1,14 +1,14 @@
 const users = [
     {
         id: 1,
-        name: "Yasin",
+        username: "Yasin",
         email: "yasin@gmail.com",
         password: "password",
         role: "user"
     },
     {
         id: 2,
-        name: "Mats",
+        username: "Mats",
         email: "mats@gmail.com",
         password: "1111",
         role: "admin"

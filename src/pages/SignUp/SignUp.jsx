@@ -3,6 +3,7 @@ import {signUp, signUpUser} from "./api";
 import Input from "./components/Input";
 import {loginUser} from "../Login/api";
 import {useNavigate} from "react-router-dom";
+import {getUser} from "../../api/ApiCalls";
 
 
 
@@ -53,7 +54,7 @@ const SignUp = ({onLogin}) => {
 
 
 
-    const onSubmit =  (event) => {
+    const onSubmit =  async (event) => {
         event.preventDefault();
         setSuccessMessage('');
         setGeneralError('');
@@ -94,14 +95,12 @@ const SignUp = ({onLogin}) => {
         }
         try {
             // Kullanıcıyı kaydet
-            const newUser =  signUpUser(username, email, password);
-            onLogin(newUser);
-            // // Kullanıcı başarıyla kaydedildiğinde localStorage'a kullanıcı bilgilerini kaydet
-            // localStorage.setItem('loggedInUser', JSON.stringify(newUser));
-            // localStorage.setItem('isLoggedIn', 'true');
-            // localStorage.setItem('username', newUser.name);
-            //
-            // // Kullanıcı kayıt işlemi başarılıysa ana sayfaya yönlendir
+            const role ="USER"
+            const id = Date.now();
+            const newUser = await signUp({id, username, email, role, password});
+            const user = await getUser(id)
+
+            onLogin(user);
             navigate('/');
         } catch (error) {
             if (error.message === 'Email already exists') {

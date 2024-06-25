@@ -46,7 +46,7 @@ const AdminPage = () => {
                 const response = await axios.post('http://localhost:3005/users', {
                     id,
                     username,
-                    role
+
                 });
                 setResponseMessage('Article posted successfully!');
                 console.log('Response:', response.data);

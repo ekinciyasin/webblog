@@ -34,12 +34,13 @@ function App() {
 
 
     const handleLogin = (user) => {
+        console.log(user)
         setIsLoggedIn(true);
         setUserRole(user.role);
-        setUsername(user.name);
+        setUsername(user.username);
         localStorage.setItem('isLoggedIn', 'true');
         localStorage.setItem('userRole', user.role);
-        localStorage.setItem('username', user.name);
+        localStorage.setItem('username', user.username);
     };
 
     const handleLogout = () => {

@@ -22,6 +22,7 @@ const Login = ({onLogin}) => {
         event.preventDefault();
         let user = await loginUser(email, password);
 
+
        if(user !==null ){
            onLogin(user);
            navigate("/");

@@ -1,8 +1,14 @@
 import axios from "axios";
 import users from "../../data/users";
-
-export function signUp(body){
+//database
+export function signUpWithBackend(body){
     return axios.post('/api/v1/users', body)
+}
+
+//
+export function signUp(body){
+return  axios.post('http://localhost:3005/users', body)
+
 }
 
 
