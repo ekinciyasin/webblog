@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { v4 as uuidv4 } from 'uuid';
@@ -39,12 +39,14 @@ const AdminPage = () => {
 
     const handleApi = async (e) => {
             e.preventDefault();
-            const name = "Pit";
+            const username = "Pit";
+            const role = 'ADMIN'
             const id = uuidv4();
             try {
                 const response = await axios.post('http://localhost:3005/users', {
                     id,
-                    name
+                    username,
+                    role
                 });
                 setResponseMessage('Article posted successfully!');
                 console.log('Response:', response.data);
