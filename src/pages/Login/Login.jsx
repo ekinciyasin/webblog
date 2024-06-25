@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './Login.css';
 import {Link, useNavigate} from "react-router-dom";
-import {signUp} from "./SignUp/api";
-import {login, loginUser} from "./Login/api";
-import Input from "../components/Input";
+import {signUp} from "../SignUp/api";
+import {login, loginUser} from "./api";
+import Input from "../../components/Input";
 
 
 
@@ -22,23 +22,20 @@ const Login = ({onLogin}) => {
     const handleLogin = async (event) => {
         event.preventDefault();
         let user;
-        try{
+        try {
             user = await login(email, password);
-       }catch (error){
-            setGeneralError('Failed to login. Please check your credentials.');
-
+        } catch (error) {
+            setGeneralError('Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.');
+            return;
         }
 
-
-
-       if(user !==null ){
-           onLogin(user);
-           navigate("/");
-       }else{
-           setGeneralError('Login failed. Please check your credentials.');
-       }
+        if (user !== null) {
+            onLogin(user);
+            navigate("/");
+        } else {
+            setGeneralError('Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.');
+        }
     };
-
 
     useEffect(() => {
         setErrors(function(lastErrors){
@@ -46,6 +43,7 @@ const Login = ({onLogin}) => {
                 email: undefined
             }
         })
+        setGeneralError('')
     }, [email]);
 
     useEffect(() => {
@@ -54,6 +52,7 @@ const Login = ({onLogin}) => {
                 password: undefined
             }
         })
+        setGeneralError('')
     }, [password]);
 
     // const onSubmit =  (event) => {
@@ -81,6 +80,8 @@ const Login = ({onLogin}) => {
             <form onSubmit={handleLogin}>
                 <Input id="email" label="Email Adresse" error={errors.email}  onChange={(event) => setEmail(event.target.value)}/>
                 <Input id="password" label="Passwort" error={errors.password}  onChange={(event) => setPassword(event.target.value)} type="password"/>
+                {successMessage && <div className="alert alert-success">{successMessage}</div>}
+                {generalError && <div className="alert alert-danger">{generalError}</div>}
                 <button type="submit" className="btn btn-success">Einloggen</button>
                 <div className="mt-3">
                     <p>Noch kein Mitglied? <Link to="/register">Registrieren</Link></p>

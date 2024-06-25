@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import HomePage from "./pages/HomePage";
-import CategoriesPage from "./pages/CategoriesPage";
-import * as PropTypes from "prop-types";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
-import Login from "./pages/Login.jsx";
+
 import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
-import BlockItem from "./components/BlockItem";
 import ArticlePage from './components/Articlepage';
 import './App.css';
 import AdminPage from "./pages/AdminPage/AdminPage";
+import Login from "./pages/Login/Login";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,13 +32,15 @@ function App() {
 
 
     const handleLogin = (user) => {
-        console.log(user)
-        setIsLoggedIn(true);
-        setUserRole(user.role);
-        setUsername(user.username);
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('userRole', user.role);
-        localStorage.setItem('username', user.username);
+        if(user !==undefined){
+
+            setIsLoggedIn(true);
+            setUserRole(user.role);
+            setUsername(user.username);
+            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('userRole', user.role);
+            localStorage.setItem('username', user.username);
+        }
     };
 
     const handleLogout = () => {
