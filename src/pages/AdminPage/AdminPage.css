@@ -1,0 +1,102 @@
+.bg-color {
+    background-color: #0B1D26;
+}
+
+
+.accent-color {
+    color: #FBD784;
+}
+
+.text-style {
+    color: #FFFFFF;
+}
+
+.btn-form-submit {
+
+    padding: 0.375rem 0.75rem;
+    margin: 4px 2px;
+
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #D9D9D9;
+    color: #000;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    vertical-align: middle;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-form-submit:hover {
+    background-color: #FBD784;
+    color: #FFFFFF;
+}
+
+.btn-form-submit:focus {
+    outline: 0;
+    box-shadow: 0 0 0.2rem .15rem rgba(255, 202, 32, 0.9) !important;
+}
+
+.form-control:focus {
+    border-color: #FBD784 !important;
+    box-shadow: inset 0 0 0.15rem .1rem rgba(255, 202, 32, 0.9) !important;
+}
+
+
+
+.ql-editor{
+    min-height: 150px;
+}
+
+.ql-editor{
+    color: #FFFFFF;
+}
+
+.ql-snow .ql-picker{
+    color: #FFFFFF;
+}
+
+.ql-snow .ql-stroke{
+    stroke: #FFFFFF;
+}
+
+
+.ql-snow .ql-picker-options {
+    background-color: #0B1D26;
+}
+
+.ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected{
+    color: #FBD784;
+}
+
+.ql-snow.ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow.ql-toolbar button:focus .ql-stroke, .ql-snow .ql-toolbar button:focus .ql-stroke, .ql-snow.ql-toolbar button.ql-active .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke, .ql-snow.ql-toolbar button:hover .ql-stroke-miter, .ql-snow .ql-toolbar button:hover .ql-stroke-miter, .ql-snow.ql-toolbar button:focus .ql-stroke-miter, .ql-snow .ql-toolbar button:focus .ql-stroke-miter, .ql-snow.ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter{
+    stroke: #FBD784;
+}
+
+/*Select*/
+.custom-select__option{
+    cursor:  pointer !important;
+}
+.custom-select__option--is-focused{
+    background-color: rgba(251, 215, 132, 0.65) !important;
+}
+
+.custom-select__multi-value__remove:hover{
+    background-color: #FBD784 !important;
+    color: #b38507 !important;
+}
+.custom-select__control--is-focused{
+    border-color: #FBD784 !important;
+    border-radius: 4px;
+    /*!*border-color: rgba(255, 202, 32, 0.7) !important;*!*/
+    box-shadow: inset 0 0 0.15rem .1rem rgba(255, 202, 32, 0.9) !important;
+}
+
+
+.invalid-feedback-display {
+    width: 100%;
+    margin-top: .25rem;
+    margin-bottom: .5rem;
+    font-size: .875em;
+    color: var(--bs-form-invalid-color);
+}
