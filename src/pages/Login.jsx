@@ -1,21 +1,33 @@
 import React, {useEffect, useState} from 'react';
 import './Login.css';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {signUp} from "./SignUp/api";
+import {loginUser} from "./Login/api";
 
-const Login = () => {
-    const [username, setUsername] = useState('');
+
+
+
+
+const Login = ({onLogin}) => {
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [apiProgress, setApiProgress] = useState(false)
     const [successMessage, setSuccessMessage] = useState('');
     const [errors, setErrors] = useState({})
     const [generalError, setGeneralError] = useState('');
+    const navigate = useNavigate();
 
-
-    const handleLogin = (event) => {
+    const handleLogin = async (event) => {
         event.preventDefault();
+        let user = await loginUser(email, password);
 
+       if(user !==null ){
+           onLogin(user);
+           navigate("/");
+       }else{
+           setGeneralError('Login failed. Please check your credentials.');
+       }
     };
 
 
@@ -35,23 +47,23 @@ const Login = () => {
         })
     }, [password]);
 
-    const onSubmit =  (event) => {
-        event.preventDefault();
-        setSuccessMessage('');
-        setGeneralError('');
-        signUp({username, email, password})
-            .then((response) => {setSuccessMessage(response.data.message) })
-            .catch((axiosError) => {
-                if(axiosError.response?.data && axiosError.response.status === 400) {
-                    setErrors(axiosError.response.data.validationErrors);
-                }else{
-                    setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
-                }
-            })
-            .finally(() => setApiProgress(false));
-        setApiProgress(true)
-
-    };
+    // const onSubmit =  (event) => {
+    //     event.preventDefault();
+    //     setSuccessMessage('');
+    //     setGeneralError('');
+    //     signUp({username, email, password})
+    //         .then((response) => {setSuccessMessage(response.data.message) })
+    //         .catch((axiosError) => {
+    //             if(axiosError.response?.data && axiosError.response.status === 400) {
+    //                 setErrors(axiosError.response.data.validationErrors);
+    //             }else{
+    //                 setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
+    //             }
+    //         })
+    //         .finally(() => setApiProgress(false));
+    //     setApiProgress(true)
+    //
+    // };
 
 
     return (

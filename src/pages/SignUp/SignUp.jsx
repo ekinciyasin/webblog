@@ -1,11 +1,13 @@
 import React, {useEffect, useMemo, useState} from 'react';
-import {signUp} from "./api";
+import {signUp, signUpUser} from "./api";
 import Input from "./components/Input";
-import {signUpUser} from "../../data/users";
+import {loginUser} from "../Login/api";
+import {useNavigate} from "react-router-dom";
 
 
 
-const SignUp = () => {
+
+const SignUp = ({onLogin}) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -14,6 +16,7 @@ const SignUp = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errors, setErrors] = useState({})
     const [generalError, setGeneralError] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         setErrors(function(lastErrors){
@@ -54,7 +57,7 @@ const SignUp = () => {
         event.preventDefault();
         setSuccessMessage('');
         setGeneralError('');
-
+        //
         // with API -springboot
         // signUp({username, email, password})
         //     .then((response) => {setSuccessMessage(response.data.message) })
@@ -66,30 +69,47 @@ const SignUp = () => {
         //         }
         //     })
         //     .finally(() => setApiProgress(false));
-
+        // setApiProgress(true)
+        //
 
         // with DummyData
-        let newErrors = {};
 
+        let newErrors = {};
         if (username.length < 5 || username.length > 20) {
             newErrors.username = "Benutzername muss zwischen 5 und 20 Zeichen sein.";
-        }
 
+        }
         if (!email.includes('@')) {
             newErrors.email = "E-Mail-Adresse muss ein '@' Zeichen enthalten.";
-        }
 
+        }
         if (password.length < 4 || password.length > 20) {
             newErrors.password = "Passwort muss zwischen 4 und 20 Zeichen sein.";
-        }
 
+        }
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
             return;
-        }
 
-        signUpUser({username, email, password})
-        setApiProgress(true)
+        }
+        try {
+            // Kullanıcıyı kaydet
+            const newUser =  signUpUser(username, email, password);
+            onLogin(newUser);
+            // // Kullanıcı başarıyla kaydedildiğinde localStorage'a kullanıcı bilgilerini kaydet
+            // localStorage.setItem('loggedInUser', JSON.stringify(newUser));
+            // localStorage.setItem('isLoggedIn', 'true');
+            // localStorage.setItem('username', newUser.name);
+            //
+            // // Kullanıcı kayıt işlemi başarılıysa ana sayfaya yönlendir
+            navigate('/');
+        } catch (error) {
+            if (error.message === 'Email already exists') {
+                setErrors({ email: 'Diese E-Mail-Adresse ist bereits registriert.' });
+            } else {
+                setGeneralError('Ein unbekannter Fehler ist aufgetreten.');
+            }
+        }
 
     };
 

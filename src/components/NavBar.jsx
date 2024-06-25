@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NavBar = () => {
+const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -14,17 +14,43 @@ const NavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
                             <li className="nav-item">
-                                <a className="nav-link" href="#kategorien">Kategorien</a>
+                                <a className="nav-link btn btn-light" href="#kategorien">Kategorien</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#artikel">Artikel</a>
+                                <a className="nav-link btn btn-light" href="#artikel">Artikel</a>
                             </li>
+                            {userRole === 'admin' && (
+                               <>
+                                 <li className="nav-item">
+                                    <a className="nav-link btn btn-light" href="/new-article">Neuen Artikel erstellen</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link btn btn-light" href="/users">Benutzer</a>
+                                </li>
+                             </>
+                            )}
                             <li className="nav-item">
-                                <a className="btn btn-success me-2" href="/login">Einloggen</a>
+                                <a className="nav-link" href="#artikel"></a>
                             </li>
-                            <li className="nav-item">
-                                <a className="btn btn-success" href="/SignUp">Registrieren</a>
-                            </li>
+                            {isLoggedIn && username ? (
+                                <>
+                                    <li className="nav-item">
+                                        <span className="nav-link bold-italic">Hallo, {username}</span>
+                                    </li>
+                                    <li className="nav-item">
+                                        <button className="btn btn-danger" onClick={onLogout}>Ausloggen</button>
+                                    </li>
+                                </>
+                            ) : (
+                                <>
+                                    <li className="nav-item">
+                                        <a className="btn btn-success me-2" href="/login">Einloggen</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="btn btn-success" href="/signup">Registrieren</a>
+                                    </li>
+                                </>
+                            )}
                         </ul>
                     </div>
                 </div>

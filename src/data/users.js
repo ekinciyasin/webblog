@@ -1,39 +1,30 @@
 const users = [
     {
         id: 1,
-        name: "aasin",
-        email: "yasin@example.com",
-        password: "passwor",
+        name: "Yasin",
+        email: "yasin@gmail.com",
+        password: "password",
         role: "user"
     },
     {
         id: 2,
         name: "Mats",
-        email: "mats@example.com",
-        password: "password456"
+        email: "mats@gmail.com",
+        password: "1111",
+        role: "admin"
     }
-
 ];
 
-export function signUpUser(name, email, password){
+const initializeUsers = () => {
+    const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
 
-    const existingUser = users.find(user => user.email === email);
-
-    if (existingUser) {
-        throw new Error("Email already exists");
+    if (storedUsers.length === 0) {
+        localStorage.setItem('users', JSON.stringify(users));
     }
+};
 
-    const newUser = {
-        id: Date.now(),
-        name,
-        email,
-        password,
-        role: "user"
-    };
+initializeUsers();
 
-    users.push(newUser);
-     console.log("User created successfully", newUser);
-    return newUser;
-}
+
 
 export default users;
