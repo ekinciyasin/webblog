@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {useParams} from "react-router-dom";
 import blocks from "../db.json";
+import Comments from "../pages/Comments/Comments";
 
 const ArticlePage = (props) => {
     const [comments, setComments] = useState([]);
@@ -39,7 +40,9 @@ const ArticlePage = (props) => {
                     <div className="">{block.blockText}</div>
                 </div>
             </div>
-
+            <div className="mt-5">
+            <Comments/>
+            </div>
             <div className="mt-5">
                 <h5>Kommentare</h5>
                 <form onSubmit={handleCommentSubmit}>
