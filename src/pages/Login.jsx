@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './Login.css';
 import {Link, useNavigate} from "react-router-dom";
 import {signUp} from "./SignUp/api";
-import {loginUser} from "./Login/api";
+import {login, loginUser} from "./Login/api";
+import Input from "../components/Input";
 
 
 
@@ -20,7 +21,14 @@ const Login = ({onLogin}) => {
 
     const handleLogin = async (event) => {
         event.preventDefault();
-        let user = await loginUser(email, password);
+        let user;
+        try{
+            user = await login(email, password);
+       }catch (error){
+            setGeneralError('Failed to login. Please check your credentials.');
+
+        }
+
 
 
        if(user !==null ){
@@ -71,28 +79,8 @@ const Login = ({onLogin}) => {
         <div className="login-container">
             <h2 className="login-title">Anmeldung</h2>
             <form onSubmit={handleLogin}>
-                <div className="form-group">
-                    <label htmlFor="email">E-Mail-Adresse</label>
-                    <input
-                        type="email"
-                        id="email"
-                        className="form-control"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="E-Mail-Adresse eingeben"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Passwort</label>
-                    <input
-                        type="password"
-                        id="password"
-                        className="form-control"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Passwort eingeben"
-                    />
-                </div>
+                <Input id="email" label="Email Adresse" error={errors.email}  onChange={(event) => setEmail(event.target.value)}/>
+                <Input id="password" label="Passwort" error={errors.password}  onChange={(event) => setPassword(event.target.value)} type="password"/>
                 <button type="submit" className="btn btn-success">Einloggen</button>
                 <div className="mt-3">
                     <p>Noch kein Mitglied? <Link to="/register">Registrieren</Link></p>
