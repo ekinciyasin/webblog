@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.snow.css';
 import { v4 as uuidv4 } from 'uuid';
 import Select from 'react-select';
 import './AdminPage.css';
+import axios from "axios";
 // import './db_1.js';
 // import {db} from "./db_1";
 
@@ -16,6 +17,46 @@ const AdminPage = () => {
     const [countryError, setCountryError] = useState('');
     const [category, setCategory] = useState([]);
     const [picURL, setPicURL] = useState('');
+    const [articles, setArticles] = useState([]);
+    ///-------->
+
+    const [responseMessage, setResponseMessage] = useState('');
+
+    async function getUser() {
+        try {
+            const response = await axios.get("http://localhost:3005/articles");
+            setArticles(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.error('Error fetching articles:', error);
+        }
+    }
+
+    useEffect(() => {
+        getUser();
+    }, []);
+
+
+    const handleApi = async (e) => {
+            e.preventDefault();
+            const name = "Pit";
+            const id = uuidv4();
+            try {
+                const response = await axios.post('http://localhost:3005/users', {
+                    id,
+                    name
+                });
+                setResponseMessage('Article posted successfully!');
+                console.log('Response:', response.data);
+            } catch (error) {
+                setResponseMessage('Failed to post article');
+                console.error('Error posting article:', error);
+            }
+        };
+
+
+
+
 
 
     const options = [
@@ -126,9 +167,9 @@ const AdminPage = () => {
         return options.filter(option => category.indexOf(option.value) !== -1);
     }
 
+
     return (
-        <div className="container my-5 bg-color">
-            <h1>Neue Artikel erstellen</h1>
+        <div className="container my-5 bg-color" >
             <form onSubmit={handleOnSubmit} >
                 <div className="mb-4">
                     <label htmlFor="title" className="form-label text-style">Titel</label>
@@ -175,6 +216,7 @@ const AdminPage = () => {
                 </div>
                 <button type="submit" className="btn-form-submit">Submit</button>
             </form>
+            <button onClick={handleApi}  className="btn-form-submit">API</button>
         </div>
     );
 };

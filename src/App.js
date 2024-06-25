@@ -7,7 +7,6 @@ import * as PropTypes from "prop-types";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login.jsx";
-import NewArticle from "./pages/NewArticle";
 import Users from "./pages/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
