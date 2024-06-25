@@ -10,7 +10,7 @@ const BlockItem = ({ blockId, title, url, blockland, blockDate, blockText, swap,
                         <h5 className="card-title" id="card-title">{title}</h5>
                         <div className="card-text">{blockbeschreibung}</div>
                         <div className="card-text">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel --></Link>
+                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel</Link>
                     </div>
                     <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
                 </>
@@ -21,7 +21,7 @@ const BlockItem = ({ blockId, title, url, blockland, blockDate, blockText, swap,
                         <h5 className="card-title" id="card-title">{title}</h5>
                         <div className="card-text">{blockbeschreibung}</div>
                         <div className="card-text">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel --></Link>
+                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel</Link>
                     </div>
                 </>
             )}
