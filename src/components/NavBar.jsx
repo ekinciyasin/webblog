@@ -47,10 +47,10 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
                             ) : (
                                 <>
                                     <li className="nav-item">
-                                        <a className="btn btn-success me-2" href="/login">Einloggen</a>
+                                        <a className="nav-link a-categorien" href="/login">Einloggen</a>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="btn btn-success" href="/signup">Registrieren</a>
+                                        <a className="nav-link a-categorien" href="/signup">Registrieren</a>
                                     </li>
                                 </>
                             )}

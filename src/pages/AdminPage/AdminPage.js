@@ -127,7 +127,8 @@ const AdminPage = () => {
     }
 
     return (
-        <div className="container my-5 bg-color" >
+        <div className="container my-5 bg-color">
+            <h1>Neue Artikel erstellen</h1>
             <form onSubmit={handleOnSubmit} >
                 <div className="mb-4">
                     <label htmlFor="title" className="form-label text-style">Titel</label>

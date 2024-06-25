@@ -2,10 +2,20 @@
     --background: #0B1D26;
     --gold: #FBD784;
     --hover: #bb8b0d;
+    --white: #f7fafd;
+}
+
+h1{
+    text-align: center;
+    color: var(--white) !important;
+    margin-bottom: 2rem !important;
+    margin-top: -55px!important;
+
 }
 #root{
     background-color: var(--background);
     min-height: 100vh;
+    color: var(--white);
 }
 
 .logo{
@@ -17,10 +27,10 @@
 }
 #navbar {
     background-image: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgba(11, 29, 38, 1) 100%), url("https://i.ibb.co/Smh8gs4/cover.png");
-    height: 800px;
-    --bs-nav-link-color: white !important;
+    height: 510px;
+    --bs-nav-link-color: var(--white) !important;
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 #navbar:after {
@@ -30,6 +40,7 @@
 
 .nav-link{
     color: white !important;
+    font-size: 1.2rem !important;
 }
 a:hover{
     color: var(--hover) !important;
@@ -63,14 +74,14 @@ a::before {
 #customCard {
     margin-bottom: 60px;
     flex-direction: row;
-    color: white;
+    color: var(--white);
     background-color: rgba(0, 0, 0, 0);
     border: none;
 }
 
 #customArticleContainer,
 .reactApp{
-    color: white;
+    color: var(--white);
     background-color: var(--background);
     border: none;
 }
@@ -95,7 +106,7 @@ a::before {
 #comment{
     background-color: var(--background);
     border: 1px solid white;
-    color: white;
+    color: var(--white);
 }
 
 #noswap-pic,
@@ -139,7 +150,8 @@ a::before {
 
 .blocks-container,
 #mt-5{
-    margin-top: -20rem !important;
+    margin-top: -5rem !important;
+    padding-bottom: 5rem !important;
 }
 
 #mt-5,
