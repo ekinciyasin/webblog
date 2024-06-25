@@ -1,8 +1,68 @@
 :root {
     --background: #0B1D26;
     --gold: #FBD784;
+    --hover: #bb8b0d;
+    --white: #f7fafd;
 }
 
+h1{
+    text-align: center;
+    color: var(--white) !important;
+    margin-bottom: 2rem !important;
+    margin-top: -55px!important;
+
+}
+#root{
+    background-color: var(--background);
+    min-height: 100vh;
+    color: var(--white);
+}
+
+.logo{
+    width: 120px;
+}
+#navbar,
+.a-categorien{
+    align-items: flex-start;
+}
+#navbar {
+    background-image: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgba(11, 29, 38, 1) 100%), url("https://i.ibb.co/Smh8gs4/cover.png");
+    height: 510px;
+    --bs-nav-link-color: var(--white) !important;
+    background-size: cover;
+    background-position: top;
+}
+
+#navbar:after {
+    background-image: linear-gradient(180deg, #fff,  #0B1D26);
+    opacity: 0.6;
+}
+
+.nav-link{
+    color: white !important;
+    font-size: 1.2rem !important;
+}
+a:hover{
+    color: var(--hover) !important;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a::before {
+    transform: scaleX(1);
+}
+
+#navbar-toggler{
+    color: white !important;
+}
 .homePageMainContainer {
     background-color: var(--background);
     display: flex;
@@ -12,15 +72,16 @@
 }
 
 #customCard {
-    background-color: var(--background);
     margin-bottom: 60px;
     flex-direction: row;
-    color: white;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
 #customArticleContainer,
 .reactApp{
-    color: white;
+    color: var(--white);
     background-color: var(--background);
     border: none;
 }
@@ -45,7 +106,7 @@
 #comment{
     background-color: var(--background);
     border: 1px solid white;
-    color: white;
+    color: var(--white);
 }
 
 #noswap-pic,
@@ -76,6 +137,7 @@
 .card-body{
     max-width: 260px;
     margin-left: 10px;
+
 }
 
 #noswap-pic{
@@ -84,4 +146,15 @@
 .bold-italic {
     font-weight: bold;
     font-style: italic;
+}
+
+.blocks-container,
+#mt-5{
+    margin-top: -5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+#mt-5,
+#customArticleContainer{
+    background-color: rgba(0, 0, 0, 0)!important;
 }

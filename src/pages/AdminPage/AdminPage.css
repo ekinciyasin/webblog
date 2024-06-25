@@ -100,3 +100,12 @@
     font-size: .875em;
     color: var(--bs-form-invalid-color);
 }
+
+.form-control{
+   background-color: #f7fafd !important;
+}
+
+
+.text-style{
+    color:#f7fafd !important;
+}

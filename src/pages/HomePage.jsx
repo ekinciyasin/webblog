@@ -7,7 +7,6 @@ function HomePage() {
 
     return (
         <div className="homePageMainContainer">
-            <h1>Home page</h1>
             <BlocksList/>
         </div>
     )

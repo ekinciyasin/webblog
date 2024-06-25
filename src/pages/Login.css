@@ -2,10 +2,14 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 100px;
+
+
+    background: rgba( 47, 71, 83, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba(100, 102, 118, 0.37);
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 .login-title {

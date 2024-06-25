@@ -22,7 +22,7 @@ const ArticlePage = (props) => {
 
 
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" id="mt-5">
             <div className="card" id="customArticleContainer">
                 <img
                     className="card-img-top"
