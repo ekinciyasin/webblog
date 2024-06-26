@@ -63,6 +63,10 @@ a::before {
 #navbar-toggler{
     color: white !important;
 }
+
+
+/*//////////////////HOME PAGE///////////////////////////////////*/
+
 .homePageMainContainer {
     background-color: var(--background);
     display: flex;
@@ -98,7 +102,7 @@ a::before {
     background-color: var(--background);
     color: var(--gold);
     border: none;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 0;
     padding-left: 0;
 }
@@ -116,7 +120,8 @@ a::before {
     max-height: 190px;
 }
 
-.card-text{
+.card-text,
+.card-date{
     margin-top: 10px;
     font-size: 10px !important;
 }
@@ -140,9 +145,31 @@ a::before {
 
 }
 
-#noswap-pic {
+#noswap-pic{
     margin-left: 10px;
 }
+
+
+.block-edit-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.block-edit-btn-container-margin-left{
+    margin-left: -5px;
+}
+
+.block-edit-btn{
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: -10px;
+    line-height: 12px;
+    border: none;
+    color: #a1cf9d;
+}
+
+/*///////////////////////////////////////////////////////////////////*/
 .bold-italic {
     font-weight: bold;
     font-style: italic;
@@ -157,4 +184,78 @@ a::before {
 #mt-5,
 #customArticleContainer{
     background-color: rgba(0, 0, 0, 0)!important;
+}
+
+
+
+/*////////////////////////////// FOOTER /////////////////////////////////////*/
+
+.text-center{
+    background: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgb(5 15 20) 100%);
+}
+
+.footer-first-div{
+    text-decoration: none !important;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.a-footer{
+    font-size: 14px;
+}
+
+
+.text-white{
+    text-decoration: none !important;
+    padding: 10px;
+}
+
+@media (max-width: 995px) {
+    .navbar-nav{
+        align-content: flex-end;
+        margin-top: -10px;
+        --bs-nav-link-padding-y: 0.3rem;
+        flex-wrap: wrap;
+        align-items: end;
+
+    }
+
+    .navbar-toggler-icon{
+        cursor: pointer;
+        background-image: url("https://i.ibb.co/D7XFCZT/burger-icon.png") !important;
+    }
+
+    #noswap-pic,
+    #swap{
+        width: 100%;
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    .card-body{
+        max-width: 150px;
+    }
+
+    #noswap-pic,
+    #noswap,
+    #swap{
+        margin-left:0;
+    }
+
+    .card-text{
+        display: none;
+    }
+
+    #customBtnBlockItem,
+    .card-date{
+        font-size: 11px;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .card-img-top {
+        max-width: 350px;
+
+    }
 }
