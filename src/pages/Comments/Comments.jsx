@@ -1,24 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './Comments.css';
-import { getCommentsByBlockId } from "./api";
 
-const Comments = ({ blockId }) => {
-    const [comments, setComments] = useState([]);
-    const [newComment, setNewComment] = useState({ title: '', text: '', userId: '' });
+const Comments = ({ comments, setComments }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 3;
-
-    useEffect(() => {
-        getCommentsByBlockId(blockId).then((data) => setComments(data));
-    }, [blockId]);
-
-    const addComment = () => {
-        const timestamp = new Date().toISOString();
-        const commentWithTimestamp = { ...newComment, timestamp };
-        setComments([commentWithTimestamp, ...comments]);
-        setCurrentPage(1); // Reset to the first page
-        setNewComment({ title: '', text: '', userId: '' });
-    };
 
     const indexOfLastComment = currentPage * commentsPerPage;
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;

@@ -4,6 +4,7 @@ import blocks from "../db.json";
 import Comments from "../pages/Comments/Comments";
 import axios from "axios";
 import AddComment from "../pages/Comments/AddComment";
+import CommentsSection from "../pages/Comments/CommentsSection";
 
 const ArticlePage = ({username}) => {
 
@@ -34,8 +35,8 @@ const ArticlePage = ({username}) => {
                 </div>
             </div>
             <div className="mt-5">
-            <Comments blockId={blockId}/>
-            <AddComment username={username} blockId={blockId}/>
+            <CommentsSection username={username} blockId={blockId}/>
+            {/*<AddComment username={username} blockId={blockId}/>*/}
             </div>
 
         </div>
