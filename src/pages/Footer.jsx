@@ -14,10 +14,10 @@ export default function App({userRole}) {
                 {userRole !== 'ADMIN' && (
                     <div className='d-flex justify-content-center align-items-center'>
                         <li className="nav-item footer-first-div">
-                            <a className="nav-link  a-categorien a-footer" href="/new-article">Einloggen</a>
+                            <a className="nav-link  a-categorien a-footer" href="/login">Einloggen</a>
                         </li>
                         <li className="nav-item footer-first-div">
-                            <a className="nav-link btn a-categorien a-footer" href="/users">Registrieren </a>
+                            <a className="nav-link btn a-categorien a-footer" href="/signup">Registrieren </a>
                         </li>
                     </div>
                 )}
