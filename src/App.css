@@ -67,6 +67,43 @@ a::before {
 
 /*//////////////////HOME PAGE///////////////////////////////////*/
 
+.custom-filter {
+    margin: -100px auto 100px auto;
+    min-width: 300px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-height: 60px;
+    align-items: center;
+
+    background: rgba( 69, 87, 94, 0.05 );
+    box-shadow: 0 5px 32px 0 rgb(97 97 116 / 37%);
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.10 );
+}
+
+#cardList-form {
+    color: var(--white);
+    margin: 5px;
+    display: inline;
+    width: 30%;
+    min-width: 170px;
+    box-shadow: 0 8px 32px 0 rgb(25 25 40 / 37%);
+    -webkit-backdrop-filter: blur(4px);
+    border: 0.5px solid rgb(139 136 136 / 18%);
+}
+
+select{
+    background-color: var(--background) !important;
+    cursor: pointer;
+    border: none;
+}
+
+
 .homePageMainContainer {
     background-color: var(--background);
     display: flex;
@@ -206,11 +243,14 @@ a::before {
     font-size: 14px;
 }
 
-
 .text-white{
     text-decoration: none !important;
     padding: 10px;
+    bottom:0;
+    width: 100%;
+    height: 160px;
 }
+
 
 @media (max-width: 995px) {
     .navbar-nav{

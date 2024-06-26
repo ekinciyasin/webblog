@@ -2,7 +2,7 @@
   {
     "blockTitle": "Everest Base Camp",
     "blockLand": "Nepal",
-    "blockReiseTyp": "",
+    "blockReiseTyp": "trekking",
     "blockBeschreibung": "Die Basislager sind einfache Zeltplätze am Fuße des Mount Everest, die von Bergsteigern beim Auf- und Abstieg genutzt werden.",
     "blockBild": "https://i.ibb.co/2qnC0nh/himalayas-lungta.jpg",
     "blockDatum": "February 18, 2020",
@@ -29,7 +29,7 @@
   {
     "blockTitle": "Annapurna Circuit Trek",
     "blockLand": "Nepal",
-    "blockReiseTyp": "",
+    "blockReiseTyp": "trekking",
     "blockBeschreibung":"Der Annapurna Circuit Trek ist eine mehrtägige Trekkingroute in Nepal. Die Route führt durch den Himalaya auf Wegen, die Siedlungen verbinden",
     "blockBild": "https://i.ibb.co/DVsCVQz/himalayan-yak.jpg",
     "blockDatum": "January 5, 2021",
@@ -109,8 +109,8 @@
   },
   {
     "blockTitle": "Goechala Trek",
-    "blockLand": "Sikkim, India",
-    "blockReiseTyp": "",
+    "blockLand": "India",
+    "blockReiseTyp": "trekking",
     "blockBeschreibung":"Auf einer Höhe von über 15.100 Fuß gelegen, bietet Goechala ein Abenteuer wie nie zuvor. Es ist eine der ältesten Trekkingrouten in India",
     "blockBild": "https://i.ibb.co/j43BhPD/nepal.jpg",
     "blockDatum": "May 17, 2020",
