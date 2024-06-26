@@ -4,14 +4,14 @@ const users = [
         username: "Yasin",
         email: "yasin@gmail.com",
         password: "password",
-        role: "user"
+        role: "USER"
     },
     {
         id: 2,
         username: "Mats",
         email: "mats@gmail.com",
         password: "1111",
-        role: "admin"
+        role: "ADMIN"
     }
 ];
 

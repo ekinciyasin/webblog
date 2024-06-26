@@ -181,21 +181,21 @@
       "id": "1",
       "username": "YASIN",
       "email": "yasin@gmail.com",
-      "role": "YASIN",
+      "role": "ADMIN",
       "password": "password"
     },
     {
       "id": "1",
       "username": "Eva",
       "email": "eva@gmail.com",
-      "role": "ADMIN",
+      "role": "USER",
       "password": "password"
     },
     {
       "id": "1",
       "username": "Ganna",
       "email": "gana@gmail.com",
-      "role": "USER",
+      "role": "ADMIN",
       "password": "password"
     },
     {

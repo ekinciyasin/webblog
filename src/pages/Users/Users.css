@@ -1,0 +1,98 @@
+/* UserStyles.css */
+.user-container {
+    margin-top: 20px;
+    background-color: #051A24;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-heading {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.user-table thead {
+    background-color: #1f2e3e;
+}
+
+.user-table th, .user-table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.user-table tr {
+    background-color: #2a3b4c;
+}
+
+.user-table tr:nth-child(even) {
+    background-color: #1f2e3e;
+}
+
+.user-table th {
+    color: #fff;
+}
+
+.user-table td {
+    color: #fff;
+}
+
+.user-table tbody tr:hover {
+    background-color: #374a5e;
+}
+
+.user-btn {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.user-btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.user-btn-primary:hover, .user-btn-danger:hover {
+    opacity: 0.8;
+}
+
+.user-modal-content {
+    background-color: #2a3b4c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+.user-modal-header, .user-modal-footer {
+    border-bottom: none;
+    border-top: none;
+}
+
+.user-modal-header {
+    border-bottom: 1px solid #374a5e;
+}
+
+.user-modal-footer {
+    border-top: 1px solid #374a5e;
+}
+
+.user-modal-title {
+    color: #fff;
+}
+
+.user-form-select, .user-btn-close {
+    color: #000;
+}

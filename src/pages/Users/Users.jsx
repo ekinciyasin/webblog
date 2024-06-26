@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Users.css'; // CSS dosyasını içe aktar
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -20,7 +21,7 @@ const Users = () => {
     const handleEditUser = (user) => {
         setSelectedUser(user);
         setShowEditModal(true);
-        setNewRole(user.role); // Mevcut kullanıcının rolünü set ediyoruz
+        setNewRole(user.role);
     };
 
     const handleUpdateUserRole = () => {
@@ -38,9 +39,9 @@ const Users = () => {
     };
 
     return (
-        <div className="container">
-            <h2>Benutzer Verwaltung</h2>
-            <table className="table table-striped">
+        <div className="user-container">
+            <h2 className="user-heading">Benutzer Verwaltung</h2>
+            <table className="user-table">
                 <thead>
                 <tr>
                     <th>Name</th>
@@ -52,14 +53,14 @@ const Users = () => {
                 <tbody>
                 {users.map(user => (
                     <tr key={user.email}>
-                        <td>{user.name}</td>
+                        <td>{user.username}</td>
                         <td>{user.email}</td>
                         <td>{user.role}</td>
                         <td>
-                            <button className="btn btn-sm btn-primary me-2" onClick={() => handleEditUser(user)}>
+                            <button className="user-btn user-btn-primary me-2" onClick={() => handleEditUser(user)}>
                                 Bearbeiten
                             </button>
-                            <button className="btn btn-sm btn-danger" onClick={() => handleDeleteUser(user.email)}>
+                            <button className="user-btn user-btn-danger" onClick={() => handleDeleteUser(user.email)}>
                                 Löschen
                             </button>
                         </td>
@@ -68,30 +69,29 @@ const Users = () => {
                 </tbody>
             </table>
 
-            {/* Bearbeitungs-Modal */}
             {showEditModal && (
                 <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
                     <div className="modal-dialog">
-                        <div className="modal-content">
-                            <div className="modal-header">
-                                <h5 className="modal-title">Benutzer Bearbeiten</h5>
-                                <button type="button" className="btn-close" onClick={() => setShowEditModal(false)}></button>
+                        <div className="user-modal-content">
+                            <div className="user-modal-header">
+                                <h5 className="user-modal-title">Benutzer Bearbeiten</h5>
+                                <button type="button" className="user-btn-close" onClick={() => setShowEditModal(false)}></button>
                             </div>
                             <div className="modal-body">
-                                <p><strong>Name:</strong> {selectedUser?.name}</p>
+                                <p><strong>Name:</strong> {selectedUser?.username}</p>
                                 <p><strong>E-Mail:</strong> {selectedUser?.email}</p>
                                 <div className="mb-3">
                                     <label className="form-label">Neue Rolle:</label>
-                                    <select className="form-select" value={newRole} onChange={(e) => setNewRole(e.target.value)}>
+                                    <select className="user-form-select" value={newRole} onChange={(e) => setNewRole(e.target.value)}>
                                         <option value="">Auswählen</option>
                                         <option value="admin">Admin</option>
                                         <option value="user">Benutzer</option>
                                     </select>
                                 </div>
                             </div>
-                            <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => setShowEditModal(false)}>Abbrechen</button>
-                                <button type="button" className="btn btn-primary" onClick={handleUpdateUserRole}>Speichern</button>
+                            <div className="user-modal-footer">
+                                <button type="button" className="user-btn user-btn-secondary" onClick={() => setShowEditModal(false)}>Abbrechen</button>
+                                <button type="button" className="user-btn user-btn-primary" onClick={handleUpdateUserRole}>Speichern</button>
                             </div>
                         </div>
                     </div>
