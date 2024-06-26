@@ -1,4 +1,6 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
     return (
@@ -16,12 +18,12 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
-                            <li className="nav-item">
+{/*                            <li className="nav-item">
                                 <a className="nav-link  a-categorien" href="#kategorien">Kategorien </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link  a-categorien"  href="#artikel">Artikel </a>
-                            </li>
+                            </li>*/}
                             {userRole === 'ADMIN' && (
                                <>
                                  <li className="nav-item">

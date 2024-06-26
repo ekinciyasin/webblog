@@ -2,13 +2,14 @@ import React from 'react';
 import blocks from "../db.json";
 import BlockItem from "./BlockItem";
 
-const BlocksList = () => {
+const BlocksList = ({userRole}) => {
     return (
         <div>
             <div className="blocks-container">
                 {blocks.map((b, index) => (
                     <div key={b.blockId}>
                         <BlockItem
+                            userRole={userRole}
                             title={b.blockTitle}
                             url={b.blockBild}
                             blockland={b.blockLand}
