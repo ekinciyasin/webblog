@@ -15,7 +15,7 @@
 .login-title {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #fbfbfb;
 }
 
 .form-group {
@@ -25,7 +25,7 @@
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+    color: #f6f6f6;
 }
 
 .form-control {
@@ -36,7 +36,7 @@
 }
 
 .btn-primary {
-    background-color: #4CAF50;
+    background-color: #5ee464;
     border: none;
     color: white;
     padding: 10px 20px;
