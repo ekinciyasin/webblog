@@ -6,7 +6,7 @@ import BlocksList from "../components/BlocksList";
 function HomePage({userRole}) {
 
     return (
-        <div className="homePageMainContainer">
+        <div className="homePageMainContainer content-container">
             <BlocksList userRole={userRole}/>
         </div>
     )

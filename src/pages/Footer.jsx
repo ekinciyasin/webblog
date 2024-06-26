@@ -9,7 +9,7 @@ import {
 
 export default function App({userRole}) {
     return (
-        <MDBFooter className='text-center text-white'>
+        <MDBFooter className='footer--pin text-center text-white'>
             <MDBContainer className='p-4 pb-0'>
                 {userRole !== 'ADMIN' && (
                     <div className='d-flex justify-content-center align-items-center'>

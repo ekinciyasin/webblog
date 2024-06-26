@@ -160,5 +160,32 @@
         "date": "November 4, 2020"
       }
     ]
+  },
+  {
+    "blockTitle": "Delhi Kulturreise",
+    "blockLand": "India",
+    "blockReiseTyp": "kulturreise",
+    "blockBeschreibung":"Ideale Einsteigertour in der Königreiche mit UNESCO-Weltkulturerbe, Tigernest-Kloster und Bogenschießen in Bhutan und Himalaya-Panorama.",
+    "blockBild": "https://i.ibb.co/vQVqBXd/delhi.jpg",
+    "blockDatum": "December 1, 2020",
+    "blockText": "Delhi liegt eingebettet in die atemberaubende Bergwelt des Himalayas und ist eines der faszinierendsten Reiseziele der Welt. Das kleine Land hat aber nicht nur für Naturliebhaber viel zu bieten, sondern verfügt auch über ein reiches Erbe an kulturellen Schätzen. Diese Kulturschätze lassen sich am besten auf speziellen Kulturreisen entdecken. Diese Reisen legen einen Schwerpunkt auf die kulturellen Sehenswürdigkeiten des Landes. Dabei besichtigen Sie historische Tempel und Pagoden, heilige Stätten und große Plätze und lernen die freundliche nepalesische Bevölkerung kennen. Auf Kultur-Rundreisen ist auch der Besuch der drei Königsstädten Kathmandu, Patan und Bhaktapur ein absolutes Muss.\n\nKathmandu ist die Hauptstadt und zugleich größte Stadt des Landes und wird auch als das „Herz Nepals“ bezeichnet. Hier gibt es zahlreiche historische Sehenswürdigkeiten zu erkunden. Bei einem Spaziergang über den Durbar Square, dem Platz vor dem Königspalast, gibt es allerhand historische Tempel und Pagoden auf engsten Raum zu entdecken. Der Durbar Square ist so bedeutend, dass er von der UNESCO zum Weltkulturerbe erklärt wurde. Ebenfalls zum Weltkulturerbe gehört der Tempel von Swayambunath. Er zählt zu den ältesten religiösen Stätten des Landes und wird auch als „Affentempel“ bezeichnet, da er zahlreiche Affen beherbergt.",
+    "blockId": "1d2949c9-aa6a-45bd-a812-66278c37254g",
+    "blockKommentare": [
+      {
+        "user": "Paul",
+        "kommentare": "Great insights, thanks!",
+        "date": "November 2, 2020"
+      },
+      {
+        "user": "Quinn",
+        "kommentare": "I found this very helpful.",
+        "date": "November 3, 2020"
+      },
+      {
+        "user": "Rita",
+        "kommentare": "Looking forward to more posts like this.",
+        "date": "November 4, 2020"
+      }
+    ]
   }
 ]
