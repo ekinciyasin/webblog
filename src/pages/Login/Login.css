@@ -1,13 +1,13 @@
 .login-container {
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
     padding: 20px;
+    margin-top: -100px;
 
-
-    background: rgba( 47, 71, 83, 0.05 );
-    box-shadow: 0 8px 32px 0 rgba(100, 102, 118, 0.37);
-    backdrop-filter: blur( 7px );
-    -webkit-backdrop-filter: blur( 7px );
+    background: rgba( 69, 87, 94, 0.05 );
+    box-shadow: 0 8px 32px 0 rgb(145 145 148 / 37%);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
@@ -15,7 +15,7 @@
 .login-title {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+
 }
 
 .form-group {
@@ -25,7 +25,7 @@
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #555;
+
 }
 
 .form-control {

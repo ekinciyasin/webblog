@@ -12,6 +12,7 @@ import ArticlePage from './components/Articlepage';
 import './App.css';
 import AdminPage from "./pages/AdminPage/AdminPage";
 import Login from "./pages/Login/Login";
+import Footer from "./pages/Footer"
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -55,7 +56,7 @@ function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <HomePage />,
+            element: <HomePage userRole={userRole}/>,
         },
         {
             path: "/login",
@@ -82,7 +83,7 @@ function App() {
             element: (
                 <ProtectedRoute isLoggedIn={isLoggedIn} userRole={userRole}>
                     <Users />
-                </ProtectedRoute>
+                </ProtectedRoute >
             ),
         },
     ]);
@@ -95,6 +96,7 @@ function App() {
         <div>
             <NavBar isLoggedIn={isLoggedIn} username={username} userRole={userRole} onLogout={handleLogout} />
             <RouterProvider router={router} />
+            <Footer userRole={userRole}/>
         </div>
     );
 }
