@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import blocks from "../db.json";
 import Comments from "../pages/Comments/Comments";
 
-const ArticlePage = (props) => {
+const ArticlePage = ({username}) => {
     const [comments, setComments] = useState([]);
     const [commentText, setCommentText] = useState('');
     const handleCommentChange = (e) => {
@@ -12,15 +12,19 @@ const ArticlePage = (props) => {
     const handleCommentSubmit = (e) => {
         e.preventDefault();
         if (commentText.trim()) {
-            setComments([...comments, commentText]);
+            const newComment = {
+                id: comments.length + 1,
+                userId: username,
+                text: commentText,
+                timestamp: new Date().toLocaleString()
+            };
+            setComments([newComment, ...comments]);
             setCommentText('');
         }
     };
 
-
     const { blockId } = useParams();
     const block = blocks.find((b) => b.blockId === blockId);
-
 
     return (
         <div className="container mt-5" id="mt-5">
@@ -55,15 +59,19 @@ const ArticlePage = (props) => {
                             onChange={handleCommentChange}
                             rows="3"
                             required
+                            style={{ color: 'black' }}
+
+
                         ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
                 </form>
 
                 <ul className="list-group mt-3">
-                    {comments.map((comment, index) => (
-                        <li key={index} className="list-group-item">
-                            {comment}
+                    {comments.map((comment) => (
+                        <li key={comment.id} className="list-group-item">
+                            <div><strong>{comment.userId}:</strong> {comment.text}</div>
+                            <div><small><strong>Geschrieben am: </strong> {comment.timestamp}</small></div>
                         </li>
                     ))}
                 </ul>
@@ -73,5 +81,3 @@ const ArticlePage = (props) => {
 };
 
 export default ArticlePage;
-
-
