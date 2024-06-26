@@ -186,6 +186,30 @@ a::before {
     background-color: rgba(0, 0, 0, 0)!important;
 }
 
+
+
+/*////////////////////////////// FOOTER /////////////////////////////////////*/
+
+.text-center{
+    background: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgb(5 15 20) 100%);
+}
+
+.footer-first-div{
+    text-decoration: none !important;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.a-footer{
+    font-size: 14px;
+}
+
+
+.text-white{
+    text-decoration: none !important;
+    padding: 10px;
+}
+
 @media (max-width: 995px) {
     .navbar-nav{
         align-content: flex-end;
