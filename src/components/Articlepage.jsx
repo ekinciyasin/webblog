@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useParams } from "react-router-dom";
 import blocks from "../db.json";
-import Comments from "../pages/Comments/Comments";
+import Comments from "../pages/Comments/Comments"; // Import der Comments-Komponente von Yasin
 
-const ArticlePage = ({username}) => {
+const ArticlePage = ({ username }) => {
     const [comments, setComments] = useState([]);
     const [commentText, setCommentText] = useState('');
+
     const handleCommentChange = (e) => {
         setCommentText(e.target.value);
     };
+
     const handleCommentSubmit = (e) => {
         e.preventDefault();
         if (commentText.trim()) {
@@ -23,8 +25,8 @@ const ArticlePage = ({username}) => {
         }
     };
 
-    const { blockId } = useParams();
-    const block = blocks.find((b) => b.blockId === blockId);
+    const { blockId } = useParams(); // Holen der blockId aus den URL-Parametern
+    const block = blocks.find((b) => b.blockId === blockId); // Finden des entsprechenden Blocks aus den Daten
 
     return (
         <div className="container mt-5" id="mt-5">
@@ -41,14 +43,13 @@ const ArticlePage = ({username}) => {
                         <div>{block.blockDatum}</div>
                     </div>
                     <div className="">{block.blockText}</div>
-                    <div className="">{block.blockText}</div>
                 </div>
             </div>
             <div className="mt-5">
-            <Comments/>
+                <Comments comments={comments} /> {/* Comments-Komponente von Yasin */}
             </div>
             <div className="mt-5">
-                <h5>Kommentare</h5>
+                <h5>Kommentar schreiben</h5>
                 <form onSubmit={handleCommentSubmit}>
                     <div className="mb-3">
                         <label htmlFor="comment" className="form-label">Kommentar schreiben</label>
@@ -60,21 +61,10 @@ const ArticlePage = ({username}) => {
                             rows="3"
                             required
                             style={{ color: 'black' }}
-
-
                         ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
                 </form>
-
-                <ul className="list-group mt-3">
-                    {comments.map((comment) => (
-                        <li key={comment.id} className="list-group-item">
-                            <div><strong>{comment.userId}:</strong> {comment.text}</div>
-                            <div><small><strong>Geschrieben am: </strong> {comment.timestamp}</small></div>
-                        </li>
-                    ))}
-                </ul>
             </div>
         </div>
     );

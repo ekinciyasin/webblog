@@ -203,6 +203,12 @@
       "username": "admin",
       "email": "1gamzeekinci@gmail.com",
       "password": "1111"
+    },
+    {
+      "id": "f89d",
+      "username": "Max Mustermann",
+      "email": "max@gmail.com",
+      "password": "1234"
     }
   ]
 }
