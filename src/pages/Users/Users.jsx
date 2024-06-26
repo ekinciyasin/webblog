@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Users.css';
-import {deleteUser, getUsers} from "./api"; // CSS file import
+import { deleteUser, getUsers } from "./api"; // CSS file import
 
 const Users = () => {
     const [users, setUsers] = useState([]);
@@ -9,11 +9,11 @@ const Users = () => {
     const [selectedUser, setSelectedUser] = useState(null);
     const [newRole, setNewRole] = useState('');
 
-
+    // Fetch users from the API
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await  getUsers();
+                const response = await getUsers();
                 setUsers(response.data);
             } catch (error) {
                 console.error("There was an error fetching the users!", error);
@@ -28,10 +28,10 @@ const Users = () => {
         setShowEditModal(true);
     };
 
-    const handleUpdateUserRole =  () => {
+    const handleUpdateUserRole = async () => {
         try {
             const updatedUser = { ...selectedUser, role: newRole };
-             axios.put(`http://localhost:3005/users/${selectedUser.id}`, updatedUser);
+            await axios.put(`http://localhost:3005/users/${selectedUser.id}`, updatedUser);
             setUsers(users.map(user => user.id === selectedUser.id ? updatedUser : user));
             setShowEditModal(false);
         } catch (error) {
@@ -80,28 +80,28 @@ const Users = () => {
             </table>
 
             {showEditModal && (
-                <div className="user-modal fade show" style={{ display: 'block' }} tabIndex="-1">
-                    <div className="user-modal-dialog">
-                        <div className="user-modal-content">
-                            <div className="user-modal-header">
-                                <h5 className="user-modal-title">Benutzer Bearbeiten</h5>
-                                <button type="button" className="user-btn-close" onClick={() => setShowEditModal(false)}></button>
+                <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h5 className="modal-title">Benutzer Bearbeiten</h5>
+                                <button type="button" className="btn-close" onClick={() => setShowEditModal(false)}></button>
                             </div>
-                            <div className="user-modal-body">
+                            <div className="modal-body">
                                 <p><strong>Name:</strong> {selectedUser?.username}</p>
                                 <p><strong>E-Mail:</strong> {selectedUser?.email}</p>
                                 <div className="mb-3">
-                                    <label className="user-form-label">Neue Rolle:</label>
-                                    <select className="user-form-select" value={newRole} onChange={(e) => setNewRole(e.target.value)}>
+                                    <label className="form-label">Neue Rolle:</label>
+                                    <select className="form-select" value={newRole} onChange={(e) => setNewRole(e.target.value)}>
                                         <option value="">Auswählen</option>
                                         <option value="ADMIN">Admin</option>
                                         <option value="USER">Benutzer</option>
                                     </select>
                                 </div>
                             </div>
-                            <div className="user-modal-footer">
-                                <button type="button" className="user-btn user-btn-secondary" onClick={() => setShowEditModal(false)}>Abbrechen</button>
-                                <button type="button" className="user-btn user-btn-primary" onClick={handleUpdateUserRole}>Speichern</button>
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" onClick={() => setShowEditModal(false)}>Abbrechen</button>
+                                <button type="button" className="btn btn-primary" onClick={handleUpdateUserRole}>Speichern</button>
                             </div>
                         </div>
                     </div>
