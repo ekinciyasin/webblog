@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({ isLoggedIn, userRole, children }) => {
-    if (!isLoggedIn || userRole !== 'admin') {
+    if (!isLoggedIn || userRole !== 'ADMIN') {
 
         return <Navigate to="/" replace />;
     }

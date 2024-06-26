@@ -5,7 +5,7 @@ import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 
-import Users from "./pages/Users";
+import Users from "./pages/Users/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
 import ArticlePage from './components/Articlepage';

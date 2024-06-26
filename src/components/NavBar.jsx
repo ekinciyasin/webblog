@@ -22,7 +22,7 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
                             <li className="nav-item">
                                 <a className="nav-link  a-categorien"  href="#artikel">Artikel </a>
                             </li>
-                            {userRole === 'admin' && (
+                            {userRole === 'ADMIN' && (
                                <>
                                  <li className="nav-item">
                                     <a className="nav-link  a-categorien" href="/new-article">Neuen Artikel erstellen </a>
