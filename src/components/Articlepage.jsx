@@ -58,6 +58,7 @@ const ArticlePage = ({username}) => {
                             required
                             style={{ color: 'black' }}
 
+
                         ></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
