@@ -84,7 +84,7 @@ const Login = ({onLogin}) => {
                 {generalError && <div className="alert alert-danger">{generalError}</div>}
                 <button type="submit" className="btn btn-success">Einloggen</button>
                 <div className="mt-3">
-                    <p>Noch kein Mitglied? <Link to="/register">Registrieren</Link></p>
+                    <p>Noch kein Mitglied? <Link to="/signup">Registrieren</Link></p>
                     <p>Passwort vergessen? <Link to="/reset-password">Passwort zurücksetzen</Link></p>
                 </div>
             </form>
