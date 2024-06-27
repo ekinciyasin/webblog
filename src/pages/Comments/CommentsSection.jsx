@@ -3,7 +3,8 @@ import axios from "axios";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 
-const CommentsSection = ({ blockId, username }) => {
+const CommentsSection = (props) => {
+    const {blockId, username ,userRole } = props;
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const CommentsSection = ({ blockId, username }) => {
 
     return (
         <div>
-            <Comments comments={comments} setComments={setComments} />
+            <Comments  userRole={userRole} username={username} blockId={blockId} comments={comments} setComments={setComments} />
             <AddComment username={username} blockId={blockId} setComments={setComments} comments={comments} />
         </div>
     );
