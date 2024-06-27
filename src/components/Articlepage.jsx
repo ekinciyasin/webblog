@@ -23,6 +23,7 @@ const ArticlePage = (props) => {
     const { blockId } = useParams();
 
 
+
     async function getArticles() {
         try {
             const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
@@ -42,6 +43,7 @@ const ArticlePage = (props) => {
         getArticles();
     }, []);
 
+    const formattedDate = new Date(article.blockDatum).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 
     return (
         <div className="container mt-5" id="mt-5">
@@ -55,7 +57,7 @@ const ArticlePage = (props) => {
                 <div className="">
                     <div className="articleTitle">
                         <h2 className="card-title">{article.blockTitle}</h2>
-                        <div>{article.blockDatum}</div>
+                        <div>{formattedDate}</div>
                     </div>
                     <div className="">{article.blockText}</div>
                     <div className="">{article.blockText}</div>
