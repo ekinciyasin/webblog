@@ -35,3 +35,32 @@
 .pagination button:hover {
     background-color: #ccc;
 }
+
+.comment-buttons {
+    display: flex;
+    margin-top: 1px;
+    justify-content: flex-end; /* Butonları sağa hizalar */
+}
+
+.comment-buttons .btn {
+   margin: 3px;
+}
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.comment-footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.comment-footer form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+}

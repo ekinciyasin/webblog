@@ -15,7 +15,8 @@ const Status = {
 }
 
 
-const ArticlePage = ({username}) => {
+const ArticlePage = (props) => {
+    const {userRole,username } = props;
     const [article, setArticle] = useState([]);
     const [status, setStatus] = useState('');
     const [responseMessage, setResponseMessage] = useState('');
@@ -63,7 +64,7 @@ const ArticlePage = ({username}) => {
                 </div>
             </div>
             <div className="mt-5">
-            <CommentsSection username={username} blockId={blockId}/>
+            <CommentsSection userRole={userRole} username={username} blockId={blockId}/>
             </div>
 
         </div>

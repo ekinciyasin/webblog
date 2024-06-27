@@ -34,7 +34,6 @@ function App() {
 
     const handleLogin = (user) => {
         if(user !==undefined){
-
             setIsLoggedIn(true);
             setUserRole(user.role);
             setUsername(user.username);
@@ -68,7 +67,7 @@ function App() {
         },
         {
             path: "/:blockId",
-            element: <ArticlePage username={username} />,
+            element: <ArticlePage userRole={userRole} username={username} />,
         },
         {
             path: "/new-article",
