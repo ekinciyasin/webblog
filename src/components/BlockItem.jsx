@@ -1,59 +1,88 @@
 import React from 'react';
 import {Link, Outlet} from 'react-router-dom';
 
-const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, blockbeschreibung, userRole, handleDeleteArticle, handleEditArticle, id}) => {
-    function handleDelete() {
-        handleDeleteArticle(id);
-    }
+const BlockItem = ({
+                       blockId,
+                       title,
+                       url,
+                       blockland,
+                       blockDate,
+                       blockText,
+                       swap,
+                       userRole,
+                       handleDeleteArticle,
+                       handleEditArticle,
+                       id,
+                       blockReiseTyp
+                   }) => {
+        function handleDelete() {
+            handleDeleteArticle(id);
+        }
 
-    function handleEdit() {
-        handleEditArticle(id);
-    }
+        function handleEdit() {
+            handleEditArticle(id);
+        }
 
-    return (
-        <div className="card" id="customCard">
-            {swap ? (
-                <>
-                    <div className="card-body" id="noswap">
-                        <h5 className="card-title" id="card-title">{title}</h5>
+        const formattedDate = new Date(blockDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
 
-                        {userRole === 'ADMIN' && (
-                            <div className="block-edit-btn-container">
-                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+        return (
+            <div className="card" id="customCard">
+                {swap ? (
+                    <>
+                        <div className="card-body" id="noswap">
+                            <h5 className="card-title" id="card-title">{title}</h5>
 
+                            {userRole === 'ADMIN' && (
+                                <div className="block-edit-btn-container">
+                                    <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+                                </div>
+                            )}
+                            <div className="card-text">{blockText}</div>
+                            <div className="card-date">{formattedDate}</div>
+                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
+                                --></Link>
+                        </div>
+                        <div>
+                            <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
+                            <div className="blog-label-swap">
+                                <div>{blockReiseTyp}</div>
+                                <div>{blockland}</div>
                             </div>
-                        )}
-                        <div className="card-text">{blockbeschreibung}</div>
-                        <div className="card-date">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
-                            --></Link>
-                    </div>
-                    <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
-                </>
-            ) : (
-                <>
-                    <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
-                    <div className="card-body" id="card-body">
-                        <h5 className="card-title" id="card-title">{title}</h5>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
+                        <div className="blog-label-noswap">
+                            <div>{blockReiseTyp}</div>
+                            <div>{blockland}</div>
+                        </div>
+                        <div className="card-body" id="card-body">
+                            <h5 className="card-title" id="card-title">{title}</h5>
 
-                        {userRole === 'ADMIN' && (
-                            <div className="block-edit-btn-container block-edit-btn-container-margin-left">
-                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
-                            </div>
-                        )}
+                            {userRole === 'ADMIN' && (
+                                <div className="block-edit-btn-container block-edit-btn-container-margin-left">
+                                    <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+                                </div>
+                            )}
 
-                        <div className="card-text">{blockbeschreibung}</div>
-                        <div className="card-date">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
-                            --></Link>
-                    </div>
-                </>
-            )}
-            <Outlet/>
-        </div>
-    );
-};
+                            <div className="card-text">{blockText}</div>
+                            <div className="card-date">{formattedDate}</div>
+                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
+                                --></Link>
+                        </div>
+                    </>
+                )}
+                <Outlet/>
+            </div>
+        );
+    }
+;
 
 export default BlockItem;

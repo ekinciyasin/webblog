@@ -106,7 +106,7 @@ const NewArticle = () => {
             "blockLand": country.trim(),
             "blockReiseTyp": category.join(', '),
             "blockBild": picURL,
-            "blockDatum": new Date().toLocaleString('de-DE'),
+            "blockDatum": new Date(),
             "blockText": description,
             "blockId": uuidv4(),
             "blockKommentare": [],

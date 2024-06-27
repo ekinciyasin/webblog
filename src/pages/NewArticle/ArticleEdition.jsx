@@ -65,7 +65,6 @@ const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
             "blockLand": country.trim(),
             "blockReiseTyp": category.join(', '),
             "blockBild": picURL,
-            "blockDatum": new Date().toLocaleString('de-DE'),
             "blockText": description,
         }
 
