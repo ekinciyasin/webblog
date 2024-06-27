@@ -70,7 +70,7 @@ const Comments = ({ comments, setComments, username, blockId, userRole }) => {
                                     required
                                     style={{ color: 'black' }}
                                 />
-                                <button type="submit" className="btn btn-primary">Kaydet</button>
+                                <button type="submit" className="btn btn-primary">Speichern</button>
                             </form>
 
                         </div>
@@ -82,9 +82,9 @@ const Comments = ({ comments, setComments, username, blockId, userRole }) => {
                                 {(comment.user === username || userRole === 'ADMIN') && (
                                     <div className="comment-buttons">
                                         {comment.user === username && (
-                                            <button onClick={() => handleEdit(comment)} className="btn btn-secondary">Düzenle</button>
+                                            <button onClick={() => handleEdit(comment)} className="btn btn-secondary">Bearbeiten</button>
                                         )}
-                                        <button onClick={() => handleDelete(comment.id)} className="btn btn-danger">Sil</button>
+                                        <button onClick={() => handleDelete(comment.id)} className="btn btn-danger">Löschen</button>
                                     </div>
                                 )}
                             </div>
