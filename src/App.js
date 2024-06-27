@@ -10,7 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
 import ArticlePage from './components/Articlepage';
 import './App.css';
-import AdminPage from "./pages/AdminPage/AdminPage";
+import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
 import Footer from "./pages/Footer"
 
@@ -74,7 +74,7 @@ function App() {
             path: "/new-article",
             element: (
                 <ProtectedRoute isLoggedIn={isLoggedIn} userRole={userRole}>
-                   <AdminPage/>
+                   <NewArticle/>
                 </ProtectedRoute>
             ),
         },

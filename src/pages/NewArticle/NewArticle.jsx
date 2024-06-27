@@ -3,12 +3,15 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { v4 as uuidv4 } from 'uuid';
 import Select from 'react-select';
-import './AdminPage.css';
+import './NewArticle.css';
+import {fetchArticles, updateArticles} from "./utils-api";
 import axios from "axios";
-// import './db_1.js';
-// import {db} from "./db_1";
+import Modal_1 from "./Modal_1/Modal_1";
+import {Slide, toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import './toastify.css';
 
-const AdminPage = () => {
+const NewArticle = () => {
     const [title, setTitle] = useState('');
     const [titleError, setTitleError] = useState('');
     const [description, setDescription] = useState('');
@@ -17,54 +20,52 @@ const AdminPage = () => {
     const [countryError, setCountryError] = useState('');
     const [category, setCategory] = useState([]);
     const [picURL, setPicURL] = useState('');
-    const [articles, setArticles] = useState([]);
-    ///-------->
+    // const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const [responseMessage, setResponseMessage] = useState('');
 
-    async function getUser() {
+
+
+    async function postArticle(item) {
         try {
-            const response = await axios.get("http://localhost:3005/articles");
-            setArticles(response.data);
-            console.log(response.data);
+            const response = await updateArticles(item);
+            toast.success('Artikel wurde erfolgreich veröffentlicht!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Slide,
+            });
+
+            console.log('Response:', response);
         } catch (error) {
-            console.error('Error fetching articles:', error);
+            toast.error('Artikel wurde nicht veröffentlicht!', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Slide,
+            });
+
+            console.error('Error posting article:', error);
         }
     }
-
-    useEffect(() => {
-        getUser();
-    }, []);
-
-
-    const handleApi = async (e) => {
-            e.preventDefault();
-            const username = "Pit";
-            const role = 'ADMIN'
-            const id = uuidv4();
-            try {
-                const response = await axios.post('http://localhost:3005/users', {
-                    id,
-                    username,
-
-                });
-                setResponseMessage('Article posted successfully!');
-                console.log('Response:', response.data);
-            } catch (error) {
-                setResponseMessage('Failed to post article');
-                console.error('Error posting article:', error);
-            }
-        };
-
-
-
-
 
 
     const options = [
         { value: 'Kultur', label: 'Kultur' },
         { value: 'Safari', label: 'Safari' },
         { value: 'Trekking', label: 'Trekking' },
+        { value: 'Leicht', label: 'Leicht' },
+        { value: 'Mittelschwer', label: 'Mittelschwer' },
+        { value: 'Schwer', label: 'Schwer' },
     ];
 
 
@@ -80,7 +81,7 @@ const AdminPage = () => {
             setTitleError("Das Feld Titel soll nicht leer sein");
             error = true;
         }
-        // const firstChar = title.charAt(0);
+
         if (title.charAt(0) !== title.charAt(0).toUpperCase()) {
             setTitleError("Das Feld Titel soll mit dem Großbuchstabe anfangen");
             error = true;
@@ -100,24 +101,18 @@ const AdminPage = () => {
             return;
         }
 
-
-        console.log('submit');
-        console.log('title', title);
-        console.log('description', description);
-        console.log('category', category);
         const output = {
             "blockTitle": title.trim(),
             "blockLand": country.trim(),
-            "blockReiseTyp": category.join(','),
+            "blockReiseTyp": category.join(', '),
             "blockBild": picURL,
             "blockDatum": new Date().toLocaleString('de-DE'),
             "blockText": description,
             "blockId": uuidv4(),
             "blockKommentare": [],
         }
-        console.log('output', output);
-        // db.push(output);
-        // console.log(db);
+        postArticle(output);
+
         setTitle('');
         setDescription('');
         setCountry('');
@@ -170,12 +165,54 @@ const AdminPage = () => {
     }
 
 
+    //
+    // // Modal_1
+    // const handleOpenModal = () => {
+    //     setIsModalOpen(true);
+    // };
+    //
+    // const handleCloseModal = () => {
+    //     setIsModalOpen(false);
+    // };
+    //
+    // useEffect(() => {
+    //     if (isModalOpen) {
+    //         document.body.classList.add('modal-open');
+    //     } else {
+    //         document.body.classList.remove('modal-open');
+    //     }
+    // }, [isModalOpen]);
+
+
+    async function handlePut(event) {
+        event.preventDefault();
+
+        const newComment = {
+            user: 'Anonym',
+            kommentare: 'text',
+            date: new Date().toLocaleString(),
+        };
+
+        try {
+            const response = await axios.patch(`http://localhost:3005/articles?blockId=2a2a12bd-b2c4-4e22-b64e-816e188b60bd`, {
+                "blockTitle": 'hiohiohioho'
+            });
+
+            if (response.status === 200) {
+                console.log(response.data)
+            }
+        } catch (error) {
+            console.error('Error posting comment:', error);
+        }
+    }
+
     return (
-        <div className="container my-5 bg-color" >
-            <form onSubmit={handleOnSubmit} >
+        <div className="container">
+            <form onSubmit={handleOnSubmit}>
                 <div className="mb-4">
                     <label htmlFor="title" className="form-label text-style">Titel</label>
-                    <input type="text" name="title" value={title} onChange={handleChange} className={titleError ? "form-control is-invalid" : "form-control"}
+                    <input type="text" name="title" value={title} onChange={handleChange}
+                           className={titleError ? "form-control is-invalid" : "form-control"}
                            id="title" placeholder="Bitte hier den Titel eingeben..."/>
                     <div className="invalid-feedback">
                         {titleError}
@@ -184,7 +221,8 @@ const AdminPage = () => {
                 <div className="mb-4">
                     <label htmlFor="country" className="form-label text-style">Land</label>
                     <input type="text" name="country" value={country} onChange={handleChange}
-                           className={countryError ? "form-control is-invalid" : "form-control"} id="country" placeholder="Bitte hier das Land eingeben..."/>
+                           className={countryError ? "form-control is-invalid" : "form-control"} id="country"
+                           placeholder="Bitte hier das Land eingeben..."/>
                     <div className="invalid-feedback">
                         {countryError}
                     </div>
@@ -214,13 +252,23 @@ const AdminPage = () => {
                         {descriptionError}
                     </div>
                     <ReactQuill modules={module} theme="snow" value={description} onChange={setDescription}
-                                id="description"/>
+                                id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
                 <button type="submit" className="btn-form-submit">Submit</button>
             </form>
-            <button onClick={handleApi}  className="btn-form-submit">API</button>
+            <ToastContainer/>
+            {/*<br/>*/}
+            {/*<div>*/}
+            {/*    <button onClick={handleOpenModal} className="btn-form-submit" aria-expanded={!isModalOpen}>*/}
+            {/*        Open Modal*/}
+            {/*    </button>*/}
+            {/*    <button onClick={handlePut} className="btn-form-submit" >*/}
+            {/*       PUT*/}
+            {/*    </button>*/}
+            {/*    {isModalOpen && <Modal_1 isOpen={isModalOpen} onClose={handleCloseModal}/>}*/}
+            {/*</div>*/}
         </div>
     );
 };
 
-export default AdminPage;
+export default NewArticle;
