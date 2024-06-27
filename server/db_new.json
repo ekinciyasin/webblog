@@ -11,19 +11,31 @@
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37270g",
       "blockKommentare": [
         {
-          "user": "Alice",
-          "kommentare": "Great post! Very informative.",
-          "date": "February 19, 2020"
+          "id": 1719470407483,
+          "user": "YASIN",
+          "text": "TEST2",
+          "timestamp": "6/27/2024, 8:40:07 AM"
         },
         {
-          "user": "Bob",
-          "kommentare": "Thanks for sharing!",
-          "date": "February 20, 2020"
+          "id": 1719470398043,
+          "user": "YASIN",
+          "text": "TEST",
+          "timestamp": "6/27/2024, 8:39:58 AM"
         },
         {
-          "user": "Charlie",
-          "kommentare": "I found this very helpful.",
-          "date": "February 21, 2020"
+          "user": "David",
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
+        },
+        {
+          "user": "Eve",
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "Frank",
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "9a2b"
@@ -40,18 +52,18 @@
       "blockKommentare": [
         {
           "user": "David",
-          "kommentare": "Interesting perspective!",
-          "date": "January 6, 2021"
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
         },
         {
           "user": "Eve",
-          "kommentare": "I disagree with some points, but overall good.",
-          "date": "January 7, 2021"
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         },
         {
           "user": "Frank",
-          "kommentare": "Can you elaborate more on this topic?",
-          "date": "January 8, 2021"
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "4580"
@@ -67,19 +79,46 @@
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37272g",
       "blockKommentare": [
         {
+          "id": 1719477229136,
+          "userId": "YASIN",
+          "text": "SAFARI TEST 2",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "id": 1719476701136,
+          "userId": "YASIN",
+          "text": "SAFARI TEST",
+          "timestamp": "6/27/2024, 10:25:01 AM"
+        },
+        {
           "user": "Grace",
-          "kommentare": "Thanks for the insights!",
-          "date": "October 26, 2021"
+          "text": "Thanks for the insights!",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         },
         {
           "user": "Hank",
-          "kommentare": "Very detailed post.",
-          "date": "October 27, 2021"
+          "text": "Very detailed post.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         },
         {
           "user": "Ivy",
-          "kommentare": "Helped me a lot, thanks!",
-          "date": "October 28, 2021"
+          "text": "Helped me a lot, thanks!",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "David",
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
+        },
+        {
+          "user": "Eve",
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "Frank",
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "8414"
@@ -96,18 +135,33 @@
       "blockKommentare": [
         {
           "user": "Jack",
-          "kommentare": "Well written!",
-          "date": "April 8, 2021"
+          "text": "Well written!",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         },
         {
           "user": "Kelly",
-          "kommentare": "I learned a lot from this post.",
-          "date": "April 9, 2021"
+          "text": "I learned a lot from this post.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         },
         {
           "user": "Leo",
-          "kommentare": "Excellent work!",
-          "date": "April 10, 2021"
+          "text": "Excellent work!",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "David",
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
+        },
+        {
+          "user": "Eve",
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "Frank",
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "55e5"
@@ -123,19 +177,40 @@
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37274g",
       "blockKommentare": [
         {
+          "id": 1719471273572,
+          "userId": "YASIN",
+          "text": "1",
+          "timestamp": "6/27/2024, 8:54:33 AM"
+        },
+        {
           "user": "Mona",
-          "kommentare": "Really enjoyed this.",
-          "date": "May 18, 2020"
+          "text": "Really enjoyed this.",
+          "timestamp": "6/27/2024, 8:54:33 AM"
         },
         {
           "user": "Nina",
-          "kommentare": "Very useful information.",
-          "date": "May 19, 2020"
+          "text": "Very useful information.",
+          "timestamp": "6/27/2024, 8:54:33 AM"
         },
         {
           "user": "Oscar",
-          "kommentare": "Thanks for the post!",
-          "date": "May 20, 2020"
+          "text": "Thanks for the post!",
+          "timestamp": "6/27/2024, 8:54:33 AM"
+        },
+        {
+          "user": "David",
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
+        },
+        {
+          "user": "Eve",
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "Frank",
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "5afd"
@@ -152,18 +227,33 @@
       "blockKommentare": [
         {
           "user": "Paul",
-          "kommentare": "Great insights, thanks!",
-          "date": "November 2, 2020"
+          "text": "Great insights, thanks!",
+          "timestamp": "November 2, 2020"
         },
         {
           "user": "Quinn",
-          "kommentare": "I found this very helpful.",
-          "date": "November 3, 2020"
+          "text": "I found this very helpful.",
+          "timestamp": "November 3, 2020"
         },
         {
           "user": "Rita",
-          "kommentare": "Looking forward to more posts like this.",
-          "date": "November 4, 2020"
+          "text": "Looking forward to more posts like this.",
+          "timestamp": "November 4, 2020"
+        },
+        {
+          "user": "David",
+          "text": "Interesting perspective!",
+          "timestamp": "7/27/2021, 6:39:58 AM"
+        },
+        {
+          "user": "Eve",
+          "text": "I disagree with some points, but overall good.",
+          "timestamp": "6/27/2024, 10:23:31 AM"
+        },
+        {
+          "user": "Frank",
+          "text": "Can you elaborate more on this topic?",
+          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "97d3"
@@ -221,7 +311,32 @@
       "blockDatum": "27.6.2024, 07:08:47",
       "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
       "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60b1",
-      "blockKommentare": []
+      "blockKommentare": [
+        {
+          "id": 1719474373960,
+          "userId": "YASIN",
+          "text": "3123",
+          "timestamp": "6/27/2024, 9:46:13 AM"
+        },
+        {
+          "id": 1719474371369,
+          "userId": "YASIN",
+          "text": "313231",
+          "timestamp": "6/27/2024, 9:46:11 AM"
+        },
+        {
+          "id": 1719474368898,
+          "userId": "YASIN",
+          "text": "313123",
+          "timestamp": "6/27/2024, 9:46:08 AM"
+        },
+        {
+          "id": 1719474366842,
+          "userId": "YASIN",
+          "text": "213123",
+          "timestamp": "6/27/2024, 9:46:06 AM"
+        }
+      ]
     },
     {
       "id": "d6cc",
@@ -251,17 +366,38 @@
       "password": "password"
     },
     {
-      "id": "1",
+      "id": "2",
       "username": "Eva",
       "email": "eva@gmail.com",
       "role": "USER",
       "password": "password"
     },
     {
-      "id": "1",
+      "id": "3",
       "username": "Ganna",
-      "email": "gana@gmail.com",
+      "email": "ganna@gmail.com",
       "role": "ADMIN",
+      "password": "password"
+    },
+    {
+      "id": "4",
+      "username": "Mats",
+      "email": "mats@gmail.com",
+      "role": "USER",
+      "password": "password"
+    },
+    {
+      "id": "5",
+      "username": "YASIN2",
+      "email": "yasin2@gmail.com",
+      "role": "ADMIN",
+      "password": "password"
+    },
+    {
+      "id": "6",
+      "username": "Eva2",
+      "email": "eva2@gmail.com",
+      "role": "USER",
       "password": "password"
     },
     {

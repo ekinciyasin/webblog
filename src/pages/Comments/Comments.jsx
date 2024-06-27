@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import './Comments.css';
 
-const Comments = ({ comments, setComments }) => {
+const Comments = ({ comments, setComments, username, blockId, userRole }) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [editingComment, setEditingComment] = useState(null);
+    const [editText, setEditText] = useState('');
     const commentsPerPage = 3;
 
     const indexOfLastComment = currentPage * commentsPerPage;
@@ -10,6 +13,43 @@ const Comments = ({ comments, setComments }) => {
     const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+    const handleDelete = async (commentId) => {
+        try {
+            const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
+            const { id, blockKommentare } = response.data[0];
+            const updatedComments = blockKommentare.filter(comment => comment.id !== commentId);
+            await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: updatedComments });
+            setComments(updatedComments);
+        } catch (error) {
+            console.error("Error deleting comment:", error);
+        }
+    };
+
+    const handleEdit = (comment) => {
+        setEditingComment(comment.id);
+        setEditText(comment.text);
+    };
+
+    const handleEditChange = (e) => {
+        setEditText(e.target.value);
+    };
+
+    const handleEditSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
+            const { id, blockKommentare } = response.data[0];
+            const updatedComments = blockKommentare.map(comment =>
+                comment.id === editingComment ? { ...comment, text: editText } : comment
+            );
+            await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: updatedComments });
+            setComments(updatedComments);
+            setEditingComment(null);
+        } catch (error) {
+            console.error("Error editing comment:", error);
+        }
+    };
 
     return (
         <div className="comments-container">
@@ -20,8 +60,36 @@ const Comments = ({ comments, setComments }) => {
                         <h3>{comment.title}</h3>
                         <span className="comment-date">{comment.timestamp}</span>
                     </div>
-                    <p>{comment.text}</p>
-                    <p><strong>{comment.userId}</strong></p>
+                    {editingComment === comment.id ? (
+                        <div className="comment-footer">
+                            <form onSubmit={handleEditSubmit}>
+                                <textarea
+                                    value={editText}
+                                    onChange={handleEditChange}
+                                    rows="3"
+                                    required
+                                    style={{ color: 'black' }}
+                                />
+                                <button type="submit" className="btn btn-primary">Kaydet</button>
+                            </form>
+
+                        </div>
+                    ) : (
+                        <>
+                            <p>{comment.text}</p>
+                            <div className="comment-footer">
+                                <p><strong>{comment.user}</strong></p>
+                                {(comment.user === username || userRole === 'ADMIN') && (
+                                    <div className="comment-buttons">
+                                        {comment.user === username && (
+                                            <button onClick={() => handleEdit(comment)} className="btn btn-secondary">Düzenle</button>
+                                        )}
+                                        <button onClick={() => handleDelete(comment.id)} className="btn btn-danger">Sil</button>
+                                    </div>
+                                )}
+                            </div>
+                        </>
+                    )}
                 </div>
             ))}
             <nav>
