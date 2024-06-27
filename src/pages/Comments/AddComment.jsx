@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 const AddComment = ({ username, blockId, setComments, comments }) => {
     const [commentText, setCommentText] = useState('');
-
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const handleCommentChange = (e) => {
         setCommentText(e.target.value);
     };
@@ -33,21 +34,30 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
 
     return (
         <div className="mt-5">
-            <form onSubmit={handleCommentSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="comment" className="form-label">Kommentar schreiben</label>
-                    <textarea
-                        id="comment"
-                        className="form-control"
-                        value={commentText}
-                        onChange={handleCommentChange}
-                        rows="3"
-                        required
-                        style={{color: 'black'}}
-                    ></textarea>
+            {isLoggedIn && (
+                <form onSubmit={handleCommentSubmit}>
+                    <div className="mb-3">
+                        <label htmlFor="comment" className="form-label">Kommentar schreiben</label>
+                        <textarea
+                            id="comment"
+                            className="form-control"
+                            value={commentText}
+                            onChange={handleCommentChange}
+                            rows="3"
+                            required
+                            style={{color: 'black'}}
+                        ></textarea>
+                    </div>
+                    <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
+                </form>
+            )}
+            {!isLoggedIn && (
+                <div className="text-center p-3">
+                <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
+                <Link to="/login">Einloggen</Link>
                 </div>
-                <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
-            </form>
+
+                )}
         </div>
     );
 };
