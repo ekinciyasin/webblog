@@ -3,9 +3,104 @@
     --gold: #FBD784;
     --hover: #bb8b0d;
     --white: #fdf7fd;
-    --green: #3d7794;
+    --green: rgba(33, 75, 98, 0.6);
+    --primary: hsl(155, 100%, 65%);
+    --primaryBg: hsla(155, 100%, 65%, 1%);
+    --primaryHi: hsla(155, 100%, 75%, 25%);
+    --primaryFg: hsl(155, 100%, 85%);
+    --secondary: hsl(156, 51%, 14%);
+    --secondaryFg: hsl(156, 51%, 75%);
+    --secondaryBg: hsla(156, 51%, 14%, 5%);
+    --secondaryHi: hsla(156, 51%, 30%, 50%);
+    --accent: hsl(155, 100%, 94%);
+    --accentBg: hsla(155, 100%, 94%, 1%);
+    --accentHi: hsla(155, 100%, 100%, 25%);
 }
 
+/*//////////////////BUTTON///////////////////////////////////*/
+
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    height: 50px;
+    width: 160px;
+    z-index: 9999;
+}
+
+button {
+    height: 50px;
+    width: 160px;
+    clip-path: path("M 0 25 C 0 -5, -5 0, 80 0 S 160 -5, 160 25, 165 50 80 50, 0 55, 0 25");
+    border: none;
+    border-radius: 13px;
+    background-color: var(--primaryBg);
+    box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+    color: var(--primaryFg);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+}
+
+span {
+    width: 100px;
+    height: 60px;
+    background-color: var(--primaryHi);
+    border-radius: 100%;
+    filter: blur(20px);
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.2s ease;
+}
+
+.button:hover > span {
+    opacity: 60%;
+}
+
+.button:hover > button {
+    transform: translateY(5px);
+}
+
+
+
+.button.sec > button {
+    background-color: var(--accentBg);
+    box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+    color: var(--gold);
+}
+
+.button.sec > span {
+    background-color: var(--accentHi);
+}
+
+.button.third {
+    bottom: 25%;
+    left: 15%;
+}
+
+.button.third > button {
+    background-color: var(--secondaryBg);
+    box-shadow: 0px -3px 15px 0px #143546 inset;
+    color: var(--gold);
+}
+
+.button.third > span {
+    background-color: var(--green);
+}
+
+
+/*////////////////////////////////////////////////////*/
 h1{
     text-align: center;
     color: var(--white) !important;
@@ -204,30 +299,28 @@ select{
 }
 
 .blog-label-swap{
-    margin: -175px auto auto 20px;
+    margin: -180px auto auto 15px;
 }
 
 .blog-label-noswap{
-    margin: 10px auto auto 110px;
+    margin: 10px auto auto 130px;
 }
 
 .blog-label-noswap div,
 .blog-label-swap div{
     display: inline;
-    font-size: 13px;
-    background-color: rgba(255, 202, 32, 0.9);
+    font-size: 12px;
     margin: 5px;
     padding: 3px 4px;
+    color: var(--white);
+    background: rgba(58, 58, 57, 0.6);
+    box-shadow: 0 5px 32px 0 rgb(97 97 116 / 37%);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
     border-radius: 5px;
-    color: var(--background);
-    opacity: 0;
-    transition: all .4s ease-in-out;
+    border: 1px solid rgba( 255, 255, 255, 0.10 );
 }
 
-#customCard:hover .blog-label-noswap div,
-#customCard:hover .blog-label-swap div{
-    opacity: 1;
-}
 
 .block-edit-btn-container{
     display: flex;
@@ -381,24 +474,16 @@ select{
     }
 
     .blog-label-swap{
-        margin: -125px auto auto 10px;
+        margin: -130px auto auto 5px;
     }
 
     .blog-label-noswap{
-        margin: 10px auto auto 80px;
+        margin: 5px auto auto 105px;
     }
 
     .blog-label-noswap div,
     .blog-label-swap div{
-        display: inline;
-        font-size: 12px;
-        background-color: rgba(255, 202, 32, 0.9);
-        margin: 5px;
-        padding: 3px 4px;
-        border-radius: 5px;
-        color: var(--background);
-        opacity: 0;
-        transition: all .4s ease-in-out;
+       font-size: 10px;
     }
 
 }

@@ -170,9 +170,11 @@ const BlocksList = ({ userRole }) => {
                         </div>
                     ))}
                     {visibleArticles < filteredArticles.length && (
-                        <button onClick={handleShowMore} className="btn btn-primary custom-primary-btn">
-                            Mehr anzeigen
-                        </button>
+                        <div className="button-div">
+                        <a className="button third">
+                            <button onClick={handleShowMore}>Mehr anzeigen</button>
+                            <span></span></a>
+                        </div>
                     )}
                     {showEditor && <ArticleEdition articleContent={articleContent} handleEditorOnSubmit={handleEditorOnSubmit} />}
                     <ToastContainer />

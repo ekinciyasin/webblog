@@ -38,8 +38,8 @@ const BlockItem = ({
 
                             {userRole === 'ADMIN' && (
                                 <div className="block-edit-btn-container">
-                                    <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                    <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+                                    <button onClick={handleEdit} className="block-edit-btn">Bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">Löschen</button>
                                 </div>
                             )}
                             <div className="card-text">{blockText}</div>
@@ -67,8 +67,8 @@ const BlockItem = ({
 
                             {userRole === 'ADMIN' && (
                                 <div className="block-edit-btn-container block-edit-btn-container-margin-left">
-                                    <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                    <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+                                    <button onClick={handleEdit} className="block-edit-btn">Bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">Löschen</button>
                                 </div>
                             )}
 
