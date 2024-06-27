@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Comments.css'; // Import der CSS-Datei
 
-const Comments = ({ comments }) => { // Kommentare als Prop
+const Comments = ({ comments }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const commentsPerPage = 5;
 
@@ -13,17 +13,17 @@ const Comments = ({ comments }) => { // Kommentare als Prop
 
     return (
         <div className="comments-container">
-            {currentComments.map((comment) => (
-                <div key={comment.id} className="comment">
+            {currentComments.map((comment, index) => (
+                <div key={index} className="comment">
                     <div className="comment-header">
-                        <h3>{comment.userId}</h3> {/* Benutzernamen */}
-                        <span className="comment-date">{comment.timestamp}</span> {/* Zeitstempel */}
+                        <h3>{comment.user}</h3> {/* Benutzername */}
+                        <span className="comment-date">{comment.date}</span> {/* Zeitstempel */}
                     </div>
-                    <p>{comment.text}</p> {/* Kommentar */}
+                    <p>{comment.kommentare}</p> {/* Kommentar */}
                 </div>
             ))}
             <div className="pagination">
-                {[...Array(Math.ceil(comments.length / commentsPerPage)).keys()].map(number => ( // Seitenzahlen
+                {[...Array(Math.ceil(comments.length / commentsPerPage)).keys()].map(number => (
                     <button key={number} onClick={() => paginate(number + 1)}>
                         {number + 1}
                     </button>

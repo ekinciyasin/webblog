@@ -165,8 +165,7 @@
           "kommentare": "Looking forward to more posts like this.",
           "date": "November 4, 2020"
         }
-      ],
-      "id": "97d3"
+      ]
     }
   ],
   "users": [
@@ -208,6 +207,18 @@
       "id": "f89d",
       "username": "Max Mustermann",
       "email": "max@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "aa43",
+      "username": "Markus",
+      "email": "markus@web.de",
+      "password": "1234"
+    },
+    {
+      "id": "cdcd",
+      "username": "Max Mustermann",
+      "email": "max@web.de",
       "password": "1234"
     }
   ]
