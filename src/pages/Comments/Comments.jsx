@@ -21,7 +21,7 @@ const Comments = ({ comments, setComments }) => {
                         <span className="comment-date">{comment.timestamp}</span>
                     </div>
                     <p>{comment.text}</p>
-                    <p><strong>{comment.userId}</strong></p>
+                    <p><strong>{comment.user}</strong></p>
                 </div>
             ))}
             <nav>

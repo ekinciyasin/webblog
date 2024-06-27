@@ -11,18 +11,18 @@
     "blockKommentare": [
       {
         "user": "Alice",
-        "kommentare": "Great post! Very informative.",
-        "date": "February 19, 2020"
+        "text": "Great post! Very informative.",
+        "timestamp": "February 19, 2020"
       },
       {
         "user": "Bob",
-        "kommentare": "Thanks for sharing!",
-        "date": "February 20, 2020"
+        "text": "Thanks for sharing!",
+        "timestamp": "February 20, 2020"
       },
       {
         "user": "Charlie",
-        "kommentare": "I found this very helpful.",
-        "date": "February 21, 2020"
+        "text": "I found this very helpful.",
+        "timestamp": "February 21, 2020"
       }
     ]
   },
@@ -38,18 +38,18 @@
     "blockKommentare": [
       {
         "user": "David",
-        "kommentare": "Interesting perspective!",
-        "date": "January 6, 2021"
+        "text": "Interesting perspective!",
+        "timestamp": "January 6, 2021"
       },
       {
         "user": "Eve",
-        "kommentare": "I disagree with some points, but overall good.",
-        "date": "January 7, 2021"
+        "text": "I disagree with some points, but overall good.",
+        "timestamp": "January 7, 2021"
       },
       {
         "user": "Frank",
-        "kommentare": "Can you elaborate more on this topic?",
-        "date": "January 8, 2021"
+        "text": "Can you elaborate more on this topic?",
+        "timestamp": "January 8, 2021"
       }
     ]
   },
@@ -65,18 +65,18 @@
     "blockKommentare": [
       {
         "user": "Grace",
-        "kommentare": "Thanks for the insights!",
-        "date": "October 26, 2021"
+        "text": "Thanks for the insights!",
+        "timestamp": "October 26, 2021"
       },
       {
         "user": "Hank",
-        "kommentare": "Very detailed post.",
-        "date": "October 27, 2021"
+        "text": "Very detailed post.",
+        "timestamp": "October 27, 2021"
       },
       {
         "user": "Ivy",
-        "kommentare": "Helped me a lot, thanks!",
-        "date": "October 28, 2021"
+        "text": "Helped me a lot, thanks!",
+        "timestamp": "October 28, 2021"
       }
     ]
   },
@@ -92,18 +92,18 @@
     "blockKommentare": [
       {
         "user": "Jack",
-        "kommentare": "Well written!",
-        "date": "April 8, 2021"
+        "text": "Well written!",
+        "timestamp": "April 8, 2021"
       },
       {
         "user": "Kelly",
-        "kommentare": "I learned a lot from this post.",
-        "date": "April 9, 2021"
+        "text": "I learned a lot from this post.",
+        "timestamp": "April 9, 2021"
       },
       {
         "user": "Leo",
-        "kommentare": "Excellent work!",
-        "date": "April 10, 2021"
+        "text": "Excellent work!",
+        "timestamp": "April 10, 2021"
       }
     ]
   },
@@ -119,18 +119,18 @@
     "blockKommentare": [
       {
         "user": "Mona",
-        "kommentare": "Really enjoyed this.",
-        "date": "May 18, 2020"
+        "text": "Really enjoyed this.",
+        "timestamp": "May 18, 2020"
       },
       {
         "user": "Nina",
-        "kommentare": "Very useful information.",
-        "date": "May 19, 2020"
+        "text": "Very useful information.",
+        "timestamp": "May 19, 2020"
       },
       {
         "user": "Oscar",
-        "kommentare": "Thanks for the post!",
-        "date": "May 20, 2020"
+        "text": "Thanks for the post!",
+        "timestamp": "May 20, 2020"
       }
     ]
   },
@@ -146,18 +146,18 @@
     "blockKommentare": [
       {
         "user": "Paul",
-        "kommentare": "Great insights, thanks!",
-        "date": "November 2, 2020"
+        "text": "Great insights, thanks!",
+        "timestamp": "November 2, 2020"
       },
       {
         "user": "Quinn",
-        "kommentare": "I found this very helpful.",
-        "date": "November 3, 2020"
+        "text": "I found this very helpful.",
+        "timestamp": "November 3, 2020"
       },
       {
         "user": "Rita",
-        "kommentare": "Looking forward to more posts like this.",
-        "date": "November 4, 2020"
+        "text": "Looking forward to more posts like this.",
+        "timestamp": "November 4, 2020"
       }
     ]
   },
@@ -173,18 +173,18 @@
     "blockKommentare": [
       {
         "user": "Paul",
-        "kommentare": "Great insights, thanks!",
-        "date": "November 2, 2020"
+        "text": "Great insights, thanks!",
+        "timestamp": "November 2, 2020"
       },
       {
         "user": "Quinn",
-        "kommentare": "I found this very helpful.",
-        "date": "November 3, 2020"
+        "text": "I found this very helpful.",
+        "timestamp": "November 3, 2020"
       },
       {
         "user": "Rita",
-        "kommentare": "Looking forward to more posts like this.",
-        "date": "November 4, 2020"
+        "text": "Looking forward to more posts like this.",
+        "timestamp": "November 4, 2020"
       }
     ]
   }

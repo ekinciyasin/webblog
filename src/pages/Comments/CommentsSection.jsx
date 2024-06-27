@@ -11,7 +11,7 @@ const CommentsSection = ({ blockId, username }) => {
             try {
                 const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
                 const { blockKommentare } = response.data[0];
-                setComments(blockKommentare);
+                setComments(blockKommentare || []);  // Eğer blockKommentare yoksa boş bir dizi olarak ayarlayın
             } catch (error) {
                 console.error("Error fetching comments:", error);
             }

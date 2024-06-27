@@ -13,7 +13,7 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
         if (commentText.trim()) {
             const newComment = {
                 id: Date.now(),
-                userId: username,
+                user: username,
                 text: commentText,
                 timestamp: new Date().toLocaleString()
             };
@@ -21,8 +21,9 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
             try {
                 const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
                 const { id, blockKommentare } = response.data[0];
-                await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: [newComment, ...comments] });
-                setComments([newComment, ...comments]);
+                const updatedComments = [newComment, ...(blockKommentare || comments)];
+                await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: updatedComments });
+                setComments(updatedComments);
                 setCommentText('');
             } catch (error) {
                 console.error("Error adding comment:", error);
