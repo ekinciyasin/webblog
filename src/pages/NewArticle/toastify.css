@@ -1,0 +1,11 @@
+:root {
+    --toastify-text-color-dark: #FBD784;
+    --toastify-color-dark: rgba(100, 114, 120, 0.4);
+    --toastify-font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+}
+
+/*.Toastify__toast--dark {*/
+/*    background: var(--toastify-color-dark);*/
+/*    color: var(--gold);*/
+/*}*/

@@ -1,7 +1,15 @@
 import React from 'react';
 import {Link, Outlet} from 'react-router-dom';
 
-const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, blockbeschreibung, userRole}) => {
+const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, blockbeschreibung, userRole, handleDeleteArticle, handleEditArticle, id}) => {
+    function handleDelete() {
+        handleDeleteArticle(id);
+    }
+
+    function handleEdit() {
+        handleEditArticle(id);
+    }
+
     return (
         <div className="card" id="customCard">
             {swap ? (
@@ -11,8 +19,8 @@ const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, 
 
                         {userRole === 'ADMIN' && (
                             <div className="block-edit-btn-container">
-                                <button className="block-edit-btn">bearbeiten</button>
-                                <button className="block-edit-btn">löschen</button>
+                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
+                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
 
                             </div>
                         )}
@@ -31,8 +39,8 @@ const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, 
 
                         {userRole === 'ADMIN' && (
                             <div className="block-edit-btn-container block-edit-btn-container-margin-left">
-                                <button className="block-edit-btn">bearbeiten</button>
-                                <button className="block-edit-btn">löschen</button>
+                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
+                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
                             </div>
                         )}
 
