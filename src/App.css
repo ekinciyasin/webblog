@@ -2,7 +2,7 @@
     --background: #0B1D26;
     --gold: #FBD784;
     --hover: #bb8b0d;
-    --white: #f7fafd;
+    --white: #fdf7fd;
 }
 
 h1{
@@ -17,6 +17,7 @@ h1{
     min-height: 100vh;
     color: var(--white);
 }
+
 
 .logo{
     width: 120px;
@@ -63,12 +64,54 @@ a::before {
 #navbar-toggler{
     color: white !important;
 }
+
+
+/*//////////////////HOME PAGE///////////////////////////////////*/
+
+.custom-filter {
+    margin: -100px auto 100px auto;
+    min-width: 300px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-height: 60px;
+    align-items: center;
+
+    background: rgba( 69, 87, 94, 0.05 );
+    box-shadow: 0 5px 32px 0 rgb(97 97 116 / 37%);
+    backdrop-filter: blur( 2px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.10 );
+}
+
+#cardList-form {
+    color: var(--white);
+    margin: 5px;
+    display: inline;
+    width: 30%;
+    min-width: 170px;
+    box-shadow: 0 8px 32px 0 rgb(25 25 40 / 37%);
+    -webkit-backdrop-filter: blur(4px);
+    border: 0.5px solid rgb(139 136 136 / 18%);
+}
+
+select{
+    background-color: var(--background) !important;
+    cursor: pointer;
+    border: none;
+}
+
+
 .homePageMainContainer {
     background-color: var(--background);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 #customCard {
@@ -98,7 +141,7 @@ a::before {
     background-color: var(--background);
     color: var(--gold);
     border: none;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 0;
     padding-left: 0;
 }
@@ -116,7 +159,8 @@ a::before {
     max-height: 190px;
 }
 
-.card-text{
+.card-text,
+.card-date{
     margin-top: 10px;
     font-size: 10px !important;
 }
@@ -140,9 +184,33 @@ a::before {
 
 }
 
-#noswap-pic {
+#noswap-pic{
     margin-left: 10px;
 }
+
+
+.block-edit-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 120px;
+    margin-left: auto;
+}
+
+.block-edit-btn-container-margin-left{
+    margin-left: -5px;
+}
+
+.block-edit-btn{
+    font-size: 12px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: -10px;
+    line-height: 12px;
+    border: none;
+    color: #a1cf9d;
+}
+
+/*///////////////////////////////////////////////////////////////////*/
 .bold-italic {
     font-weight: bold;
     font-style: italic;
@@ -157,4 +225,80 @@ a::before {
 #mt-5,
 #customArticleContainer{
     background-color: rgba(0, 0, 0, 0)!important;
+}
+
+
+
+/*////////////////////////////// FOOTER /////////////////////////////////////*/
+
+.text-center{
+    background: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgb(11 23 30) 100%);
+}
+
+.footer-first-div{
+    text-decoration: none !important;
+    list-style-type: none;
+    padding: 10px;
+}
+
+.a-footer{
+    font-size: 14px;
+}
+
+.text-white{
+    text-decoration: none !important;
+    padding: 10px;
+    bottom:0;
+    width: 100%;
+}
+
+
+@media (max-width: 995px) {
+    .navbar-nav{
+        align-content: flex-end;
+        margin-top: -10px;
+        --bs-nav-link-padding-y: 0.3rem;
+        flex-wrap: wrap;
+        align-items: end;
+
+    }
+
+    .navbar-toggler-icon{
+        cursor: pointer;
+        background-image: url("https://i.ibb.co/D7XFCZT/burger-icon.png") !important;
+    }
+
+    #noswap-pic,
+    #swap{
+        width: 100%;
+        max-width: 200px;
+        max-height: 150px;
+    }
+
+    .card-body{
+        max-width: 150px;
+    }
+
+    #noswap-pic,
+    #noswap,
+    #swap{
+        margin-left:0;
+    }
+
+    .card-text{
+        display: none;
+    }
+
+    #customBtnBlockItem,
+    .card-date{
+        font-size: 11px;
+    }
+
+}
+
+@media (max-width: 760px) {
+    .card-img-top {
+        max-width: 350px;
+
+    }
 }

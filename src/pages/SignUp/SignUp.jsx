@@ -116,7 +116,7 @@ const SignUp = ({onLogin}) => {
                         <Input id="username" label="Vollständiger Name" error={errors.username}  onChange={(event) => setUsername(event.target.value)}/>
                         <Input id="email" label="Email Adresse" error={errors.email}  onChange={(event) => setEmail(event.target.value)}/>
                         <Input id="password" label="Passwort" error={errors.password}  onChange={(event) => setPassword(event.target.value)} type="password"/>
-                        <Input id="passwordRepeat" label="Passwort" error={passordRepeatError}  onChange={(event) => setPasswordRepeat(event.target.value)} type="password"/>
+                        <Input id="passwordRepeat" label="Passwort Wiederholung" error={passordRepeatError}  onChange={(event) => setPasswordRepeat(event.target.value)} type="password"/>
                         {successMessage && <div className="alert alert-success">{successMessage}</div>}
                         {generalError && <div className="alert alert-danger">{generalError}</div>}
                         <button disabled={apiProgress || (!password || password !== passwordRepeat)} type="submit" className="btn btn-success">

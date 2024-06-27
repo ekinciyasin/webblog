@@ -7,25 +7,24 @@ import {
     MDBBtn
 } from 'mdb-react-ui-kit';
 
-export default function App() {
+export default function App({userRole}) {
     return (
-        <MDBFooter className='text-center text-white' style={{ backgroundColor: '#0a4275' }}>
+        <MDBFooter className='footer--pin text-center text-white'>
             <MDBContainer className='p-4 pb-0'>
-                <section className=''>
-                    <p className='d-flex justify-content-center align-items-center'>
-                        <span className='me-3'>Kostenlos registrieren</span>
-                        <MDBBtn type='button' outline color="light" rounded>
-                            Konto erstellen
-                        </MDBBtn>
-                    </p>
-                </section>
+                {userRole !== 'ADMIN' && (
+                    <div className='d-flex justify-content-center align-items-center'>
+                        <li className="nav-item footer-first-div">
+                            <a className="nav-link  a-categorien a-footer" href="/login">Einloggen</a>
+                        </li>
+                        <li className="nav-item footer-first-div">
+                            <a className="nav-link btn a-categorien a-footer" href="/signup">Registrieren </a>
+                        </li>
+                    </div>
+                )}
             </MDBContainer>
 
-            <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-                © 2024
-                <a className='text-white' href='https://mdbootstrap.com/'>
-                    Evgeniia, Ganna, Yasin und Mats
-                </a>
+            <div className="text-center p-3">
+                © 2024 Eva, Ganna, Yasin und Mats
             </div>
         </MDBFooter>
     );

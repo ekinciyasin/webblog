@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Comments.css'; // Import der CSS-Datei
+import './Comments.css';
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, setComments }) => {
     const [currentPage, setCurrentPage] = useState(1);
-    const commentsPerPage = 5;
+    const commentsPerPage = 3;
 
     const indexOfLastComment = currentPage * commentsPerPage;
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;
@@ -13,22 +13,28 @@ const Comments = ({ comments }) => {
 
     return (
         <div className="comments-container">
+            <h5>Kommentare</h5>
             {currentComments.map((comment, index) => (
                 <div key={index} className="comment">
                     <div className="comment-header">
-                        <h3>{comment.user}</h3> {/* Benutzername */}
-                        <span className="comment-date">{comment.date}</span> {/* Zeitstempel */}
+                        <h3>{comment.title}</h3>
+                        <span className="comment-date">{comment.timestamp}</span>
                     </div>
-                    <p>{comment.kommentare}</p> {/* Kommentar */}
+                    <p>{comment.text}</p>
+                    <p><strong>{comment.userId}</strong></p>
                 </div>
             ))}
-            <div className="pagination">
-                {[...Array(Math.ceil(comments.length / commentsPerPage)).keys()].map(number => (
-                    <button key={number} onClick={() => paginate(number + 1)}>
-                        {number + 1}
-                    </button>
-                ))}
-            </div>
+            <nav>
+                <ul className="pagination">
+                    {[...Array(Math.ceil(comments.length / commentsPerPage)).keys()].map(number => (
+                        <li key={number} className={`page-item ${number + 1 === currentPage ? 'active' : ''}`}>
+                            <button onClick={() => paginate(number + 1)} className="page-link">
+                                {number + 1}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
         </div>
     );
 };

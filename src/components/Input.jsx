@@ -7,7 +7,7 @@ function Input(props) {
             <label htmlFor="name" className="form-label">{label}</label>
             <input onChange={onChange} type={type? type : "text"}
                    className={error ? "form-control is-invalid" : "form-control"} id={id}
-                   placeholder="Name eingeben"/>
+                   placeholder={label}/>
 
             <div className="invalid-feedback">
                 {error}

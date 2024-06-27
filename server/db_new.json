@@ -3,7 +3,7 @@
     {
       "blockTitle": "Everest Base Camp",
       "blockLand": "Nepal",
-      "blockReiseTyp": "",
+      "blockReiseTyp": "Trekking",
       "blockBeschreibung": "Die Basislager sind einfache Zeltplätze am Fuße des Mount Everest, die von Bergsteigern beim Auf- und Abstieg genutzt werden.",
       "blockBild": "https://i.ibb.co/2qnC0nh/himalayas-lungta.jpg",
       "blockDatum": "February 18, 2020",
@@ -31,7 +31,7 @@
     {
       "blockTitle": "Annapurna Circuit Trek",
       "blockLand": "Nepal",
-      "blockReiseTyp": "",
+      "blockReiseTyp": "Trekking",
       "blockBeschreibung": "Der Annapurna Circuit Trek ist eine mehrtägige Trekkingroute in Nepal. Die Route führt durch den Himalaya auf Wegen, die Siedlungen verbinden",
       "blockBild": "https://i.ibb.co/DVsCVQz/himalayan-yak.jpg",
       "blockDatum": "January 5, 2021",
@@ -59,7 +59,7 @@
     {
       "blockTitle": "Safari in Chitwan",
       "blockLand": "Nepal",
-      "blockReiseTyp": "safari",
+      "blockReiseTyp": "Safari",
       "blockBeschreibung": "Es ist ein beliebtes Ziel für Dschungelsafaris. Besucher können verschiedene Aktivitäten wie Elefantensafaris und Naturwanderungen genießen.",
       "blockBild": "https://i.ibb.co/k5DQPS9/chitwan.jpg",
       "blockDatum": "October 25, 2021",
@@ -87,7 +87,7 @@
     {
       "blockTitle": "Manaslu Circuit Trek",
       "blockLand": "India",
-      "blockReiseTyp": "",
+      "blockReiseTyp": "Trekking",
       "blockBeschreibung": "Unterwegs werden Sie Menschen und auch Yaks treffen. Es gibt nur eine Verkehrsregel, wenn Sie einem entgegenkommenden Yak begegnen.",
       "blockBild": "https://i.ibb.co/2vt2zvM/himalayas-trek.jpg",
       "blockDatum": "April 7, 2021",
@@ -114,8 +114,8 @@
     },
     {
       "blockTitle": "Goechala Trek",
-      "blockLand": "Sikkim, India",
-      "blockReiseTyp": "",
+      "blockLand": "India",
+      "blockReiseTyp": "Trekking",
       "blockBeschreibung": "Auf einer Höhe von über 15.100 Fuß gelegen, bietet Goechala ein Abenteuer wie nie zuvor. Es ist eine der ältesten Trekkingrouten in India",
       "blockBild": "https://i.ibb.co/j43BhPD/nepal.jpg",
       "blockDatum": "May 17, 2020",
@@ -143,7 +143,7 @@
     {
       "blockTitle": "Kathmandu Kulturreise",
       "blockLand": "Nepal",
-      "blockReiseTyp": "kulturreise",
+      "blockReiseTyp": "Kultur",
       "blockBeschreibung": "Ideale Einsteigertour in der Königreiche mit UNESCO-Weltkulturerbe, Tigernest-Kloster und Bogenschießen in Bhutan und Himalaya-Panorama.",
       "blockBild": "https://i.ibb.co/X2KdQRz/temple.jpg",
       "blockDatum": "November 1, 2020",
@@ -165,7 +165,74 @@
           "kommentare": "Looking forward to more posts like this.",
           "date": "November 4, 2020"
         }
-      ]
+      ],
+      "id": "97d3"
+    },
+    {
+      "id": "7416",
+      "blockTitle": "Post 1",
+      "blockLand": "India",
+      "blockReiseTyp": "Kultur",
+      "blockBild": "https://images.pexels.com/photos/860577/pexels-photo-860577.jpeg",
+      "blockDatum": "26.6.2024, 01:52:47",
+      "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, <strong>consetetur sadipscing elitr,</strong> sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
+      "blockId": "8f3f0113-5240-4541-8723-05e47875758d",
+      "blockKommentare": []
+    },
+    {
+      "id": "6007",
+      "blockTitle": "Post2",
+      "blockLand": "Norway",
+      "blockReiseTyp": "Trekking, Kultur",
+      "blockBild": "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "blockDatum": "26.6.2024, 02:05:36",
+      "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
+      "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60bc",
+      "blockKommentare": []
+    },
+    {
+      "id": "6007b",
+      "blockTitle": "Post3",
+      "blockLand": "Norway",
+      "blockReiseTyp": "Trekking, Kultur",
+      "blockBild": "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "blockDatum": "26.6.2024, 02:05:36",
+      "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
+      "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60bd",
+      "blockKommentare": []
+    },
+    {
+      "id": "6008",
+      "blockTitle": "Post4",
+      "blockLand": "Norway",
+      "blockReiseTyp": "Trekking, Kultur",
+      "blockBild": "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "blockDatum": "26.6.2024, 02:05:36",
+      "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
+      "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60bp",
+      "blockKommentare": []
+    },
+    {
+      "id": "6009",
+      "blockTitle": "Post5",
+      "blockLand": "Norway",
+      "blockReiseTyp": "Trekking, Kultur",
+      "blockBild": "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "blockDatum": "27.6.2024, 07:08:47",
+      "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
+      "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60b1",
+      "blockKommentare": []
+    },
+    {
+      "id": "d6cc",
+      "blockTitle": "Post 8",
+      "blockLand": "Norway",
+      "blockReiseTyp": "Leicht, Kultur",
+      "blockBild": "https://i.ibb.co/2qnC0nh/himalayas-lungta.jpg",
+      "blockDatum": "27.6.2024, 07:19:54",
+      "blockText": "<p class=\"ql-indent-1 ql-align-center\"><strong>Lorem</strong></p><p>Lorem</p><p>Lorem Lorem Lorem Lorem Lorem</p><p><br></p><p>Lorem</p>",
+      "blockId": "f9a575fb-7f42-4428-93d4-16a687292565",
+      "blockKommentare": []
     }
   ],
   "users": [
@@ -204,22 +271,11 @@
       "password": "1111"
     },
     {
-      "id": "f89d",
-      "username": "Max Mustermann",
-      "email": "max@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "aa43",
-      "username": "Markus",
-      "email": "markus@web.de",
-      "password": "1234"
-    },
-    {
-      "id": "cdcd",
-      "username": "Max Mustermann",
-      "email": "max@web.de",
-      "password": "1234"
+      "id": "8fac",
+      "username": "Mary Mary",
+      "email": "mary1@mail.com",
+      "role": "admin",
+      "password": "123456"
     }
   ]
 }

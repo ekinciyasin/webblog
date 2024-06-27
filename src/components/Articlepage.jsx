@@ -1,109 +1,69 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 import blocks from "../db.json";
 import Comments from "../pages/Comments/Comments";
 import axios from "axios";
+import AddComment from "../pages/Comments/AddComment";
+import CommentsSection from "../pages/Comments/CommentsSection";
+import {fetchArticles} from "../pages/NewArticle/utils-api";
 
-const ArticlePage = ({ username }) => {
-    const [comments, setComments] = useState([]);
-    const [commentText, setCommentText] = useState('');
+const Status = {
+    IDLE: 'idle',
+    PENDING: 'pending',
+    RESOLVED: 'resolved',
+    REJECTED: 'rejected'
+}
+
+
+const ArticlePage = ({username}) => {
+    const [article, setArticle] = useState([]);
+    const [status, setStatus] = useState('');
+    const [responseMessage, setResponseMessage] = useState('');
     const { blockId } = useParams();
+
 
     async function getArticles() {
         try {
             const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
-            console.log(response.data);
-            if (response.data.length > 0) {
-                console.log('Kommentare:', response.data[0].blockKommentare);
-                setComments(response.data[0].blockKommentare);
-            } else {
-                console.log('Keine Artikel gefunden');
-            }
+            setArticle(response.data[0]);
+            setStatus(Status.RESOLVED)
         } catch (error) {
-            console.error('Error fetching articles:', error);
+            console.error('Error fetching article:', error);
+            setResponseMessage("Es wurden keine Artikel gefunden!");
+            setStatus(Status.REJECTED)
         }
+
     }
 
+
     useEffect(() => {
+        setStatus(Status.PENDING);
         getArticles();
-    }, [blockId]);
+    }, []);
 
-    useEffect(() => {
-        console.log(comments);
-    }, [comments]);
-
-    const handleCommentChange = (e) => {
-        setCommentText(e.target.value);
-    };
-
-    const handleCommentSubmit = async (event) => {
-        event.preventDefault();
-
-        const newComment = {
-            id: comments.length + 1,
-            user: username,
-            kommentare: commentText,
-            date: new Date().toLocaleString(),
-        };
-
-        try {
-            const response = await axios.put(`http://localhost:3005/articles/${blockId}`, {
-                blockKommentare: [...comments, newComment]
-            });
-
-            if (response.status === 200) {
-                setComments([...comments, newComment]);
-                setCommentText('');
-            }
-        } catch (error) {
-            console.error('Error posting comment:', error);
-        }
-    };
-
-    const block = blocks.find((b) => b.blockId === blockId);
 
     return (
         <div className="container mt-5" id="mt-5">
             <div className="card" id="customArticleContainer">
                 <img
                     className="card-img-top"
-                    src={block.blockBild}
+                    src={article.blockBild}
                     alt="Card image cap"
                     style={{ width: '40rem', margin: '0 auto' }}
                 />
                 <div className="">
                     <div className="articleTitle">
-                        <h2 className="card-title">{block.blockTitle}</h2>
-                        <div>{block.blockDatum}</div>
+                        <h2 className="card-title">{article.blockTitle}</h2>
+                        <div>{article.blockDatum}</div>
                     </div>
-                    <div className="">{block.blockText}</div>
+                    <div className="">{article.blockText}</div>
+                    <div className="">{article.blockText}</div>
                 </div>
             </div>
             <div className="mt-5">
-                <Comments comments={comments} />
+            <CommentsSection username={username} blockId={blockId}/>
             </div>
-            <div className="mt-5">
-                <h5>Kommentar schreiben</h5>
-                {username ? (
-                    <form onSubmit={handleCommentSubmit}>
-                        <div className="mb-3">
-                            <label htmlFor="comment" className="form-label">Kommentar schreiben</label>
-                            <textarea
-                                id="comment"
-                                className="form-control"
-                                value={commentText}
-                                onChange={handleCommentChange}
-                                rows="3"
-                                required
-                                style={{ color: 'black' }}
-                            ></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
-                    </form>
-                ) : (
-                    <p>Bitte loggen Sie sich ein, wenn Sie einen Kommentar schreiben möchten.</p>
-                )}
-            </div>
+
         </div>
     );
 };
