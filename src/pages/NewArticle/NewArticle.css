@@ -98,6 +98,15 @@ line-height: inherit;
 }
 
 .container-newarticle {
-
+    margin-top: -12rem;
+    z-index: auto;
+    position: relative;
     margin-bottom: 50px;
+}
+
+
+@media (max-width: 1200px) {
+    .container-newarticle {
+        margin-top: -16rem;
+    }
 }
