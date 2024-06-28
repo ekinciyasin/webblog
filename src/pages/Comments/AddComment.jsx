@@ -48,16 +48,28 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
                             style={{color: 'black'}}
                         ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
-                </form>
-            )}
-            {!isLoggedIn && (
-                <div className="text-center p-3">
-                <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
-                <Link to="/login">Einloggen</Link>
+
+
+                    {/*<button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>*/}
+
+                    <div className="button-div btn-left" onClick={handleCommentSubmit}>
+                        <div className="button third">
+                        <button>
+                            Submit
+                        </button>
+                        <span className="span"></span>
+                        </div>
                 </div>
 
+                </form>
                 )}
+            {!isLoggedIn && (
+                <div className="text-center p-3">
+                    <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
+                    <Link to="/login">Einloggen</Link>
+                </div>
+
+            )}
         </div>
     );
 };
