@@ -6,10 +6,10 @@ import Select from 'react-select';
 import './NewArticle.css';
 import {fetchArticles, updateArticles} from "./utils-api";
 import axios from "axios";
-import Modal_1 from "./Modal_1/Modal_1";
 import {Slide, toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './toastify.css';
+import Main from "./Modal/Main";
 
 const NewArticle = () => {
     const [title, setTitle] = useState('');
@@ -20,8 +20,6 @@ const NewArticle = () => {
     const [countryError, setCountryError] = useState('');
     const [category, setCategory] = useState([]);
     const [picURL, setPicURL] = useState('');
-    // const [isModalOpen, setIsModalOpen] = useState(false);
-
 
 
 
@@ -106,7 +104,7 @@ const NewArticle = () => {
             "blockLand": country.trim(),
             "blockReiseTyp": category.join(', '),
             "blockBild": picURL,
-            "blockDatum": new Date().toLocaleString('de-DE'),
+            "blockDatum": new Date(),
             "blockText": description,
             "blockId": uuidv4(),
             "blockKommentare": [],
@@ -163,25 +161,6 @@ const NewArticle = () => {
     function getValueCategory() {
         return options.filter(option => category.indexOf(option.value) !== -1);
     }
-
-
-    //
-    // // Modal_1
-    // const handleOpenModal = () => {
-    //     setIsModalOpen(true);
-    // };
-    //
-    // const handleCloseModal = () => {
-    //     setIsModalOpen(false);
-    // };
-    //
-    // useEffect(() => {
-    //     if (isModalOpen) {
-    //         document.body.classList.add('modal-open');
-    //     } else {
-    //         document.body.classList.remove('modal-open');
-    //     }
-    // }, [isModalOpen]);
 
 
     async function handlePut(event) {
@@ -257,16 +236,8 @@ const NewArticle = () => {
                 <button type="submit" className="btn-form-submit">Submit</button>
             </form>
             <ToastContainer/>
-            {/*<br/>*/}
-            {/*<div>*/}
-            {/*    <button onClick={handleOpenModal} className="btn-form-submit" aria-expanded={!isModalOpen}>*/}
-            {/*        Open Modal*/}
-            {/*    </button>*/}
-            {/*    <button onClick={handlePut} className="btn-form-submit" >*/}
-            {/*       PUT*/}
-            {/*    </button>*/}
-            {/*    {isModalOpen && <Modal_1 isOpen={isModalOpen} onClose={handleCloseModal}/>}*/}
-            {/*</div>*/}
+
+            <Main/>
         </div>
     );
 };

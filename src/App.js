@@ -67,7 +67,7 @@ function App() {
         },
         {
             path: "/:blockId",
-            element: <ArticlePage username={username} />,
+            element: <ArticlePage userRole={userRole} username={username} />,
         },
         {
             path: "/new-article",

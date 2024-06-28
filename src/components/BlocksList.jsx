@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import BlockItem from "./BlockItem";
 import Filter from "./Filter";
-import {deleteArticle, editArticles, fetchArticles} from "../pages/NewArticle/utils-api";
-import {Slide, toast, ToastContainer} from "react-toastify";
+import { deleteArticle, editArticles, fetchArticles } from "../pages/NewArticle/utils-api";
+import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import '../pages/NewArticle/toastify.css'
+import '../pages/NewArticle/toastify.css';
 import ArticleEdition from "../pages/NewArticle/ArticleEdition";
+import Modal from "../pages/NewArticle/Modal/Modal";
 
 const Status = {
     IDLE: 'idle',
@@ -14,7 +15,7 @@ const Status = {
     REJECTED: 'rejected'
 }
 
-const BlocksList = ({userRole}) => {
+const BlocksList = ({ userRole }) => {
     const [selectedTyp, setSelectedTyp] = useState("all");
     const [selectedLand, setSelectedLand] = useState("all");
     const [articles, setArticles] = useState([]);
@@ -22,8 +23,7 @@ const BlocksList = ({userRole}) => {
     const [status, setStatus] = useState('');
     const [showEditor, setShowEditor] = useState(false);
     const [articleContent, setArticleContent] = useState(null);
-
-
+    const [visibleArticles, setVisibleArticles] = useState(4); // State to manage visible articles
 
     function setSelectedTypHandler(value) {
         setSelectedTyp(value);
@@ -37,11 +37,11 @@ const BlocksList = ({userRole}) => {
         try {
             const data = await fetchArticles();
             setArticles(data);
-            setStatus(Status.RESOLVED)
+            setStatus(Status.RESOLVED);
         } catch (error) {
             console.error('Error fetching articles:', error);
             setResponseMessage("Es wurden keine Artikel gefunden!");
-            setStatus(Status.REJECTED)
+            setStatus(Status.REJECTED);
         }
     }
 
@@ -49,8 +49,6 @@ const BlocksList = ({userRole}) => {
         setStatus(Status.PENDING);
         getArticles();
     }, []);
-
-
 
     async function handleDeleteArticle(id) {
         const newArticles = articles.filter(article => article.id !== id);
@@ -82,10 +80,7 @@ const BlocksList = ({userRole}) => {
                 transition: Slide,
             });
         }
-
     }
-
-
 
     function handleEditArticle(id) {
         const currentArticleContent = articles.find(article => article.id === id);
@@ -93,44 +88,45 @@ const BlocksList = ({userRole}) => {
         setShowEditor(true);
     }
 
-     async function handleEditorOnSubmit(id, response) {
-         // console.log('response ' + id + response)
-         try {
-             const newResponse = await editArticles(id, response);
-             const articleIndex = articles.findIndex(article => article.id === id);
-             const newArticles = [...articles];
-             newArticles.splice(articleIndex,1,newResponse);
-             setArticles(newArticles);
-             toast.success("Der Artikel wurde erfolgreich bearbeitet!", {
-                 position: "top-right",
-                 autoClose: 3000,
-                 hideProgressBar: false,
-                 closeOnClick: true,
-                 pauseOnHover: true,
-                 draggable: true,
-                 progress: undefined,
-                 theme: "dark",
-                 transition: Slide,
-             });
-         } catch (error) {
+    async function handleEditorOnSubmit(id, response) {
+        try {
+            const newResponse = await editArticles(id, response);
+            const articleIndex = articles.findIndex(article => article.id === id);
+            const newArticles = [...articles];
+            newArticles.splice(articleIndex, 1, newResponse);
+            setArticles(newArticles);
+            toast.success("Der Artikel wurde erfolgreich bearbeitet!", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Slide,
+            });
+        } catch (error) {
+            toast.error("Der Artikel konnte nicht bearbeitet werden!", {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Slide,
+            });
+            console.error('Error posting article:', error);
+        }
 
-             toast.error("Der Artikel konnte nicht bearbeitet werden!", {
-                 position: "top-right",
-                 autoClose: 3000,
-                 hideProgressBar: false,
-                 closeOnClick: true,
-                 pauseOnHover: true,
-                 draggable: true,
-                 progress: undefined,
-                 theme: "dark",
-                 transition: Slide,
-             });
-             console.error('Error posting article:', error);
-         }
-
-         setShowEditor(false);
-
+        setShowEditor(false);
     }
+
+    const handleShowMore = () => {
+        setVisibleArticles(prevVisibleArticles => prevVisibleArticles + 4);
+    };
 
     if (status === Status.PENDING) {
         return <div><p>Loading....</p></div>
@@ -141,6 +137,14 @@ const BlocksList = ({userRole}) => {
     }
 
     if (status === Status.RESOLVED) {
+        const filteredArticles = articles.filter((blog) => selectedTyp === "all" ? blog !== null : blog.blockReiseTyp.toLowerCase() === selectedTyp)
+            .filter((blog) => selectedLand === "all" ? blog !== null : blog.blockLand === selectedLand)
+            .sort((a, b) => {
+                const dateA = new Date(a.blockDatum);
+                const dateB = new Date(b.blockDatum);
+                return dateB - dateA;
+            });
+
         return (
             <div>
                 <div className="blocks-container">
@@ -148,9 +152,10 @@ const BlocksList = ({userRole}) => {
                         setSelectedTypHandler={setSelectedTypHandler}
                         setSelectedLandHandler={setSelectedLandHandler}
                     />
-                    {articles.filter((blog) => selectedTyp === "all" ? blog !== null : blog.blockReiseTyp.toLowerCase() === selectedTyp).filter((blog) => selectedLand === "all" ? blog !== null : blog.blockLand === selectedLand).map((b, index) => (
+                    {filteredArticles.slice(0, visibleArticles).map((b, index) => (
                         <div key={b.blockId}>
                             <BlockItem
+                                blockReiseTyp={b.blockReiseTyp}
                                 handleDeleteArticle={handleDeleteArticle}
                                 handleEditArticle={handleEditArticle}
                                 id={b.id}
@@ -161,13 +166,26 @@ const BlocksList = ({userRole}) => {
                                 blockDate={b.blockDatum}
                                 blockText={b.blockText}
                                 blockId={b.blockId}
-                                blockbeschreibung={b.blockBeschreibung ? b.blockBeschreibung : ''}
-                                swap={index % 2 === 1} // Pass swap prop to indicate if the positions should be swapped
+                                swap={index % 2 === 1}
                             />
                         </div>
                     ))}
-                    {showEditor && <ArticleEdition articleContent={articleContent} handleEditorOnSubmit={handleEditorOnSubmit}/>}
-                    <ToastContainer/>
+                    {visibleArticles < filteredArticles.length && (
+                        <button onClick={handleShowMore} className="btn btn-primary custom-primary-btn">
+                            Mehr anzeigen
+                        </button>
+                    )}
+                    <Modal isOpen={showEditor} onClose={() => setShowEditor(false)}>
+                        {articleContent ? (
+                            <ArticleEdition
+                                articleContent={articleContent}
+                                handleEditorOnSubmit={handleEditorOnSubmit}
+                            />
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                    </Modal>
+                    <ToastContainer />
                 </div>
             </div>
         );

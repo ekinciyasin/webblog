@@ -3,6 +3,7 @@
     --gold: #FBD784;
     --hover: #bb8b0d;
     --white: #fdf7fd;
+    --green: #3d7794;
 }
 
 h1{
@@ -165,8 +166,17 @@ select{
     font-size: 10px !important;
 }
 
+.card-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 #card-title{
     margin-bottom: 20px;
+    margin-top: -10px;
 }
 
 #swap{
@@ -188,6 +198,36 @@ select{
     margin-left: 10px;
 }
 
+.blog-label-swap,
+.blog-label-noswap{
+    position: absolute;
+}
+
+.blog-label-swap{
+    margin: -175px auto auto 20px;
+}
+
+.blog-label-noswap{
+    margin: 10px auto auto 110px;
+}
+
+.blog-label-noswap div,
+.blog-label-swap div{
+    display: inline;
+    font-size: 13px;
+    background-color: rgba(255, 202, 32, 0.9);
+    margin: 5px;
+    padding: 3px 4px;
+    border-radius: 5px;
+    color: var(--background);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+}
+
+#customCard:hover .blog-label-noswap div,
+#customCard:hover .blog-label-swap div{
+    opacity: 1;
+}
 
 .block-edit-btn-container{
     display: flex;
@@ -202,12 +242,18 @@ select{
 }
 
 .block-edit-btn{
-    font-size: 12px;
+    font-size: 13px;
     background-color: rgba(0, 0, 0, 0);
     margin-top: -10px;
     line-height: 12px;
     border: none;
-    color: #a1cf9d;
+    color: var(--green);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.block-edit-btn:hover{
+    transform: scale(1.1);
+    color: #4983a1;
 }
 
 /*///////////////////////////////////////////////////////////////////*/
@@ -252,6 +298,46 @@ select{
     width: 100%;
 }
 
+.custom-primary-btn{
+    display: inline-block;
+    padding: 9px 18px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    background-color: rgba(189,193,196,0.1);
+    border: 1px solid var(--background);
+    backdrop-filter: blur(30px);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.custom-primary-btn:hover {
+    background-color: rgba(189,193,196, 0.2);
+}
+
+.custom-primary-btn {
+    display: inline-block;
+    padding: 9px 18px;
+    border: 0;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    background-color: rgba(189,193,196,0.1);
+    border: 1px solid var(--background);
+    backdrop-filter: blur(30px);
+    color: var(--white);
+    font-size: 12px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-primary-btn:hover {
+    background-color: rgba(208, 210, 211, 0.2);
+    color: #97a2a7;
+}
 
 @media (max-width: 995px) {
     .navbar-nav{
@@ -294,11 +380,31 @@ select{
         font-size: 11px;
     }
 
+    .blog-label-swap{
+        margin: -125px auto auto 10px;
+    }
+
+    .blog-label-noswap{
+        margin: 10px auto auto 80px;
+    }
+
+    .blog-label-noswap div,
+    .blog-label-swap div{
+        display: inline;
+        font-size: 12px;
+        background-color: rgba(255, 202, 32, 0.9);
+        margin: 5px;
+        padding: 3px 4px;
+        border-radius: 5px;
+        color: var(--background);
+        opacity: 0;
+        transition: all .4s ease-in-out;
+    }
+
 }
 
 @media (max-width: 760px) {
     .card-img-top {
         max-width: 350px;
-
     }
 }

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Navigate } from "react-router-dom"; // Hinzugefügt: Import von Navigate
+import React, {useEffect, useState} from 'react';
+import { useParams, Navigate } from "react-router-dom";
 import axios from "axios";
 import CommentsSection from "../pages/Comments/CommentsSection";
+import {fetchArticles} from "../pages/NewArticle/utils-api";
+import sanitizeHtml from 'sanitize-html';
 
 const Status = {
     IDLE: 'idle',
@@ -10,11 +12,14 @@ const Status = {
     REJECTED: 'rejected'
 }
 
-const ArticlePage = ({ username }) => {
+
+const ArticlePage = (props) => {
+    const {userRole,username } = props;
     const [article, setArticle] = useState(null); // Geändert: Initialisierung auf null
     const [status, setStatus] = useState(Status.IDLE);
     const [responseMessage, setResponseMessage] = useState('');
     const { blockId } = useParams();
+
 
     async function getArticles() {
         try {
@@ -29,14 +34,16 @@ const ArticlePage = ({ username }) => {
         } catch (error) {
             console.error('Error fetching article:', error);
             setResponseMessage("Es wurden keine Artikel gefunden!");
-            setStatus(Status.REJECTED); // Hinzugefügt: Setzen des Status auf REJECTED bei Fehler
+            setStatus(Status.REJECTED)
         }
+
     }
+
 
     useEffect(() => {
         setStatus(Status.PENDING);
         getArticles();
-    }, [blockId]);
+    }, []);
 
     if (status === Status.PENDING) { // Hinzugefügt: Überprüfung auf PENDING
         return <div>Loading...</div>;
@@ -45,6 +52,13 @@ const ArticlePage = ({ username }) => {
     if (status === Status.REJECTED) { // Hinzugefügt: Überprüfung auf REJECTED und Umleitung
         return <Navigate to="/not-found" />;
     }
+
+
+    const sanitizedContent = sanitizeHtml(article.blockText, {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img' ])
+    });
+
+    const formattedDate = new Date(article.blockDatum).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 
     return (
         <div className="container mt-5" id="mt-5">
@@ -60,14 +74,14 @@ const ArticlePage = ({ username }) => {
                         <div className="">
                             <div className="articleTitle">
                                 <h2 className="card-title">{article.blockTitle}</h2>
-                                <div>{article.blockDatum}</div>
+                                <div>{formattedDate}</div>
                             </div>
-                            <div className="">{article.blockText}</div>
-                            <div className="">{article.blockText}</div>
+                            <div dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                            <div dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
                         </div>
                     </div>
                     <div className="mt-5">
-                        <CommentsSection username={username} blockId={blockId} />
+                        <CommentsSection userRole={userRole} username={username} blockId={blockId}/>
                     </div>
                 </>
             )}

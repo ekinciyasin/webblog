@@ -1,59 +1,116 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, Outlet} from 'react-router-dom';
+import Modal from "../pages/NewArticle/Modal/Modal";
+import sanitizeHtml from "sanitize-html";
 
-const BlockItem = ({blockId, title, url, blockland, blockDate, blockText, swap, blockbeschreibung, userRole, handleDeleteArticle, handleEditArticle, id}) => {
-    function handleDelete() {
-        handleDeleteArticle(id);
-    }
+const BlockItem = ({
+                       blockId,
+                       title,
+                       url,
+                       blockland,
+                       blockDate,
+                       blockText,
+                       swap,
+                       userRole,
+                       handleDeleteArticle,
+                       handleEditArticle,
+                       id,
+                       blockReiseTyp
+                   }) => {
+        const [isModalOpen, setIsModalOpen] = useState(false);
 
-    function handleEdit() {
-        handleEditArticle(id);
-    }
+        function handleDelete() {
+            setIsModalOpen(true);
+        }
 
-    return (
-        <div className="card" id="customCard">
-            {swap ? (
-                <>
-                    <div className="card-body" id="noswap">
-                        <h5 className="card-title" id="card-title">{title}</h5>
+        function handleEdit() {
+            handleEditArticle(id);
+        }
 
-                        {userRole === 'ADMIN' && (
-                            <div className="block-edit-btn-container">
-                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
+        const formattedDate = new Date(blockDate).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
 
+        const sanitizedContent = sanitizeHtml(blockText, {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+        });
+
+        return (
+            <div className="card" id="customCard">
+                {swap ? (
+                    <>
+                        <div className="card-body" id="noswap">
+                            <h5 className="card-title" id="card-title">{title}</h5>
+
+                            {userRole === 'ADMIN' && (
+                                <div className="block-edit-btn-container">
+                                    <button onClick={handleEdit} className="block-edit-btn">Bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">Löschen</button>
+                                </div>
+                            )}
+
+                            <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                            {/*<div className="card-text">{blockText}</div>*/}
+                            <div className="card-date">{formattedDate}</div>
+                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum
+                                Blogartikel
+                                --></Link>
+                        </div>
+                        <div>
+                            <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
+                            <div className="blog-label-swap">
+                                {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
+                                    <div>{item}</div>
+                                </div>))}
+                                {/*<div>{blockReiseTyp}</div>*/}
+                                <div>{blockland}</div>
                             </div>
-                        )}
-                        <div className="card-text">{blockbeschreibung}</div>
-                        <div className="card-date">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
-                            --></Link>
-                    </div>
-                    <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
-                </>
-            ) : (
-                <>
-                    <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
-                    <div className="card-body" id="card-body">
-                        <h5 className="card-title" id="card-title">{title}</h5>
+                        </div>
+                    </>
+                ) : (
+                    <>
+                        <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
+                        <div className="blog-label-noswap">
+                            {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
+                                <div>{item}</div>
+                            </div>))}
+                            {/*<div>{blockReiseTyp}</div>*/}
+                            <div>{blockland}</div>
+                        </div>
+                        <div className="card-body" id="card-body">
+                            <h5 className="card-title" id="card-title">{title}</h5>
 
-                        {userRole === 'ADMIN' && (
-                            <div className="block-edit-btn-container block-edit-btn-container-margin-left">
-                                <button onClick={handleEdit} className="block-edit-btn">bearbeiten</button>
-                                <button onClick={handleDelete} className="block-edit-btn">löschen</button>
-                            </div>
-                        )}
-
-                        <div className="card-text">{blockbeschreibung}</div>
-                        <div className="card-date">{blockDate}</div>
-                        <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
-                            --></Link>
+                            {userRole === 'ADMIN' && (
+                                <div className="block-edit-btn-container block-edit-btn-container-margin-left">
+                                    <button onClick={handleEdit} className="block-edit-btn">Bearbeiten</button>
+                                    <button onClick={handleDelete} className="block-edit-btn">Löschen</button>
+                                </div>
+                            )}
+                            <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                            {/*<div className="card-text">{blockText}</div>*/}
+                            <div className="card-date">{formattedDate}</div>
+                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
+                                --></Link>
+                        </div>
+                    </>
+                )}
+                <Modal width={'20vw'} bgColor={'#0B1D26'} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                    <p style={{textAlign: 'center'}}>Wollen Sie den Artikel wirklich löschen?</p>
+                    <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
+                        <button type="button" className="btn btn-primary " onClick={() => handleDeleteArticle(id)}>Ja
+                        </button>
+                        <button type="button" className="btn btn-secondary " onClick={() => setIsModalOpen(false)}>Nein
+                        </button>
                     </div>
-                </>
-            )}
-            <Outlet/>
-        </div>
-    );
-};
+
+                </Modal>
+
+                <Outlet/>
+            </div>
+        );
+    }
+;
 
 export default BlockItem;
