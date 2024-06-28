@@ -8,6 +8,7 @@ import './NewArticle.css';
 
 const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
 
+
     const [title, setTitle] = useState(articleContent.blockTitle);
     const [titleError, setTitleError] = useState('');
     const [description, setDescription] = useState(articleContent.blockText);
@@ -71,11 +72,11 @@ const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
 
         handleEditorOnSubmit(articleContent.id, output);
 
-        setTitle('');
-        setDescription('');
-        setCountry('');
-        setPicURL('');
-        setCategory([]);
+        // setTitle('');
+        // setDescription('');
+        // setCountry('');
+        // setPicURL('');
+        // setCategory([]);
     }
 
     function handleChange(evt) {
