@@ -3,9 +3,9 @@
     --gold: #FBD784;
     --hover: #bb8b0d;
     --white: #fdf7fd;
-    --red: #905353;
+    --red: #9b5c5c;
     --green: rgba(33, 75, 98, 0.45);
-    --primary: hsl(155, 20%, 37%);
+    --primary: hsl(152, 19%, 41%);
     --primaryBg: hsla(155, 100%, 65%, 1%);
     --primaryHi: hsla(155, 100%, 75%, 25%);
     --primaryFg: hsl(165, 4%, 39%);
@@ -184,20 +184,48 @@ a::before {
     display: inline-flex;
     justify-content: space-between;
     width: 170px;
-    justify-content: space-between;
 }
 
+.edit-btn-div,
+.block-edit-btn,
 .delete-btn-div{
-    color: var(--red);
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.delete-btn-div{
+    color: var(--red);
+}
 
-.block-edit-btn,
 .edit-btn-div{
     color: var(--primary);
-    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.block-edit-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 120px;
+    margin-left: auto;
+    font-size: 13px;
+}
+
+.block-edit-btn-container-margin-left{
+    margin-left: -5px;
+}
+
+.card-second-btn{
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: -10px;
+    line-height: 12px;
+    border: none;
+}
+
+.block-edit-btn:hover,
+.delete-btn-div:hover,
+.edit-btn-div:hover{
+    transform: scale(1.1);
 }
 
 /*////////////////////////////////////////////////////*/
@@ -363,32 +391,6 @@ select{
 }
 
 
-.block-edit-btn-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 120px;
-    margin-left: auto;
-}
-
-.block-edit-btn-container-margin-left{
-    margin-left: -5px;
-}
-
-.card-second-btn{
-    font-size: 13px;
-    background-color: rgba(0, 0, 0, 0);
-    margin-top: -10px;
-    line-height: 12px;
-    border: none;
-}
-
-.block-edit-btn:hover,
-.delete-btn-div:hover,
-.edit-btn-div:hover{
-    transform: scale(1.1);
-}
-
 /*///////////////////////////////////////////////////////////////////*/
 .bold-italic {
     font-weight: bold;
@@ -397,7 +399,7 @@ select{
 
 .blocks-container,
 #mt-5{
-    margin-top: -5rem !important;
+    margin-top: -12rem !important;
     padding-bottom: 5rem !important;
 }
 
@@ -472,6 +474,17 @@ select{
     color: #97a2a7;
 }
 
+@media (max-width: 1200px) {
+    .blocks-container,
+    #mt-5{
+        margin-top: -16rem !important;
+    }
+
+    .container-newarticle {
+        margin-top: -16rem;
+    }
+}
+
 @media (max-width: 995px) {
     .navbar-nav{
         align-content: flex-end;
@@ -533,3 +546,4 @@ select{
         max-width: 350px;
     }
 }
+

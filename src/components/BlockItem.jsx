@@ -62,7 +62,7 @@ const BlockItem = ({
                             <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
                             <div className="blog-label-swap">
                                 {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
-                                    <div>{item}</div>
+                                    {item}
                                 </div>))}
                                 {/*<div>{blockReiseTyp}</div>*/}
                                 <div>{blockland}</div>
@@ -74,9 +74,8 @@ const BlockItem = ({
                         <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
                         <div className="blog-label-noswap">
                             {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
-                                <div>{item}</div>
+                                {item}
                             </div>))}
-                            {/*<div>{blockReiseTyp}</div>*/}
                             <div>{blockland}</div>
                         </div>
                         <div className="card-body" id="card-body">
