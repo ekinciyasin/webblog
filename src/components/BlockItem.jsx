@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, Outlet} from 'react-router-dom';
+import Modal from "../pages/NewArticle/Modal/Modal";
+import sanitizeHtml from "sanitize-html";
 
 const BlockItem = ({
                        blockId,
@@ -15,8 +17,10 @@ const BlockItem = ({
                        id,
                        blockReiseTyp
                    }) => {
+        const [isModalOpen, setIsModalOpen] = useState(false);
+
         function handleDelete() {
-            handleDeleteArticle(id);
+            setIsModalOpen(true);
         }
 
         function handleEdit() {
@@ -27,6 +31,10 @@ const BlockItem = ({
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+        });
+
+        const sanitizedContent = sanitizeHtml(blockText, {
+            allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
         });
 
         return (
@@ -42,15 +50,21 @@ const BlockItem = ({
                                     <div onClick={handleDelete} className="delete-btn-div card-second-btn">Löschen</div>
                                 </div>
                             )}
-                            <div className="card-text">{blockText}</div>
+
+                            <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                            {/*<div className="card-text">{blockText}</div>*/}
                             <div className="card-date">{formattedDate}</div>
-                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
+                            <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum
+                                Blogartikel
                                 --></Link>
                         </div>
                         <div>
                             <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
                             <div className="blog-label-swap">
-                                <div>{blockReiseTyp}</div>
+                                {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
+                                    <div>{item}</div>
+                                </div>))}
+                                {/*<div>{blockReiseTyp}</div>*/}
                                 <div>{blockland}</div>
                             </div>
                         </div>
@@ -59,7 +73,10 @@ const BlockItem = ({
                     <>
                         <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
                         <div className="blog-label-noswap">
-                            <div>{blockReiseTyp}</div>
+                            {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
+                                <div>{item}</div>
+                            </div>))}
+                            {/*<div>{blockReiseTyp}</div>*/}
                             <div>{blockland}</div>
                         </div>
                         <div className="card-body" id="card-body">
@@ -71,14 +88,25 @@ const BlockItem = ({
                                     <div onClick={handleDelete} className="delete-btn-div card-second-btn">Löschen</div>
                                 </div>
                             )}
-
-                            <div className="card-text">{blockText}</div>
+                            <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                            {/*<div className="card-text">{blockText}</div>*/}
                             <div className="card-date">{formattedDate}</div>
                             <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
                                 --></Link>
                         </div>
                     </>
                 )}
+                <Modal width={'20vw'} bgColor={'#0B1D26'} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                    <p style={{textAlign: 'center'}}>Wollen Sie den Artikel wirklich löschen?</p>
+                    <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
+                        <button type="button" className="btn btn-primary " onClick={() => handleDeleteArticle(id)}>Ja
+                        </button>
+                        <button type="button" className="btn btn-secondary " onClick={() => setIsModalOpen(false)}>Nein
+                        </button>
+                    </div>
+
+                </Modal>
+
                 <Outlet/>
             </div>
         );
