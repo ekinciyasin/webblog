@@ -3,9 +3,9 @@
     --gold: #FBD784;
     --hover: #bb8b0d;
     --white: #fdf7fd;
-    --red: #9b5c5c;
+    --red: #d08080;
     --green: rgba(33, 75, 98, 0.67);
-    --primary: hsl(152, 19%, 41%);
+    --primary: hsl(157, 30%, 54%);
     --primaryBg: hsla(155, 100%, 65%, 1%);
     --primaryHi: hsla(201, 41%, 61%, 0.6);
     --primaryFg: hsl(165, 4%, 39%);
@@ -50,10 +50,7 @@ h1{
     --bs-nav-link-color: var(--white) !important;
     background-size: cover;
     background-position: top;
-
     width: 100%;
-
-
 }
 
 
@@ -153,7 +150,7 @@ a::before {
 }
 
 .button:hover > button {
-    transform: translateY(5px);
+    transform: translateY(3px);
 }
 
 .button.sec > button {
@@ -423,6 +420,13 @@ select{
 }
 
 
+.mt-3 a{
+color: var(--primary);
+}
+
+#customBtnBlockItem a{
+    color: var(--gold) !important;
+}
 
 /*////////////////////////////// FOOTER /////////////////////////////////////*/
 
