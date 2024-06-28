@@ -6,6 +6,7 @@ import axios from "axios";
 import AddComment from "../pages/Comments/AddComment";
 import CommentsSection from "../pages/Comments/CommentsSection";
 import {fetchArticles} from "../pages/NewArticle/utils-api";
+import sanitizeHtml from 'sanitize-html';
 
 const Status = {
     IDLE: 'idle',
@@ -43,6 +44,12 @@ const ArticlePage = (props) => {
         getArticles();
     }, []);
 
+
+
+    const sanitizedContent = sanitizeHtml(article.blockText, {
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img' ])
+    });
+
     const formattedDate = new Date(article.blockDatum).toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'});
 
     return (
@@ -59,8 +66,8 @@ const ArticlePage = (props) => {
                         <h2 className="card-title">{article.blockTitle}</h2>
                         <div>{formattedDate}</div>
                     </div>
-                    <div className="">{article.blockText}</div>
-                    <div className="">{article.blockText}</div>
+                    <div dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
+                    <div dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
                 </div>
             </div>
             <div className="mt-5">
