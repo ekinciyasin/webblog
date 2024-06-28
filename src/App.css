@@ -4,10 +4,10 @@
     --hover: #bb8b0d;
     --white: #fdf7fd;
     --red: #9b5c5c;
-    --green: rgba(33, 75, 98, 0.45);
+    --green: rgba(33, 75, 98, 0.67);
     --primary: hsl(152, 19%, 41%);
     --primaryBg: hsla(155, 100%, 65%, 1%);
-    --primaryHi: hsla(155, 100%, 75%, 25%);
+    --primaryHi: hsla(201, 41%, 61%, 0.6);
     --primaryFg: hsl(165, 4%, 39%);
     --secondary: hsl(156, 51%, 14%);
     --secondaryFg: hsl(156, 51%, 75%);
@@ -169,7 +169,7 @@ a::before {
 
 .button.third > button {
     background-color: var(--secondaryBg);
-    box-shadow: 0 -3px 15px 0 #143546 inset;
+    box-shadow: 0 -3px 15px 0 #1b4157 inset;
     color: var(--gold);
 }
 
@@ -294,6 +294,19 @@ select{
     border: none;
 }
 
+/*.img-card-container,
+.img-card{
+    width: 285px;
+    height: 190px;
+
+}*/
+
+.img-card{
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
 .articleTitle{
     display: flex;
     flex-direction: row;
@@ -319,9 +332,8 @@ select{
 
 #noswap-pic,
 #swap{
-    width: 100%;
-    max-width: 285px;
-    max-height: 190px;
+    width: 285px;
+    height: 190px;
 }
 
 .card-text,
@@ -350,12 +362,12 @@ select{
 #noswap{
     margin-left: 50px;
     text-align: right;
+    margin-right: -10px;
 }
 
 .card-body{
     max-width: 260px;
     margin-left: 10px;
-
 }
 
 #noswap-pic{
@@ -368,11 +380,13 @@ select{
 }
 
 .blog-label-swap{
-    margin: -180px auto auto 15px;
+    top: 5px;
+    left: 325px;
 }
 
 .blog-label-noswap{
-    margin: 10px auto auto 130px;
+    top: 5px;
+    right: 365px;
 }
 
 .blog-label-noswap div,
@@ -507,6 +521,12 @@ select{
         max-height: 150px;
     }
 
+    .img-card-container{
+        position: relative;
+        width: 200px;
+        height: 150px;
+    }
+
     .card-body{
         max-width: 150px;
     }
@@ -526,24 +546,28 @@ select{
         font-size: 11px;
     }
 
+
     .blog-label-swap{
-        margin: -130px auto auto 5px;
+        left: 5px;
     }
 
     .blog-label-noswap{
-        margin: 5px auto auto 105px;
+        top: 5px;
+        right: 5px;
     }
 
     .blog-label-noswap div,
     .blog-label-swap div{
-       font-size: 10px;
+        margin: 0 2px;
+        font-size: 11px;
+        padding: 2px 2px;
+    }
+
+    #noswap {
+        text-align: right;
+        margin-right: 7px;
     }
 
 }
 
-@media (max-width: 760px) {
-    .card-img-top {
-        max-width: 350px;
-    }
-}
 
