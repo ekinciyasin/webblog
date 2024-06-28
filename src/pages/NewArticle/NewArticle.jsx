@@ -207,7 +207,7 @@ const NewArticle = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container container-newarticle">
             <form onSubmit={handleOnSubmit}>
                 <div className="mb-4">
                     <label htmlFor="title" className="form-label text-style">Titel</label>
@@ -254,7 +254,11 @@ const NewArticle = () => {
                     <ReactQuill modules={module} theme="snow" value={description} onChange={setDescription}
                                 id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
-                <button type="submit" className="btn-form-submit">Submit</button>
+                <div className="button-div btn-left">
+                    <a className="button third" type="submit">
+                        <button>Submit</button>
+                        <span className="span"></span></a>
+                </div>
             </form>
             <ToastContainer/>
             {/*<br/>*/}

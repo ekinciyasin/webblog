@@ -68,13 +68,13 @@ const Users = () => {
                         <td>{user.username}</td>
                         <td>{user.email}</td>
                         <td>{user.role}</td>
-                        <td>
-                            <button className="user-btn user-btn-primary me-2" onClick={() => handleEditUser(user)}>
+                        <td className="bearbeiten-loeschen-btn-div">
+                            <div className="edit-btn-div" onClick={() => handleEditUser(user)}>
                                 Bearbeiten
-                            </button>
-                            <button className="user-btn user-btn-danger" onClick={() => handleDeleteUser(user.id)}>
+                            </div>
+                            <div className="delete-btn-div" onClick={() => handleDeleteUser(user.id)}>
                                 Löschen
-                            </button>
+                            </div>
                         </td>
                     </tr>
                 ))}

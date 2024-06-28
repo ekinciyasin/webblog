@@ -171,9 +171,9 @@ const BlocksList = ({ userRole }) => {
                     ))}
                     {visibleArticles < filteredArticles.length && (
                         <div className="button-div">
-                        <a className="button third">
-                            <button onClick={handleShowMore}>Mehr anzeigen</button>
-                            <span></span></a>
+                        <a className="button third" onClick={handleShowMore}>
+                            <button>Mehr anzeigen</button>
+                            <span className="span"></span></a>
                         </div>
                     )}
                     {showEditor && <ArticleEdition articleContent={articleContent} handleEditorOnSubmit={handleEditorOnSubmit} />}

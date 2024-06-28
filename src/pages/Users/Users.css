@@ -47,26 +47,6 @@
     background-color: #374a5e;
 }
 
-.user-btn {
-    border: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.user-btn-primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.user-btn-danger {
-    background-color: #dc3545;
-    color: white;
-}
-
-.user-btn-primary:hover, .user-btn-danger:hover {
-    opacity: 0.8;
-}
 
 .modal-content {
     background-color: #2a3b4c !important;

@@ -78,11 +78,19 @@ const Login = ({onLogin}) => {
         <div className="login-container">
             <h2 className="login-title">Anmeldung</h2>
             <form onSubmit={handleLogin}>
-                <Input id="email" label="Email Adresse" error={errors.email}  onChange={(event) => setEmail(event.target.value)}/>
-                <Input id="password" label="Passwort" error={errors.password}  onChange={(event) => setPassword(event.target.value)} type="password"/>
+                <Input id="email" label="Email Adresse" error={errors.email}
+                       onChange={(event) => setEmail(event.target.value)}/>
+                <Input id="password" label="Passwort" error={errors.password}
+                       onChange={(event) => setPassword(event.target.value)} type="password"/>
                 {successMessage && <div className="alert alert-success">{successMessage}</div>}
                 {generalError && <div className="alert alert-danger">{generalError}</div>}
-                <button type="submit" className="btn btn-success">Einloggen</button>
+                <div className="button-div btn-left">
+                    <a className="button third">
+                        <button type="submit">Einloggen</button>
+                        <span></span></a>
+                </div>
+
+                {/*<button type="submit" className="btn btn-success">Einloggen</button>*/}
                 <div className="mt-3">
                     <p>Noch kein Mitglied? <Link to="/signup">Registrieren</Link></p>
                     <p>Passwort vergessen? <Link to="/reset-password">Passwort zurücksetzen</Link></p>
