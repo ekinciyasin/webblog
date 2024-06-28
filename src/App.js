@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
-
 import Users from "./pages/Users/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Loading from "./components/Loading";
@@ -13,6 +12,8 @@ import './App.css';
 import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
 import Footer from "./pages/Footer"
+import NotFound from "./pages/NotFound";
+import DeleteAccount from "./components/DeleteAccount"; // Import the DeleteAccount component
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -31,10 +32,8 @@ function App() {
         setLoading(false);
     }, []);
 
-
     const handleLogin = (user) => {
         if(user !==undefined){
-
             setIsLoggedIn(true);
             setUserRole(user.role);
             setUsername(user.username);
@@ -56,7 +55,7 @@ function App() {
     const router = createBrowserRouter([
         {
             path: "/",
-            element: <HomePage userRole={userRole}/>,
+            element: <HomePage userRole={userRole} />,
         },
         {
             path: "/login",
@@ -74,7 +73,7 @@ function App() {
             path: "/new-article",
             element: (
                 <ProtectedRoute isLoggedIn={isLoggedIn} userRole={userRole}>
-                   <NewArticle/>
+                    <NewArticle />
                 </ProtectedRoute>
             ),
         },
@@ -83,9 +82,21 @@ function App() {
             element: (
                 <ProtectedRoute isLoggedIn={isLoggedIn} userRole={userRole}>
                     <Users />
-                </ProtectedRoute >
+                </ProtectedRoute>
             ),
         },
+        {
+            path: "/delete-account",
+            element: (
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                    <DeleteAccount />
+                </ProtectedRoute>
+            ),
+        },
+        {
+            path: "/not-found",
+            element: <NotFound />,
+        }
     ]);
 
     if (loading) {
@@ -96,7 +107,7 @@ function App() {
         <div>
             <NavBar isLoggedIn={isLoggedIn} username={username} userRole={userRole} onLogout={handleLogout} />
             <RouterProvider router={router} />
-            <Footer userRole={userRole}/>
+            <Footer userRole={userRole} />
         </div>
     );
 }

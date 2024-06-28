@@ -276,6 +276,12 @@
       "email": "mary1@mail.com",
       "role": "admin",
       "password": "123456"
+    },
+    {
+      "id": "83c3",
+      "username": "Max Mustermann",
+      "email": "max@web.de",
+      "password": "1234"
     }
   ]
 }
