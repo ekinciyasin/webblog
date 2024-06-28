@@ -6,6 +6,7 @@ import { Slide, toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import '../pages/NewArticle/toastify.css';
 import ArticleEdition from "../pages/NewArticle/ArticleEdition";
+import Modal from "../pages/NewArticle/Modal/Modal";
 
 const Status = {
     IDLE: 'idle',
@@ -176,7 +177,16 @@ const BlocksList = ({ userRole }) => {
                             <span></span></a>
                         </div>
                     )}
-                    {showEditor && <ArticleEdition articleContent={articleContent} handleEditorOnSubmit={handleEditorOnSubmit} />}
+                    <Modal isOpen={showEditor} onClose={() => setShowEditor(false)}>
+                        {articleContent ? (
+                            <ArticleEdition
+                                articleContent={articleContent}
+                                handleEditorOnSubmit={handleEditorOnSubmit}
+                            />
+                        ) : (
+                            <div>Loading...</div>
+                        )}
+                    </Modal>
                     <ToastContainer />
                 </div>
             </div>
