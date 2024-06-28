@@ -3,7 +3,19 @@
     --gold: #FBD784;
     --hover: #bb8b0d;
     --white: #fdf7fd;
-    --green: #3d7794;
+    --red: #905353;
+    --green: rgba(33, 75, 98, 0.45);
+    --primary: hsl(155, 20%, 37%);
+    --primaryBg: hsla(155, 100%, 65%, 1%);
+    --primaryHi: hsla(155, 100%, 75%, 25%);
+    --primaryFg: hsl(165, 4%, 39%);
+    --secondary: hsl(156, 51%, 14%);
+    --secondaryFg: hsl(156, 51%, 75%);
+    --secondaryBg: hsla(156, 51%, 14%, 5%);
+    --secondaryHi: hsla(156, 51%, 30%, 50%);
+    --accent: hsl(155, 100%, 94%);
+    --accentBg: hsla(155, 100%, 94%, 1%);
+    --accentHi: hsla(155, 100%, 100%, 25%);
 }
 
 h1{
@@ -13,27 +25,37 @@ h1{
     margin-top: -55px!important;
 
 }
+
 #root{
     background-color: var(--background);
     min-height: 100vh;
     color: var(--white);
+    position: absolute;
+    width: 100%;
+    z-index: -2;
 }
-
 
 .logo{
     width: 120px;
 }
+
 #navbar,
 .a-categorien{
     align-items: flex-start;
 }
+
 #navbar {
     background-image: linear-gradient(to bottom, rgba(11, 29, 38, 0) 20%, rgba(11, 29, 38, 1) 100%), url("https://i.ibb.co/Smh8gs4/cover.png");
     height: 510px;
     --bs-nav-link-color: var(--white) !important;
     background-size: cover;
     background-position: top;
+
+    width: 100%;
+
+
 }
+
 
 #navbar:after {
     background-image: linear-gradient(180deg, #fff,  #0B1D26);
@@ -65,6 +87,120 @@ a::before {
 #navbar-toggler{
     color: white !important;
 }
+
+
+/*//////////////////BUTTON///////////////////////////////////*/
+
+.button-div{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.btn-left{
+    justify-content: left;
+    margin-left: 10px;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    height: 40px;
+    width: 150px;
+    z-index: 9999;
+}
+
+.button-div button {
+    height: 40px;
+    width: 150px;
+    clip-path: path("M0 20C0 9 9 0 20 0H130C141 0 150 9 150 20V20C150 31 141 40 130 40H20C9 40 0 31 0 20Z");
+    border: none;
+    border-radius: 13px;
+    background-color: var(--primaryBg);
+    box-shadow: 0px -3px 15px 0px var(--primaryHi) inset;
+    color: var(--primaryFg);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translateY(0px);
+    transition: all 0.2s ease;
+}
+
+.span {
+    width: 70px;
+    height: 50px;
+    background-color: var(--primaryHi);
+    border-radius: 100%;
+    filter: blur(20px);
+    position: absolute;
+    bottom: -50%;
+    transition: all 0.2s ease;
+}
+
+.button:hover > span {
+    opacity: 60%;
+}
+
+.button:hover > button {
+    transform: translateY(5px);
+}
+
+.button.sec > button {
+    background-color: var(--accentBg);
+    box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
+    color: var(--gold);
+}
+
+.button.sec > span {
+    background-color: var(--accentHi);
+}
+
+
+.button.third > button {
+    background-color: var(--secondaryBg);
+    box-shadow: 0 -3px 15px 0 #143546 inset;
+    color: var(--gold);
+}
+
+.button.third > span {
+    background-color: var(--green);
+}
+
+
+/*////////////////////////SECONDARY BTN////////////////////////////*/
+
+.bearbeiten-loeschen-btn-div{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 170px;
+    justify-content: space-between;
+}
+
+.delete-btn-div{
+    color: var(--red);
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+
+.block-edit-btn,
+.edit-btn-div{
+    color: var(--primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/*////////////////////////////////////////////////////*/
 
 
 /*//////////////////HOME PAGE///////////////////////////////////*/
@@ -204,30 +340,28 @@ select{
 }
 
 .blog-label-swap{
-    margin: -175px auto auto 20px;
+    margin: -180px auto auto 15px;
 }
 
 .blog-label-noswap{
-    margin: 10px auto auto 110px;
+    margin: 10px auto auto 130px;
 }
 
 .blog-label-noswap div,
 .blog-label-swap div{
     display: inline;
-    font-size: 13px;
-    background-color: rgba(255, 202, 32, 0.9);
+    font-size: 12px;
     margin: 5px;
     padding: 3px 4px;
+    color: var(--white);
+    background: rgba(58, 58, 57, 0.6);
+    box-shadow: 0 5px 32px 0 rgb(97 97 116 / 37%);
+    backdrop-filter: blur( 6px );
+    -webkit-backdrop-filter: blur( 6px );
     border-radius: 5px;
-    color: var(--background);
-    opacity: 0;
-    transition: all .4s ease-in-out;
+    border: 1px solid rgba( 255, 255, 255, 0.10 );
 }
 
-#customCard:hover .blog-label-noswap div,
-#customCard:hover .blog-label-swap div{
-    opacity: 1;
-}
 
 .block-edit-btn-container{
     display: flex;
@@ -241,19 +375,18 @@ select{
     margin-left: -5px;
 }
 
-.block-edit-btn{
+.card-second-btn{
     font-size: 13px;
     background-color: rgba(0, 0, 0, 0);
     margin-top: -10px;
     line-height: 12px;
     border: none;
-    color: var(--green);
-    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.block-edit-btn:hover{
+.block-edit-btn:hover,
+.delete-btn-div:hover,
+.edit-btn-div:hover{
     transform: scale(1.1);
-    color: #4983a1;
 }
 
 /*///////////////////////////////////////////////////////////////////*/
@@ -381,24 +514,16 @@ select{
     }
 
     .blog-label-swap{
-        margin: -125px auto auto 10px;
+        margin: -130px auto auto 5px;
     }
 
     .blog-label-noswap{
-        margin: 10px auto auto 80px;
+        margin: 5px auto auto 105px;
     }
 
     .blog-label-noswap div,
     .blog-label-swap div{
-        display: inline;
-        font-size: 12px;
-        background-color: rgba(255, 202, 32, 0.9);
-        margin: 5px;
-        padding: 3px 4px;
-        border-radius: 5px;
-        color: var(--background);
-        opacity: 0;
-        transition: all .4s ease-in-out;
+       font-size: 10px;
     }
 
 }

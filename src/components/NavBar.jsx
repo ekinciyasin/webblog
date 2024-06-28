@@ -6,7 +6,7 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light" id="navbar">
-                <div className="container">
+                <div className="container navbar-container">
                     <a className="navbar-brand" href="/">
                         <img className="logo" src="https://i.ibb.co/RDwKkQb/logo2.png" alt="Logo" />
                     </a>

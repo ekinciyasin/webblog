@@ -171,9 +171,11 @@ const BlocksList = ({ userRole }) => {
                         </div>
                     ))}
                     {visibleArticles < filteredArticles.length && (
-                        <button onClick={handleShowMore} className="btn btn-primary custom-primary-btn">
-                            Mehr anzeigen
-                        </button>
+                        <div className="button-div">
+                        <a className="button third" onClick={handleShowMore}>
+                            <button>Mehr anzeigen</button>
+                            <span className="span"></span></a>
+                        </div>
                     )}
                     <Modal isOpen={showEditor} onClose={() => setShowEditor(false)}>
                         {articleContent ? (

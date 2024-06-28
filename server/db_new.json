@@ -383,27 +383,6 @@
   ],
   "users": [
     {
-      "id": "1",
-      "username": "Mats",
-      "email": "mats@gmail.com",
-      "role": "USER",
-      "password": "password"
-    },
-    {
-      "id": "1",
-      "username": "YASIN",
-      "email": "yasin@gmail.com",
-      "role": "ADMIN",
-      "password": "password"
-    },
-    {
-      "id": "2",
-      "username": "Eva",
-      "email": "eva@gmail.com",
-      "role": "USER",
-      "password": "password"
-    },
-    {
       "id": "3",
       "username": "Ganna",
       "email": "ganna@gmail.com",
