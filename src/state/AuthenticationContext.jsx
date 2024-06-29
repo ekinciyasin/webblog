@@ -13,8 +13,13 @@ function AuthenticationContext(props) {
         storeAuthState(data);
     }
 
+    const onLogoutSuccess = () => {
+        setAuth({id:0})
+        storeAuthState({id:0})
+    }
+
     return (
-        <AuthContext.Provider value={{...auth ,onLoginSuccess}}>
+        <AuthContext.Provider value={{...auth ,onLoginSuccess,onLogoutSuccess}}>
              {props.children}
         </AuthContext.Provider>
     );
