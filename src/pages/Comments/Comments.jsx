@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import axios from "axios";
 import './Comments.css';
+import {AuthContext} from "../../state/AuthenticationContext";
 
-const Comments = ({ comments, setComments, username, blockId, userRole }) => {
+const Comments = ({ comments, setComments,  blockId }) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [editingComment, setEditingComment] = useState(null);
     const [editText, setEditText] = useState('');
     const commentsPerPage = 3;
-
     const indexOfLastComment = currentPage * commentsPerPage;
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;
     const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
+    const authContext = useContext(AuthContext);
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -79,9 +80,9 @@ const Comments = ({ comments, setComments, username, blockId, userRole }) => {
                             <p>{comment.text}</p>
                             <div className="comment-footer">
                                 <p><strong>{comment.user}</strong></p>
-                                {(comment.user === username || userRole === 'ADMIN') && (
+                                {(comment.user === authContext.username || authContext.role === 'ADMIN') && (
                                     <div className="comment-buttons">
-                                        {comment.user === username && (
+                                        {comment.user === authContext.username && (
                                             <button onClick={() => handleEdit(comment)} className="btn btn-secondary">Bearbeiten</button>
                                         )}
                                         <button onClick={() => handleDelete(comment.id)} className="btn btn-danger">Löschen</button>

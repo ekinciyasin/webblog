@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 
+
 const CommentsSection = (props) => {
-    const {blockId, username ,userRole } = props;
+    const {blockId} = props;
     const [comments, setComments] = useState([]);
 
     useEffect(() => {
@@ -12,7 +13,7 @@ const CommentsSection = (props) => {
             try {
                 const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
                 const { blockKommentare } = response.data[0];
-                setComments(blockKommentare || []);  // Eğer blockKommentare yoksa boş bir dizi olarak ayarlayın
+                setComments(blockKommentare || []);
             } catch (error) {
                 console.error("Error fetching comments:", error);
             }
@@ -22,8 +23,8 @@ const CommentsSection = (props) => {
 
     return (
         <div>
-            <Comments  userRole={userRole} username={username} blockId={blockId} comments={comments} setComments={setComments} />
-            <AddComment username={username} blockId={blockId} setComments={setComments} comments={comments} />
+            <Comments  blockId={blockId} comments={comments} setComments={setComments} />
+            <AddComment blockId={blockId} setComments={setComments} comments={comments} />
         </div>
     );
 };
