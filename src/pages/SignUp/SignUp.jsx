@@ -1,14 +1,12 @@
-import React, {useEffect, useMemo, useState} from 'react';
-import {signUp, signUpUser} from "./api";
+import React, {useContext, useEffect, useMemo, useState} from 'react';
+import {signUp} from "./api";
 import Input from "../../components/Input";
-import {login, loginUser} from "../Login/api";
+import {login} from "../Login/api";
 import {useNavigate} from "react-router-dom";
-import {getUser} from "../../api/ApiCalls";
 
+import {AuthContext} from "../../state/AuthenticationContext";
 
-
-
-const SignUp = ({onLogin}) => {
+const SignUp = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +16,7 @@ const SignUp = ({onLogin}) => {
     const [errors, setErrors] = useState({})
     const [generalError, setGeneralError] = useState('');
     const navigate = useNavigate();
-
+    let authState = useContext(AuthContext);
     useEffect(() => {
         setErrors(function(lastErrors){
             return {...lastErrors,
@@ -52,29 +50,10 @@ const SignUp = ({onLogin}) => {
             }
     }, [password,passwordRepeat]);
 
-
-
-
     const onSubmit =  async (event) => {
         event.preventDefault();
         setSuccessMessage('');
         setGeneralError('');
-        //
-        // with API -springboot
-        // signUp({username, email, password})
-        //     .then((response) => {setSuccessMessage(response.data.message) })
-        //     .catch((axiosError) => {
-        //         if(axiosError.response?.data && axiosError.response.status === 400) {
-        //             setErrors(axiosError.response.data.validationErrors);
-        //         }else{
-        //            setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
-        //         }
-        //     })
-        //     .finally(() => setApiProgress(false));
-        // setApiProgress(true)
-        //
-
-        // with DummyData
 
         let newErrors = {};
         if (username.length < 5 || username.length > 20) {
@@ -98,7 +77,7 @@ const SignUp = ({onLogin}) => {
         try {
             newUser = await signUp({ username, email, password });
             await login(email, password);
-            onLogin(newUser);
+            authState.onLoginSuccess(newUser);
             navigate("/");
         } catch (error) {
             setGeneralError(error.message || 'Registrierung fehlgeschlagen.');
