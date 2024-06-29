@@ -59,7 +59,7 @@ const AddComment = ({blockId, setComments, comments }) => {
                 </div>
 
                 </form>
-
+            )}
             {authContext.id === 0 && (
                 <div className="text-center p-3">
                     <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
