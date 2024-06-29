@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import BlockItem from "./BlockItem";
 import Filter from "./Filter";
 import { deleteArticle, editArticles, fetchArticles } from "../pages/NewArticle/utils-api";
@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import '../pages/NewArticle/toastify.css';
 import ArticleEdition from "../pages/NewArticle/ArticleEdition";
 import Modal from "../pages/NewArticle/Modal/Modal";
+import {AuthContext} from "../state/AuthenticationContext";
 
 const Status = {
     IDLE: 'idle',
@@ -15,7 +16,7 @@ const Status = {
     REJECTED: 'rejected'
 }
 
-const BlocksList = ({ userRole }) => {
+const BlocksList = () => {
     const [selectedTyp, setSelectedTyp] = useState("all");
     const [selectedLand, setSelectedLand] = useState("all");
     const [articles, setArticles] = useState([]);
@@ -23,7 +24,8 @@ const BlocksList = ({ userRole }) => {
     const [status, setStatus] = useState('');
     const [showEditor, setShowEditor] = useState(false);
     const [articleContent, setArticleContent] = useState(null);
-    const [visibleArticles, setVisibleArticles] = useState(4); // State to manage visible articles
+    const [visibleArticles, setVisibleArticles] = useState(4);
+    const authContext = useContext(AuthContext)// State to manage visible articles
 
     function setSelectedTypHandler(value) {
         setSelectedTyp(value);
@@ -159,7 +161,7 @@ const BlocksList = ({ userRole }) => {
                                 handleDeleteArticle={handleDeleteArticle}
                                 handleEditArticle={handleEditArticle}
                                 id={b.id}
-                                userRole={userRole}
+                                userRole={authContext.role}
                                 title={b.blockTitle}
                                 url={b.blockBild}
                                 blockland={b.blockLand}

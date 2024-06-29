@@ -5,7 +5,6 @@ export const AuthContext = createContext();
 
 
 function AuthenticationContext(props) {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [auth, setAuth] = useState(loadAuthState());
 
     const onLoginSuccess = (data) => {
