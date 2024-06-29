@@ -11,6 +11,7 @@
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     z-index: 1000;
+
 }
 
 .modal-open {
@@ -30,12 +31,13 @@
 }
 
 .modal-content-container {
+    min-width: 350px;
     position: relative;
     /*margin: 20px;*/
     width: 60vw;
     border-radius: 10px;
     /*#2a3b4c !important*/
-    background: rgba(69, 87, 94, 0.05);
+    background-color: rgb(27 37 41 / 83%);
     /*backdrop-filter: blur(4px);*/
     /*-webkit-backdrop-filter: blur(4px);*/
     color: var(--white);

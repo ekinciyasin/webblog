@@ -12,15 +12,14 @@ const Comments = ({ comments, setComments,  blockId }) => {
     const indexOfFirstComment = indexOfLastComment - commentsPerPage;
     const currentComments = comments.slice(indexOfFirstComment, indexOfLastComment);
     const authContext = useContext(AuthContext);
-
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     const handleDelete = async (commentId) => {
         try {
             const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
-            const { id, blockKommentare } = response.data[0];
+            const {id, blockKommentare} = response.data[0];
             const updatedComments = blockKommentare.filter(comment => comment.id !== commentId);
-            await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: updatedComments });
+            await axios.patch(`http://localhost:3005/articles/${id}`, {blockKommentare: updatedComments});
             setComments(updatedComments);
         } catch (error) {
             console.error("Error deleting comment:", error);
@@ -40,11 +39,11 @@ const Comments = ({ comments, setComments,  blockId }) => {
         e.preventDefault();
         try {
             const response = await axios.get(`http://localhost:3005/articles?blockId=${blockId}`);
-            const { id, blockKommentare } = response.data[0];
+            const {id, blockKommentare} = response.data[0];
             const updatedComments = blockKommentare.map(comment =>
-                comment.id === editingComment ? { ...comment, text: editText } : comment
+                comment.id === editingComment ? {...comment, text: editText} : comment
             );
-            await axios.patch(`http://localhost:3005/articles/${id}`, { blockKommentare: updatedComments });
+            await axios.patch(`http://localhost:3005/articles/${id}`, {blockKommentare: updatedComments});
             setComments(updatedComments);
             setEditingComment(null);
         } catch (error) {
@@ -69,11 +68,15 @@ const Comments = ({ comments, setComments,  blockId }) => {
                                     onChange={handleEditChange}
                                     rows="3"
                                     required
-                                    style={{ color: 'black' }}
+                                    style={{color: 'black'}}
                                 />
-                                <button type="submit" className="btn btn-primary">Speichern</button>
-                            </form>
 
+                                <div className="button-div btn-left" onClick={handleEditSubmit}>
+                                    <a className="button third">
+                                        <button>Speichern</button>
+                                        <span className="span"></span></a>
+                                </div>
+                            </form>
                         </div>
                     ) : (
                         <>
@@ -81,11 +84,15 @@ const Comments = ({ comments, setComments,  blockId }) => {
                             <div className="comment-footer">
                                 <p><strong>{comment.user}</strong></p>
                                 {(comment.user === authContext.username || authContext.role === 'ADMIN') && (
-                                    <div className="comment-buttons">
+                                    <div className="block-edit-btn-container flex-end">
                                         {comment.user === authContext.username && (
-                                            <button onClick={() => handleEdit(comment)} className="btn btn-secondary">Bearbeiten</button>
+                          
+                                            <div onClick={() => handleEdit(comment)}
+                                                 className="edit-btn-div card-second-btn font17">Bearbeiten</div>
                                         )}
-                                        <button onClick={() => handleDelete(comment.id)} className="btn btn-danger">Löschen</button>
+                                        <div onClick={() => handleDelete(comment.id)}
+                                             className="delete-btn-div card-second-btn font17">Löschen
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -97,9 +104,9 @@ const Comments = ({ comments, setComments,  blockId }) => {
                 <ul className="pagination">
                     {[...Array(Math.ceil(comments.length / commentsPerPage)).keys()].map(number => (
                         <li key={number} className={`page-item ${number + 1 === currentPage ? 'active' : ''}`}>
-                            <button onClick={() => paginate(number + 1)} className="page-link">
+                            <div onClick={() => paginate(number + 1)} className="page-link">
                                 {number + 1}
-                            </button>
+                            </div>
                         </li>
                     ))}
                 </ul>

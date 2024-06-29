@@ -187,6 +187,7 @@ const NewArticle = () => {
 
     return (
         <div className="container container-newarticle">
+            <h1>Neuen Artikel erstellen</h1>
             <form onSubmit={handleOnSubmit}>
                 <div className="mb-4">
                     <label htmlFor="title" className="form-label text-style">Titel</label>
@@ -240,8 +241,6 @@ const NewArticle = () => {
                 </div>
             </form>
             <ToastContainer/>
-
-            <Main/>
         </div>
     );
 };

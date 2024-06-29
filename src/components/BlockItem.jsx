@@ -52,33 +52,32 @@ const BlockItem = ({
                             )}
 
                             <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
-                            {/*<div className="card-text">{blockText}</div>*/}
                             <div className="card-date">{formattedDate}</div>
                             <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum
                                 Blogartikel
                                 --></Link>
                         </div>
-                        <div>
-                            <img className="card-img-top" src={url} alt="Card image cap" id="noswap-pic"/>
+                        <div className="img-card-container" id="noswap-pic">
+                            <img className="img-card" src={url} alt="Card image cap" id="noswap-pic"/>
                             <div className="blog-label-swap">
                                 {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
-                                    <div>{item}</div>
+                                    {item}
                                 </div>))}
-                                {/*<div>{blockReiseTyp}</div>*/}
                                 <div>{blockland}</div>
                             </div>
                         </div>
                     </>
                 ) : (
                     <>
-                        <img className="card-img-top" src={url} alt="Card image cap" id="swap"/>
+                    <div className="img-card-container">
+                        <img className="img-card" src={url} alt="Card image cap" id="swap"/>
                         <div className="blog-label-noswap">
                             {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
-                                <div>{item}</div>
+                                {item}
                             </div>))}
-                            {/*<div>{blockReiseTyp}</div>*/}
                             <div>{blockland}</div>
                         </div>
+                    </div>
                         <div className="card-body" id="card-body">
                             <h5 className="card-title" id="card-title">{title}</h5>
 
@@ -89,7 +88,6 @@ const BlockItem = ({
                                 </div>
                             )}
                             <div className="card-text" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
-                            {/*<div className="card-text">{blockText}</div>*/}
                             <div className="card-date">{formattedDate}</div>
                             <Link to={`${blockId}`} className="btn btn-primary" id="customBtnBlockItem">Zum Blogartikel
                                 --></Link>

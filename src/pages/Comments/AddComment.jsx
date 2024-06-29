@@ -49,16 +49,24 @@ const AddComment = ({blockId, setComments, comments }) => {
                             style={{color: 'black'}}
                         ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>
-                </form>
-            )}
-            {authContext.id === 0 && (
-                <div className="text-center p-3">
-                <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
-                <Link to="/login">Einloggen</Link>
+                    <div className="button-div btn-left" onClick={handleCommentSubmit}>
+                        <div className="button third">
+                        <button>
+                            Submit
+                        </button>
+                        <span className="span"></span>
+                        </div>
                 </div>
 
-                )}
+                </form>
+
+            {authContext.id === 0 && (
+                <div className="text-center p-3">
+                    <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
+                    <Link to="/login">Einloggen</Link>
+                </div>
+
+            )}
         </div>
     );
 };

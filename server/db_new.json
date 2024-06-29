@@ -76,6 +76,24 @@
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37272g",
       "blockKommentare": [
         {
+          "id": 1719591168600,
+          "user": "YASIN2",
+          "text": "fggjg1",
+          "timestamp": "6/28/2024, 6:12:48 PM"
+        },
+        {
+          "id": 1719589351240,
+          "user": "Ganna",
+          "text": "dgerg",
+          "timestamp": "6/28/2024, 5:42:31 PM"
+        },
+        {
+          "id": 1719589196719,
+          "user": "Ganna",
+          "text": "fdgd",
+          "timestamp": "6/28/2024, 5:39:56 PM"
+        },
+        {
           "id": 1719477229136,
           "userId": "YASIN",
           "text": "SAFARI TEST 2",
@@ -86,36 +104,6 @@
           "userId": "YASIN",
           "text": "SAFARI TEST",
           "timestamp": "6/27/2024, 10:25:01 AM"
-        },
-        {
-          "user": "Grace",
-          "text": "Thanks for the insights!",
-          "timestamp": "6/27/2024, 10:23:31 AM"
-        },
-        {
-          "user": "Hank",
-          "text": "Very detailed post.",
-          "timestamp": "6/27/2024, 10:23:31 AM"
-        },
-        {
-          "user": "Ivy",
-          "text": "Helped me a lot, thanks!",
-          "timestamp": "6/27/2024, 10:23:31 AM"
-        },
-        {
-          "user": "David",
-          "text": "Interesting perspective!",
-          "timestamp": "7/27/2021, 6:39:58 AM"
-        },
-        {
-          "user": "Eve",
-          "text": "I disagree with some points, but overall good.",
-          "timestamp": "6/27/2024, 10:23:31 AM"
-        },
-        {
-          "user": "Frank",
-          "text": "Can you elaborate more on this topic?",
-          "timestamp": "6/27/2024, 10:23:31 AM"
         }
       ],
       "id": "8414"
@@ -383,13 +371,6 @@
   ],
   "users": [
     {
-      "id": "3",
-      "username": "Ganna",
-      "email": "ganna@gmail.com",
-      "role": "ADMIN",
-      "password": "password"
-    },
-    {
       "id": "4",
       "username": "Mats",
       "email": "mats@gmail.com",
@@ -428,6 +409,24 @@
       "username": "Max Mustermann",
       "email": "max@web.de",
       "password": "1234"
+    },
+    {
+      "id": "eded",
+      "username": "evaog",
+      "email": "eva@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "eeab",
+      "username": "evvaog",
+      "email": "evva@gmail.com",
+      "password": "password"
+    },
+    {
+      "id": "490e",
+      "username": "markus",
+      "email": "markus@m.com",
+      "password": "password"
     }
   ]
 }
