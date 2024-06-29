@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import {AuthContext} from "../state/AuthenticationContext";
 
-const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
+const NavBar = () => {
+    const authState = useContext(AuthContext)
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light" id="navbar">
@@ -17,7 +19,7 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav ms-auto">
-                            {userRole === 'ADMIN' && (
+                            {authState.role === 'ADMIN' && (
                                 <>
                                     <li className="nav-item">
                                         <a className="nav-link a-categorien" href="/new-article">Neuen Artikel erstellen</a>
@@ -27,18 +29,18 @@ const NavBar = ({ isLoggedIn, username, userRole, onLogout }) => {
                                     </li>
                                 </>
                             )}
-                            {isLoggedIn && username ? (
+                            {authState.id !== 0 ? (
                                 <>
                                     <li className="nav-item dropdown">
                                         <span className="nav-link dropdown-toggle bold-italic" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Hallo, {username}
+                                            Hallo, {authState.username}
                                         </span>
                                         <ul className="dropdown-menu" aria-labelledby="userDropdown">
                                             <li><a className="dropdown-item" href="/delete-account">Account löschen</a></li>
                                         </ul>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link a-categorien" onClick={onLogout} href="/">Ausloggen</a>
+                                        <a className="nav-link a-categorien" onClick={authState.onLogoutSuccess} href="/">Ausloggen</a>
                                     </li>
                                 </>
                             ) : (

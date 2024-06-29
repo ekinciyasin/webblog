@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import axios from "axios";
 import {Link} from "react-router-dom";
+import {AuthContext} from "../../state/AuthenticationContext";
 
-const AddComment = ({ username, blockId, setComments, comments }) => {
+const AddComment = ({blockId, setComments, comments }) => {
     const [commentText, setCommentText] = useState('');
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const authContext = useContext(AuthContext);
     const handleCommentChange = (e) => {
         setCommentText(e.target.value);
     };
@@ -14,7 +15,7 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
         if (commentText.trim()) {
             const newComment = {
                 id: Date.now(),
-                user: username,
+                user: authContext.username,
                 text: commentText,
                 timestamp: new Date().toLocaleString()
             };
@@ -34,7 +35,7 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
 
     return (
         <div className="mt-5">
-            {isLoggedIn && (
+            {authContext.id !== 0 && (
                 <form onSubmit={handleCommentSubmit}>
                     <div className="mb-3">
                         <label htmlFor="comment" className="form-label">Kommentar schreiben</label>
@@ -48,10 +49,6 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
                             style={{color: 'black'}}
                         ></textarea>
                     </div>
-
-
-                    {/*<button type="submit" className="btn btn-primary">Kommentar hinzufügen</button>*/}
-
                     <div className="button-div btn-left" onClick={handleCommentSubmit}>
                         <div className="button third">
                         <button>
@@ -62,8 +59,8 @@ const AddComment = ({ username, blockId, setComments, comments }) => {
                 </div>
 
                 </form>
-                )}
-            {!isLoggedIn && (
+
+            {authContext.id === 0 && (
                 <div className="text-center p-3">
                     <p>Bitte loggen Sie sich ein, um einen Kommentar abzugeben..</p>
                     <Link to="/login">Einloggen</Link>

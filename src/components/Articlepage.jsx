@@ -13,8 +13,7 @@ const Status = {
 }
 
 
-const ArticlePage = (props) => {
-    const {userRole,username } = props;
+const ArticlePage = () => {
     const [article, setArticle] = useState({}); // Geändert: Initialisierung auf null
     const [status, setStatus] = useState(Status.IDLE);
     const [responseMessage, setResponseMessage] = useState('');
@@ -81,7 +80,7 @@ const ArticlePage = (props) => {
                         </div>
                     </div>
                     <div className="mt-5">
-                    <CommentsSection userRole={userRole} username={username} blockId={blockId}/>
+                    <CommentsSection blockId={blockId}/>
                     </div>
                 </>
             )}

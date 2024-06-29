@@ -1,38 +1,26 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './Login.css';
 import {Link, useNavigate} from "react-router-dom";
-import {signUp} from "../SignUp/api";
-import {login, loginUser} from "./api";
+import {login} from "./api";
 import Input from "../../components/Input";
+import {AuthContext} from "../../state/AuthenticationContext";
 
-
-
-
-
-const Login = ({onLogin}) => {
-
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [apiProgress, setApiProgress] = useState(false)
     const [successMessage, setSuccessMessage] = useState('');
     const [errors, setErrors] = useState({})
     const [generalError, setGeneralError] = useState('');
     const navigate = useNavigate();
-
+    const authState = useContext(AuthContext)
     const handleLogin = async (event) => {
         event.preventDefault();
         let user;
         try {
             user = await login(email, password);
-        } catch (error) {
-            setGeneralError('Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.');
-            return;
-        }
-
-        if (user !== null) {
-            onLogin(user);
+            authState.onLoginSuccess(user);
             navigate("/");
-        } else {
+        } catch (error) {
             setGeneralError('Anmeldung fehlgeschlagen. Bitte überprüfen Sie Ihre Anmeldedaten.');
         }
     };
@@ -55,24 +43,6 @@ const Login = ({onLogin}) => {
         setGeneralError('')
     }, [password]);
 
-    // const onSubmit =  (event) => {
-    //     event.preventDefault();
-    //     setSuccessMessage('');
-    //     setGeneralError('');
-    //     signUp({username, email, password})
-    //         .then((response) => {setSuccessMessage(response.data.message) })
-    //         .catch((axiosError) => {
-    //             if(axiosError.response?.data && axiosError.response.status === 400) {
-    //                 setErrors(axiosError.response.data.validationErrors);
-    //             }else{
-    //                 setGeneralError('Ein unbekannter Fehler ist aufgetreten.')
-    //             }
-    //         })
-    //         .finally(() => setApiProgress(false));
-    //     setApiProgress(true)
-    //
-    // };
-
 
     return (
         <div className="login-container">
@@ -89,8 +59,6 @@ const Login = ({onLogin}) => {
                         <button type="submit">Einloggen</button>
                         <span className="span"></span></a>
                 </div>
-
-                {/*<button type="submit" className="btn btn-success">Einloggen</button>*/}
                 <div className="mt-3">
                     <p>Noch kein Mitglied? <Link id="mt" to="/signup">Registrieren</Link></p>
                     <p>Passwort vergessen? <Link id="mt2" to="/reset-password">Passwort zurücksetzen</Link></p>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {
     MDBFooter,
     MDBContainer,
@@ -6,12 +6,14 @@ import {
     MDBRow,
     MDBBtn
 } from 'mdb-react-ui-kit';
+import {AuthContext} from "../state/AuthenticationContext";
 
-export default function App({userRole}) {
+export default function App() {
+    let authContext = useContext(AuthContext);
     return (
         <MDBFooter className='footer--pin text-center text-white'>
             <MDBContainer className='p-4 pb-0'>
-                {userRole !== 'ADMIN' && (
+                {authContext.role !== 'ADMIN' && (
                     <div className='d-flex justify-content-center align-items-center'>
                         <li className="nav-item footer-first-div">
                             <a className="nav-link  a-categorien a-footer" href="/login">Einloggen</a>
