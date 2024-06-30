@@ -102,7 +102,6 @@ const BlockItem = ({
                         <button type="button" className="btn btn-secondary " onClick={() => setIsModalOpen(false)}>Nein
                         </button>
                     </div>
-
                 </Modal>
 
                 <Outlet/>

@@ -1,15 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { v4 as uuidv4 } from 'uuid';
 import Select from 'react-select';
 import './NewArticle.css';
-import {fetchArticles, updateArticles} from "./utils-api";
-import axios from "axios";
+import {updateArticles} from "./utils-api";
 import {Slide, toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './toastify.css';
-import Main from "./Modal/Main";
+
 
 const NewArticle = () => {
     const [title, setTitle] = useState('');
@@ -69,6 +68,7 @@ const NewArticle = () => {
 
     function handleOnSubmit(evt) {
         evt.preventDefault();
+
         let error = false;
 
         setTitleError('');
@@ -145,7 +145,7 @@ const NewArticle = () => {
 
     //Quill-Style
     const toolbarOptions  = [
-        [{ 'header': [1, 2, 3, 4, false] }],
+        [{ 'header': [2, 3, 4, false] }],
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
         [{ 'list': 'ordered'}, { 'list': 'bullet' }, { 'list': 'check' }],
         [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
@@ -163,27 +163,6 @@ const NewArticle = () => {
     }
 
 
-    async function handlePut(event) {
-        event.preventDefault();
-
-        const newComment = {
-            user: 'Anonym',
-            kommentare: 'text',
-            date: new Date().toLocaleString(),
-        };
-
-        try {
-            const response = await axios.patch(`http://localhost:3005/articles?blockId=2a2a12bd-b2c4-4e22-b64e-816e188b60bd`, {
-                "blockTitle": 'hiohiohioho'
-            });
-
-            if (response.status === 200) {
-                console.log(response.data)
-            }
-        } catch (error) {
-            console.error('Error posting comment:', error);
-        }
-    }
 
     return (
         <div className="container container-newarticle">
@@ -236,7 +215,7 @@ const NewArticle = () => {
                 </div>
                 <div className="button-div btn-left">
                     <a className="button third" type="submit">
-                        <button>Submit</button>
+                        <button>Absenden</button>
                         <span className="span"></span></a>
                 </div>
             </form>

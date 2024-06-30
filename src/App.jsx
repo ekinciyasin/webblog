@@ -11,7 +11,7 @@ import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
 import Footer from "./pages/Footer"
 import NotFound from "./pages/NotFound";
-import DeleteAccount from "./components/DeleteAccount";
+import AccountPage from "./components/AccountPage";
 import AuthenticationContext from "./state/AuthenticationContext"; // Import the DeleteAccount component
 
 function App() {
@@ -49,10 +49,10 @@ function App() {
             ),
         },
         {
-            path: "/delete-account",
+            path: "/account-page",
             element: (
                 <ProtectedRoute>
-                    <DeleteAccount />
+                    <AccountPage />
                 </ProtectedRoute>
             ),
         },
