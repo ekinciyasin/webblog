@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 import Users from "./pages/Users/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
-import ArticlePage from './components/Articlepage';
+import ArticlePage from './pages/Article/Articlepage';
 import './App.css';
 import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";

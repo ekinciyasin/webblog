@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, Navigate } from "react-router-dom";
 import axios from "axios";
-import CommentsSection from "../pages/Comments/CommentsSection";
-import {fetchArticles} from "../pages/NewArticle/utils-api";
+import CommentsSection from "../Comments/CommentsSection";
 import sanitizeHtml from 'sanitize-html';
 
 const Status = {
