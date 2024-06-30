@@ -69,15 +69,15 @@ const BlockItem = ({
                     </>
                 ) : (
                     <>
-                    <div className="img-card-container">
-                        <img className="img-card" src={url} alt="Card image cap" id="swap"/>
-                        <div className="blog-label-noswap">
-                            {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
-                                {item}
-                            </div>))}
-                            <div>{blockland}</div>
+                        <div className="img-card-container">
+                            <img className="img-card" src={url} alt="Card image cap" id="swap"/>
+                            <div className="blog-label-noswap">
+                                {blockReiseTyp.split(', ').map((item, index) => (<div key={index}>
+                                    {item}
+                                </div>))}
+                                <div>{blockland}</div>
+                            </div>
                         </div>
-                    </div>
                         <div className="card-body" id="card-body">
                             <h5 className="card-title" id="card-title">{title}</h5>
 
@@ -96,11 +96,20 @@ const BlockItem = ({
                 )}
                 <Modal width={'20vw'} bgColor={'#0B1D26'} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                     <p style={{textAlign: 'center'}}>Wollen Sie den Artikel wirklich löschen?</p>
-                    <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
-                        <button type="button" className="btn btn-primary " onClick={() => handleDeleteArticle(id)}>Ja
-                        </button>
-                        <button type="button" className="btn btn-secondary " onClick={() => setIsModalOpen(false)}>Nein
-                        </button>
+                    <div className="mt-2 pt-2 gap-2 justify-content-center align-items-center" id="custom-btn-container">
+
+                            <div className="button-div ja-nein-btn" onClick={() => handleDeleteArticle(id)}>
+                                <a className="button third" type="submit">
+                                    <button>Ja</button>
+                                    <span className="span"></span></a>
+                            </div>
+
+                            <div className="button-div ja-nein-btn" onClick={() => setIsModalOpen(false)}>
+                                <a className="button third" type="submit">
+                                    <button>Nein</button>
+                                    <span className="span"></span></a>
+                            </div>
+
                     </div>
                 </Modal>
 
