@@ -76,10 +76,10 @@
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37272g",
       "blockKommentare": [
         {
-          "id": 1719591168600,
-          "user": "YASIN2",
-          "text": "fggjg1",
-          "timestamp": "6/28/2024, 6:12:48 PM"
+          "id": 1719750841340,
+          "user": "Yasin Ekinci",
+          "text": "This blog beautifully captures the essence of the Langtang Valley Trek, highlighting its serene landscapes and rich cultural experiences. It truly inspires adventure seekers to explore this less-traveled Himalayan gem.",
+          "timestamp": "6/30/2024, 2:34:01 PM"
         },
         {
           "id": 1719589351240,
@@ -432,6 +432,13 @@
     }
   ],
   "users": [
+    {
+      "id": "1",
+      "username": "Yasin Ekinci",
+      "email": "yasin@gmail.com",
+      "role": "ADMIN",
+      "password": "password"
+    },
     {
       "id": "4",
       "username": "Mats",

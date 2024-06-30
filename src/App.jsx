@@ -11,7 +11,7 @@ import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
 import Footer from "./pages/Footer"
 import NotFound from "./pages/NotFound";
-import AccountPage from "./components/AccountPage";
+import AccountPage from "./pages/Account/AccountPage";
 import AuthenticationContext from "./state/AuthenticationContext"; // Import the DeleteAccount component
 
 function App() {
