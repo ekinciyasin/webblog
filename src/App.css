@@ -618,6 +618,15 @@ color: var(--primary);
         margin-right: 7px;
     }
 
+
+}
+
+.link-account:active{
+    background-color: transparent !important;
+}
+
+.link-account:hover{
+    background-color: hsla(155, 100%, 100%, 10%) !important;
 }
 
 

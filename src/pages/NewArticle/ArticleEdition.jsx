@@ -172,10 +172,12 @@ const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
                                 id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
 
-                <div className="button-div btn-left" onClick={handleOnSubmit}>
-                    <a className="button third" type="submit">
-                        <button>Speichern</button>
-                        <span className="span"></span></a>
+                <div className="button-div btn-left">
+
+                    <div className="button third" >
+                        <button type="submit">Speichern</button>
+                        <span className="span"></span>
+                    </div>
                 </div>
             </form>
         </div>

@@ -52,7 +52,7 @@ const AddComment = ({blockId, setComments, comments }) => {
                     <div className="button-div btn-left" onClick={handleCommentSubmit}>
                         <div className="button third">
                         <button>
-                            Submit
+                            Absenden
                         </button>
                         <span className="span"></span>
                         </div>
@@ -67,6 +67,7 @@ const AddComment = ({blockId, setComments, comments }) => {
                 </div>
 
             )}
+
         </div>
     );
 };
