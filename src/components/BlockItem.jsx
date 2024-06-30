@@ -111,7 +111,6 @@ const BlockItem = ({
                             </div>
 
                     </div>
-
                 </Modal>
 
                 <Outlet/>

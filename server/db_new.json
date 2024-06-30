@@ -94,6 +94,24 @@
           "timestamp": "6/28/2024, 5:39:56 PM"
         },
         {
+          "id": 1719703577014,
+          "user": "Ganna",
+          "text": "Hi!",
+          "timestamp": "30.06.2024, 01:26:17"
+        },
+        {
+          "id": 1719703553699,
+          "user": "Ganna",
+          "text": "Wow!",
+          "timestamp": "30.06.2024, 01:25:53"
+        },
+        {
+          "id": 1719703548058,
+          "user": "Ganna",
+          "text": "Cool!",
+          "timestamp": "30.06.2024, 01:25:48"
+        },
+        {
           "id": 1719477229136,
           "userId": "YASIN",
           "text": "SAFARI TEST 2",
@@ -249,7 +267,20 @@
       "blockDatum": "2022-07-03T08:51:36.428Z",
       "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, <strong>consetetur sadipscing elitr,</strong> sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>",
       "blockId": "8f3f0113-5240-4541-8723-05e47875758d",
-      "blockKommentare": []
+      "blockKommentare": [
+        {
+          "id": 1719718066857,
+          "user": "AnnaAnna",
+          "text": "bbbbbbklkblb",
+          "timestamp": "30.06.2024, 05:27:46"
+        },
+        {
+          "id": 1719717873210,
+          "user": "AnnaAnna",
+          "text": "bncnbnbcn",
+          "timestamp": "30.06.2024, 05:24:33"
+        }
+      ]
     },
     {
       "id": "6007",
@@ -260,7 +291,38 @@
       "blockDatum": "26.6.2024, 02:05:36",
       "blockText": "<h2 class=\"ql-align-center\"><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor</span></h2><p class=\"ql-align-center\"><br></p><p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p><p><br></p><ul><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore;</span></li><li><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\"> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></li></ul><p><br></p><p><span style=\"background-color: rgb(253, 247, 253); color: rgb(33, 37, 41);\">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</span></p>",
       "blockId": "2a2a12bd-b2c4-4e22-b64e-816e188b60bc",
-      "blockKommentare": []
+      "blockKommentare": [
+        {
+          "id": 1719718218191,
+          "user": "AnnaAnna",
+          "text": "Coole Post yoo !",
+          "timestamp": "30.06.2024, 05:30:18"
+        },
+        {
+          "id": 1719713654852,
+          "user": "AnnaAnna",
+          "text": "Hallo",
+          "timestamp": "30.06.2024, 04:14:14"
+        },
+        {
+          "id": 1719713422349,
+          "user": "AnnaAnna",
+          "text": "neue3",
+          "timestamp": "30.06.2024, 04:10:22"
+        },
+        {
+          "id": 1719713044104,
+          "user": "AnnaAnna",
+          "text": "neue2",
+          "timestamp": "30.06.2024, 04:04:04"
+        },
+        {
+          "id": 1719707473730,
+          "user": "AnnaAnna",
+          "text": "1111124",
+          "timestamp": "30.06.2024, 02:31:13"
+        }
+      ]
     },
     {
       "id": "6007b",
@@ -398,13 +460,6 @@
       "password": "1111"
     },
     {
-      "id": "8fac",
-      "username": "Mary Mary",
-      "email": "mary1@mail.com",
-      "role": "admin",
-      "password": "123456"
-    },
-    {
       "id": "83c3",
       "username": "Max Mustermann",
       "email": "max@web.de",
@@ -420,13 +475,22 @@
       "id": "eeab",
       "username": "evvaog",
       "email": "evva@gmail.com",
+      "role": "USER",
       "password": "password"
     },
     {
-      "id": "490e",
-      "username": "markus",
-      "email": "markus@m.com",
-      "password": "password"
+      "id": "aa13",
+      "username": "AnnaAnna",
+      "email": "anna@gmail.com",
+      "role": "ADMIN",
+      "password": "123456"
+    },
+    {
+      "id": "aa29",
+      "username": "Mary Wick",
+      "email": "maryWick@gmail.com",
+      "role": "USER",
+      "password": "123456"
     }
   ]
 }
