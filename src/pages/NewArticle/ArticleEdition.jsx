@@ -171,7 +171,12 @@ const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
                     <ReactQuill modules={module} theme="snow" value={description} onChange={setDescription}
                                 id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
-                <button type="submit" className="btn-form-submit">Save</button>
+
+                <div className="button-div btn-left" onClick={handleOnSubmit}>
+                    <a className="button third" type="submit">
+                        <button>Speichern</button>
+                        <span className="span"></span></a>
+                </div>
             </form>
         </div>
     );

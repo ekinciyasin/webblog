@@ -35,7 +35,7 @@ const NavBar = () => {
                                         <span className="nav-link dropdown-toggle bold-italic" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Hallo, {authState.username}
                                         </span>
-                                        <ul className="dropdown-menu" aria-labelledby="userDropdown">
+                                        <ul className="dropdown-menu" id="dropdown-menu" aria-labelledby="userDropdown">
                                             <li><a className="dropdown-item" href="/delete-account">Account löschen</a></li>
                                         </ul>
                                     </li>
