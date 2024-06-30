@@ -234,9 +234,9 @@ const NewArticle = () => {
                     <ReactQuill modules={module} theme="snow" value={description} onChange={setDescription}
                                 id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
-                <div className="button-div btn-left">
-                    <a className="button third" type="submit">
-                        <button>Submit</button>
+                <div className="button-div btn-left" onSubmit={() => handleOnSubmit()}>
+                    <a className="button third">
+                        <button type="submit">Submit</button>
                         <span className="span"></span></a>
                 </div>
             </form>
