@@ -173,10 +173,8 @@ const ArticleEdition = ({articleContent, handleEditorOnSubmit}) => {
                 </div>
 
                 <div className="button-div btn-left">
-
                     <div className="button third" >
                         <button type="submit">Speichern</button>
-                        <span className="span"></span>
                     </div>
                 </div>
             </form>

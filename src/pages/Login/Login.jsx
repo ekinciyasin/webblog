@@ -54,10 +54,11 @@ const Login = () => {
                        onChange={(event) => setPassword(event.target.value)} type="password"/>
                 {successMessage && <div className="alert alert-success">{successMessage}</div>}
                 {generalError && <div className="alert alert-danger">{generalError}</div>}
-                <div className="button-div btn-left" onClick={handleLogin}>
-                    <a className="button third">
+
+                <div className="button-div btn-left">
+                    <div className="button third">
                         <button type="submit">Einloggen</button>
-                        <span className="span"></span></a>
+                    </div>
                 </div>
                 <div className="mt-3">
                     <p>Noch kein Mitglied? <Link id="mt" to="/signup">Registrieren</Link></p>

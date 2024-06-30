@@ -8,6 +8,7 @@ import {updateArticles} from "./utils-api";
 import {Slide, toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import './toastify.css';
+import Button from "bootstrap/js/src/button";
 
 
 const NewArticle = () => {
@@ -213,10 +214,12 @@ const NewArticle = () => {
                     <ReactQuill modules={module} theme="snow" value={description} onChange={setDescription}
                                 id="description" placeholder="Bitte hier den Text eingeben..."/>
                 </div>
-                <div className="button-div btn-left" onSubmit={() => handleOnSubmit()}>
-                    <a className="button third">
+
+                <div className="button-div btn-left">
+
+                    <div className="button third">
                         <button type="submit">Submit</button>
-                        <span className="span"></span></a>
+                    </div>
                 </div>
             </form>
             <ToastContainer/>
