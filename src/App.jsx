@@ -35,7 +35,7 @@ function App() {
         {
             path: "/new-article",
             element: (
-                <ProtectedRoute >
+                <ProtectedRoute  role={["ADMIN"]}>
                     <NewArticle />
                 </ProtectedRoute>
             ),
@@ -43,7 +43,7 @@ function App() {
         {
             path: "/users",
             element: (
-                <ProtectedRoute >
+                <ProtectedRoute role={["ADMIN"]} >
                     <Users />
                 </ProtectedRoute>
             ),
@@ -51,7 +51,7 @@ function App() {
         {
             path: "/account-page",
             element: (
-                <ProtectedRoute>
+                <ProtectedRoute  role ={["USER", "ADMIN"]}>
                     <AccountPage />
                 </ProtectedRoute>
             ),
