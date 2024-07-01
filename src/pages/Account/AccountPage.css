@@ -86,6 +86,10 @@
     color: var(--white) !important;
 }
 
+.text-password{
+    font-size: 24px;
+}
+
 
 @media (max-width: 420px) {
     .accout-items-label {

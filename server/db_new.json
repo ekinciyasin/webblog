@@ -72,9 +72,27 @@
       "blockReiseTyp": "Safari",
       "blockBild": "https://i.ibb.co/k5DQPS9/chitwan.jpg",
       "blockDatum": "2024-05-29T08:51:36.428Z",
-      "blockText": "The Langtang Valley Trek is a hidden gem located north of Kathmandu, offering trekkers an opportunity to explore the serene and remote Langtang Valley. This trek is perfect for those looking to experience the beauty of the Himalayas without the crowds found on more popular routes. The trek begins with a drive from Kathmandu to Syabrubesi, the starting point of the trek. From here, the trail ascends through dense forests of rhododendron and bamboo, home to the elusive red panda. As trekkers climb higher, they are rewarded with breathtaking views of snow-capped peaks, including Langtang Lirung. The trail passes through traditional Tamang villages, where trekkers can experience the unique culture and hospitality of the local people. A highlight of the trek is the visit to Kyanjin Gompa, a beautiful monastery set against the backdrop of towering mountains. From Kyanjin Gompa, trekkers can hike to Tserko Ri for panoramic views of the Langtang range.",
+      "blockText": "<p>The Langtang Valley Trek is a hidden gem located north of Kathmandu, offering trekkers an opportunity to explore the serene and remote Langtang Valley. This trek is perfect for those looking to experience the beauty of the Himalayas without the crowds found on more popular routes. The trek begins with a drive from Kathmandu to Syabrubesi, the starting point of the trek. From here, the trail ascends through dense forests of rhododendron and bamboo, home to the elusive red panda. As trekkers climb higher, they are rewarded with breathtaking views of snow-capped peaks, including Langtang Lirung. The trail passes through traditional Tamang villages, where trekkers can experience the unique culture and hospitality of the local people. A highlight of the trek is the visit to Kyanjin Gompa, a beautiful monastery set against the backdrop of towering mountains. From Kyanjin Gompa, trekkers can hike to Tserko Ri for panoramic views of the Langtang range.</p>",
       "blockId": "1d2949c9-aa6a-45bd-a812-66278c37272g",
       "blockKommentare": [
+        {
+          "id": 1719870688035,
+          "user": "Anna Anna",
+          "text": "Hallo!=)) Cool!\n",
+          "timestamp": "01.07.2024, 23:51:28"
+        },
+        {
+          "id": 1719867544540,
+          "user": "Kolin Fahrel",
+          "text": "Gute Geschichte😎",
+          "timestamp": "01.07.2024, 22:59:04"
+        },
+        {
+          "id": 1719867496052,
+          "user": "Kolin Fahrel",
+          "text": "Sehr schön!)",
+          "timestamp": "01.07.2024, 22:58:16"
+        },
         {
           "id": 1719815525140,
           "user": "Yasin Ekinci",
@@ -104,12 +122,6 @@
           "userId": "YASIN",
           "text": "SAFARI TEST 2",
           "timestamp": "6/27/2024, 10:23:31 AM"
-        },
-        {
-          "id": 1719476701136,
-          "userId": "YASIN",
-          "text": "SAFARI TEST",
-          "timestamp": "6/27/2024, 10:25:01 AM"
         }
       ],
       "id": "8414"
@@ -339,21 +351,16 @@
       "password": "password"
     },
     {
-      "id": "565b",
-      "username": "admin",
-      "email": "1gamzeekinci@gmail.com",
-      "password": "1111"
-    },
-    {
       "id": "8fac",
       "username": "Mary Mary",
       "email": "mary1@mail.com",
-      "role": "admin",
+      "role": "ADMIN",
       "password": "123456"
     },
     {
       "id": "83c3",
       "username": "Max Mustermann",
+      "role": "USER",
       "email": "max@web.de",
       "password": "1234"
     },
@@ -361,25 +368,43 @@
       "id": "eded",
       "username": "evaog",
       "email": "eva@gmail.com",
+      "role": "USER",
       "password": "password"
     },
     {
       "id": "490e",
       "username": "markus",
       "email": "markus@m.com",
+      "role": "USER",
       "password": "password"
     },
     {
       "id": "9557",
       "username": "Evaogg",
       "email": "evvva@gmail.com",
+      "role": "USER",
       "password": "password"
     },
     {
-      "id": "ed22",
-      "username": "Nikolai",
-      "email": "niko@gmail.com",
-      "password": "password"
+      "id": "7e21",
+      "username": "Mary Smit",
+      "email": "marySmit@gmail.com",
+      "role": "ADMIN",
+      "password": "1234567"
+    },
+    {
+      "id": "6021",
+      "username": "Colin Farrell",
+      "email": "colinFarrell@gmail.com",
+      "password": "12345678",
+      "role": "USER"
+    },
+    {
+      "id": "ce62",
+      "username": "Anna Anna",
+      "email": "anna@gmail.com",
+      "password": "123456",
+      "role": "ADMIN"
     }
   ]
 }
