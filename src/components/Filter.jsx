@@ -29,6 +29,7 @@ function Filter({ setSelectedTypHandler, setSelectedLandHandler }) {
                 </option>
                 <option value="Nepal">Nepal</option>
                 <option value="India">India</option>
+                <option value="Bhutan">Bhutan</option>
             </select>
         </div>
     );

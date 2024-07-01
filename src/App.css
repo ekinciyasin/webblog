@@ -59,7 +59,8 @@ h1{
     opacity: 0.6;
 }
 
-.nav-link{
+.nav-link,
+.dropdown-menu li{
     color: white !important;
     font-size: 1.2rem !important;
 }
@@ -85,10 +86,11 @@ a::before {
     color: white !important;
 }
 
-#dropdown-menu{
+.dropdown-menu {
     --bs-dropdown-bg: rgba(225, 225, 225, 0) !important;
     border: none !important;
-
+    --bs-dropdown-border-color: rgba(225, 225, 225, 0) !important;
+    --bs-dropdown-border-width: 0 !important;
 }
 
 .dropdown-item:focus,
@@ -99,8 +101,17 @@ a::before {
 
 .dropdown-item{
     color: var(--white) !important;
+    background-color: rgba(225, 225, 225, 0) !important;
+    display: inline !important;
 }
 
+.dropdown-menu{
+    --bs-dropdown-bg: rgba(225, 225, 225, 0) !important;
+}
+
+.dropdown-item:hover{
+    --bs-dropdown-bg: rgba(225, 225, 225, 0) !important;
+}
 
 /*//////////////////BUTTON///////////////////////////////////*/
 
@@ -117,23 +128,27 @@ a::before {
     margin-left: 10px;
 }
 
-.button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    height: 40px;
-    width: 150px;
-    z-index: 9999;
-    box-shadow: 0 5px 5px -4px #2a5974;
-    border-radius: 20px;
+.button,
+#third,
+#third2{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    text-decoration: none !important;
+    color: inherit !important;
+    cursor: pointer !important;
+    height: 40px !important;
+    width: 150px !important;
+    z-index: 9999 !important;
+    box-shadow: 0 5px 5px -4px #2a5974 !important;
+    border-radius: 20px !important;
 }
 
-.button-div button {
+.button-div button,
+#third button,
+#third2 button{
     height: 40px;
     width: 150px;
     clip-path: path("M0 20C0 9 9 0 20 0H130C141 0 150 9 150 20V20C150 31 141 40 130 40H20C9 40 0 31 0 20Z");
@@ -152,22 +167,32 @@ a::before {
     transition: all 0.2s ease;
 }
 
-
-.button:hover > button {
-    transform: translateY(3px);
+#custom-third-div,
+#custom-third-div2{
+    position: relative;
 }
 
-.button.sec > button {
-    background-color: var(--accentBg);
-    box-shadow: 0px -3px 15px 0px var(--accentHi) inset;
-    color: var(--gold);
+.button:hover > button,
+#third:hover > button,
+#third2:hover > button
+{
+    transform: translateY(3px) !important;
+}
+
+.button.sec > button,
+#third.sec > button,
+#third2.sec > button{
+    background-color: var(--accentBg) !important;
+    box-shadow: 0px -3px 15px 0px var(--accentHi) inset !important;
+    color: var(--gold) !important;
 }
 
 
-.button.third > button {
+.button.third > button
+{
     background-color: var(--secondaryBg);
     box-shadow: 0 -3px 15px 0 #1b4157 inset;
-    color: var(--gold);
+    color: var(--gold) !important;
 }
 
 
@@ -520,16 +545,6 @@ color: var(--primary);
 
 
 
-
-
-
-
-
-
-
-
-
-
 @media (max-width: 995px) {
     .navbar-nav{
         align-content: flex-end;
@@ -610,4 +625,9 @@ color: var(--primary);
     background-color: hsla(155, 100%, 100%, 10%) !important;
 }
 
+
+.modal {
+    display: block; /* Ensure the modal is always displayed correctly */
+
+}
 

@@ -39,7 +39,8 @@ const Modal = ({isOpen, onClose, children, ...otherProps}) => {
 
         <div className={`modal ${isOpen ? 'modal-open' : 'modal-close'}`}>
             <div className="modal-wrapper" onClick={onWrapperClick}>
-                <div style={{ width: width || '60vw', backgroundColor: bgColor|| 'rgb(27 37 41 / 83%)' }} className="modal-content-container">
+                <div style={{width: width || '60vw', backgroundColor: bgColor || 'rgb(27 37 41 / 83%)'}}
+                     className="modal-content-container">
                     <button className="modal-close-button" onClick={() => onClose()}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                              className="bi bi-x" viewBox="0 0 16 16">

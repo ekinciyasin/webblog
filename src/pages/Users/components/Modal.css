@@ -1,3 +1,33 @@
 .modal {
     display: block; /* Ensure the modal is always displayed correctly */
+
+}
+
+#yasin-modal{
+    opacity: 1;
+    visibility: visible;
+    color: var(--white);
+    padding-top: 100px;
+}
+
+.form-select{
+    color: #fff;
+}
+
+.custom-modal-footer{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.custom-modal-div{
+    position: relative;
+}
+
+@media (max-width: 600px) {
+    .custom-modal-footer {
+        flex-direction: column;
+    }
 }

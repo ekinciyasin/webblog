@@ -25,7 +25,7 @@ const Modal = ({ show, user, newRole, setNewRole, handleClose, handleSave }) => 
     if (!show) return null;
 
     return (
-        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
+        <div className="modal fade show" id="yasin-modal" style={{ display: 'block' }} tabIndex="-1">
             <div className="modal-dialog" ref={modalRef}>
                 <div className="modal-content">
                     <div className="modal-header">
@@ -44,9 +44,20 @@ const Modal = ({ show, user, newRole, setNewRole, handleClose, handleSave }) => 
                             </select>
                         </div>
                     </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" onClick={handleClose}>Abbrechen</button>
-                        <button type="button" className="btn btn-primary" onClick={handleSave}>Speichern</button>
+                    <div className="custom-modal-footer">
+
+                        <div className="button-div custom-modal-div" id="custom-third-div2">
+                            <div className="button third" id="third">
+                                <button type="button" onClick={handleSave}>Speichern</button>
+                            </div>
+                        </div>
+
+                        <div className="button-div custom-modal-div" id="custom-third-div">
+                            <div className="button third" id="third2">
+                                <button type="button" onClick={handleClose}>Abbrechen</button>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
