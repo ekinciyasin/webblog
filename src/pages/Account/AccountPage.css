@@ -2,17 +2,12 @@
     margin-top: -12rem;
     z-index: auto;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 18rem;
 }
 
-
-@media (max-width: 1200px) {
-    .container-account {
-        margin-top: -16rem;
-    }
-}
 
 .account-card {
+    border-radius: 10px;
     background-color: rgba(28, 42, 50, 0.4);
     box-shadow: 0 5px 12px 0 rgb(97 97 116 / 37%);
     backdrop-filter: blur(6px);
@@ -45,7 +40,7 @@
 
 
 .accout-items-label {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -65,7 +60,7 @@
 
 .btn-column{
     min-width: 150px;
-    text-align: center;
+    text-align: right;
 }
 
 .form-control:focus {
@@ -89,4 +84,21 @@
 
 .text-style{
     color: var(--white) !important;
+}
+
+
+@media (max-width: 420px) {
+    .accout-items-label {
+        font-size: 14px;
+    }
+
+    .account-card{
+        width: 340px;
+    }
+}
+@media (max-width: 1200px) {
+    .container-account {
+        margin-top: -16rem;
+        margin-bottom: 22rem;
+    }
 }
