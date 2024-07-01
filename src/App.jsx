@@ -1,17 +1,17 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 import Users from "./pages/Users/Users";
 import ProtectedRoute from "./components/ProtectedRoute";
-import ArticlePage from './components/Articlepage';
+import ArticlePage from './pages/Article/Articlepage';
 import './App.css';
 import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
-import Footer from "./pages/Footer"
-import NotFound from "./pages/NotFound";
-import AccountPage from "./components/AccountPage";
+import Footer from "./components/Footer"
+import NotFound from "./pages/NotFound/NotFound";
+import AccountPage from "./pages/Account/AccountPage";
 import AuthenticationContext from "./state/AuthenticationContext"; // Import the DeleteAccount component
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
         {
             path: "/new-article",
             element: (
-                <ProtectedRoute >
+                <ProtectedRoute  role={["ADMIN"]}>
                     <NewArticle />
                 </ProtectedRoute>
             ),
@@ -43,7 +43,7 @@ function App() {
         {
             path: "/users",
             element: (
-                <ProtectedRoute >
+                <ProtectedRoute role={["ADMIN"]} >
                     <Users />
                 </ProtectedRoute>
             ),
@@ -51,7 +51,7 @@ function App() {
         {
             path: "/account-page",
             element: (
-                <ProtectedRoute>
+                <ProtectedRoute  role ={["USER", "ADMIN"]}>
                     <AccountPage />
                 </ProtectedRoute>
             ),

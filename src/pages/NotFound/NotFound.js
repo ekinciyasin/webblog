@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import notFoundImage from '../assets/404-illustration.jpg';
+import notFoundImage from '../../assets/404-illustration.jpg';
 
 export default function NotFound() {
     return (

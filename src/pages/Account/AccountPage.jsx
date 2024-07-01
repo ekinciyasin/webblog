@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import './AccountPage.css';
-import Modal from "../pages/NewArticle/Modal/Modal";
-import {AuthContext} from "../state/AuthenticationContext";
+import Modal from "../NewArticle/Modal/Modal";
+import {AuthContext} from "../../state/AuthenticationContext";
 import axios from "axios";
 
 const ModalType = {

@@ -75,7 +75,8 @@ const SignUp = () => {
         }
         let newUser;
         try {
-            newUser = await signUp({ username, email, password });
+            let role='USER';
+            newUser = await signUp({ username, email, password ,role});
             await login(email, password);
             authState.onLoginSuccess(newUser);
             navigate("/");
