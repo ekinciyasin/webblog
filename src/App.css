@@ -129,6 +129,8 @@ a::before {
     height: 40px;
     width: 150px;
     z-index: 9999;
+    box-shadow: 0 5px 5px -4px #2a5974;
+    border-radius: 20px;
 }
 
 .button-div button {
@@ -150,20 +152,6 @@ a::before {
     transition: all 0.2s ease;
 }
 
-.span {
-    width: 70px;
-    height: 50px;
-    background-color: var(--primaryHi);
-    border-radius: 100%;
-    filter: blur(20px);
-    position: absolute;
-    bottom: -50%;
-    transition: all 0.2s ease;
-}
-
-.button:hover > span {
-    opacity: 60%;
-}
 
 .button:hover > button {
     transform: translateY(3px);
@@ -175,10 +163,6 @@ a::before {
     color: var(--gold);
 }
 
-.button.sec > span {
-    background-color: var(--accentHi);
-}
-
 
 .button.third > button {
     background-color: var(--secondaryBg);
@@ -186,9 +170,6 @@ a::before {
     color: var(--gold);
 }
 
-.button.third > span {
-    background-color: var(--green);
-}
 
 
 /*////////////////////////SECONDARY BTN////////////////////////////*/

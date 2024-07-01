@@ -112,10 +112,11 @@ const SignUp = () => {
                 {/*    Registrieren*/}
                 {/*</button>*/}
 
-                <div disabled={apiProgress || (!password || password !== passwordRepeat)} className="button-div btn-left" onClick={onSubmit}>
-                    <a className="button third">
-                        <button type="submit">Registrieren</button>
-                        <span className="span"></span></a>
+                <div disabled={apiProgress || (!password || password !== passwordRepeat)}
+                     className="button-div btn-left">
+                        <div className="button third">
+                            <button type="submit">Registrieren</button>
+                        </div>
                     {apiProgress &&
                         <span className="spinner-border spinner-border-sm" role="status" aria-hidden=""></span>}
                 </div>

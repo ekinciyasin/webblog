@@ -174,10 +174,11 @@ const BlocksList = () => {
                     ))}
                     {visibleArticles < filteredArticles.length && (
                         <div className="button-div">
-                        <a className="button third" onClick={handleShowMore}>
-                            <button>Mehr anzeigen</button>
-                            <span className="span"></span></a>
+                        <div className="button third" >
+                        <button onClick={handleShowMore}>Mehr anzeigen</button>
                         </div>
+                        </div>
+
                     )}
                     <Modal isOpen={showEditor} onClose={() => setShowEditor(false)}>
                         {articleContent ? (
