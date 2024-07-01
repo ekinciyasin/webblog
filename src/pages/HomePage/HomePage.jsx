@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
-import Login from "./Login/Login";
-import BlocksList from "../components/BlocksList";
+import '../../App.css';
+import Login from "../Login/Login";
+import BlocksList from "../../components/BlocksList";
 
 function HomePage() {
     return (

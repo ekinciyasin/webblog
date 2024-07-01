@@ -1,6 +1,6 @@
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar";
 import SignUp from "./pages/SignUp/SignUp";
 import Users from "./pages/Users/Users";
@@ -9,8 +9,8 @@ import ArticlePage from './pages/Article/Articlepage';
 import './App.css';
 import NewArticle from "./pages/NewArticle/NewArticle";
 import Login from "./pages/Login/Login";
-import Footer from "./pages/Footer"
-import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer"
+import NotFound from "./pages/NotFound/NotFound";
 import AccountPage from "./pages/Account/AccountPage";
 import AuthenticationContext from "./state/AuthenticationContext"; // Import the DeleteAccount component
 
