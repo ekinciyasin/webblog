@@ -142,7 +142,7 @@ const AccountPage = () => {
                         </div>
                         <div className="account-items">
                             <p className="accout-items-label">Passwort:</p>
-                            <p>{password}</p>
+                            <p className="text-password">{'•'.repeat(password.length)}</p>
                             <div className="btn-column">
                                 {/*<button className="btn btn-danger"
                                         onClick={() => handleOpenModal(ModalType.PASSWORD)}>Passwort ändern
