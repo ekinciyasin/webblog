@@ -25,7 +25,7 @@ const Modal = ({ show, user, newRole, setNewRole, handleClose, handleSave }) => 
     if (!show) return null;
 
     return (
-        <div className="modal fade show" style={{ display: 'block' }} tabIndex="-1">
+        <div className="modal fade show" id="yasin-modal" style={{ display: 'block' }} tabIndex="-1">
             <div className="modal-dialog" ref={modalRef}>
                 <div className="modal-content">
                     <div className="modal-header">

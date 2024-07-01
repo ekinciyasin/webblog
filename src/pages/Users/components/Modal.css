@@ -1,3 +1,9 @@
 .modal {
     display: block; /* Ensure the modal is always displayed correctly */
+
+}
+
+#yasin-modal{
+    opacity: 1;
+    visibility: visible;
 }
