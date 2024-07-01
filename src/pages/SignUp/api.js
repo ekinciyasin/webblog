@@ -10,13 +10,13 @@ export function signUpWithBackend(body){
 export async function signUp(body) {
     const { email } = body;
 
-    // Önce e-posta adresinin zaten var olup olmadığını kontrol edelim
+
     const response = await axios.get(`http://localhost:3005/users?email=${email}`);
     if (response.data.length > 0) {
         throw new Error("Diese E-Mail-Adresse existiert bereits.");
     }
 
-    // E-posta adresi yoksa, yeni kullanıcıyı oluştur
+
     const newUserResponse = await axios.post('http://localhost:3005/users', body);
     return newUserResponse.data;
 }
