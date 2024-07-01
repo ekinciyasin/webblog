@@ -31,3 +31,11 @@
         flex-direction: column;
     }
 }
+
+#custom-flex-column,
+#custom-flex-column2,
+#custom-flex-column3{
+    flex-direction: column;
+    height: 130px;
+    margin-top: 30px;
+}

@@ -183,12 +183,29 @@ const AccountPage = () => {
                         <div className="invalid-feedback">
                             {emailError}
                         </div>
-                        <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
+                       {/* <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
                             <button type="button" className="btn btn-primary" onClick={handleChangeEmail}>Ja</button>
                             <button type="button" className="btn btn-secondary"
                                     onClick={() => setIsModalOpen(false)}>Nein
                             </button>
+                        </div>*/}
+
+                        <div className="custom-modal-footer" id="custom-flex-column2">
+
+                            <div className="button-div custom-modal-div" id="custom-third-div2">
+                                <div className="button third" id="third">
+                                    <button type="button" onClick={handleChangeEmail}>Ja</button>
+                                </div>
+                            </div>
+
+                            <div className="button-div custom-modal-div" id="custom-third-div">
+                                <div className="button third" id="third2">
+                                    <button type="button" onClick={() => setIsModalOpen(false)}>Nein</button>
+                                </div>
+                            </div>
+
                         </div>
+
                     </>
                 )}
                 {modalType === ModalType.PASSWORD && (
@@ -206,29 +223,65 @@ const AccountPage = () => {
                         <div className="invalid-feedback">
                             {passwordError}
                         </div>
-                        <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
-                            <button type="button" className="btn btn-primary" onClick={handleChangePassword}>Ja</button>
+
+                        {/* <button type="button" className="btn btn-primary" onClick={handleChangePassword}>Ja</button>
                             <button type="button" className="btn btn-secondary"
                                     onClick={() => setIsModalOpen(false)}>Nein
-                            </button>
-                        </div>
+                            </button>*/}
+
+
+                            <div className="custom-modal-footer" id="custom-flex-column">
+
+                                <div className="button-div custom-modal-div" id="custom-third-div2">
+                                    <div className="button third" id="third">
+                                        <button type="button" onClick={handleChangePassword}>Ja</button>
+                                    </div>
+                                </div>
+
+                                <div className="button-div custom-modal-div" id="custom-third-div">
+                                    <div className="button third" id="third2">
+                                        <button type="button" onClick={() => setIsModalOpen(false)}>Nein</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
                     </>
                 )}
                 {modalType === ModalType.DELETE && (
                     <>
                         <p style={{textAlign: 'center'}}>Bist du sicher, dass du deinen Account löschen möchtest? Diese
                             Aktion kann nicht rückgängig gemacht werden.</p>
-                        <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
+                        {/*<div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
                             <button type="button" className="btn btn-primary" onClick={handleDeleteAccount}>Ja</button>
                             <button type="button" className="btn btn-secondary"
                                     onClick={() => setIsModalOpen(false)}>Nein
                             </button>
+                        </div>*/}
+
+                        <div className="custom-modal-footer" id="custom-flex-column3">
+
+                            <div className="button-div custom-modal-div" id="custom-third-div2">
+                                <div className="button third" id="third">
+                                    <button type="button" onClick={handleDeleteAccount}>Ja</button>
+                                </div>
+                            </div>
+
+                            <div className="button-div custom-modal-div" id="custom-third-div">
+                                <div className="button third" id="third2">
+                                    <button type="button" onClick={() => setIsModalOpen(false)}>Nein</button>
+                                </div>
+                            </div>
+
                         </div>
                     </>
                 )}
                 {modalType === ModalType.ADMIN && (
                     <>
-                        <p style={{textAlign: 'center'}}> Das Administratorkonto kann nicht so einfach gelöscht werden. Bitte kontaktieren Sie den Blog-Eigentümer!</p>
+                        <p style={{textAlign: 'center'}}> Das Administratorkonto kann nicht so einfach gelöscht werden.
+                            Bitte kontaktieren Sie den Blog-Eigentümer!</p>
                         <div className="mt-2 pt-2 d-grid gap-2 d-md-flex justify-content-center align-items-center">
                             <button type="button" className="btn btn-secondary"
                                     onClick={() => setIsModalOpen(false)}>Ok
@@ -237,8 +290,6 @@ const AccountPage = () => {
                     </>
                 )}
             </Modal>
-
-
 
 
         </>
