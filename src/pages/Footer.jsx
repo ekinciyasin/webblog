@@ -13,7 +13,7 @@ export default function App() {
     return (
         <MDBFooter className='footer--pin text-center text-white'>
             <MDBContainer className='p-4 pb-0'>
-                {authContext.role !== 'ADMIN' && (
+                {(authContext.id === 0) && (
                     <div className='d-flex justify-content-center align-items-center'>
                         <li className="nav-item footer-first-div">
                             <a className="nav-link  a-categorien a-footer" href="/login">Einloggen</a>
